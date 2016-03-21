@@ -1,21 +1,20 @@
 <div class="container">
-
   <div>
-    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+    <acme-navbar></acme-navbar>
   </div>
-
-  <div class="jumbotron text-center">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">
-      <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-      Always a pleasure scaffolding your apps.
-    </p>
-    <p class="animated infinite" ng-class="main.classAnimation">
-      <button type="button" class="btn btn-lg btn-success" ng-click="main.showToastr()">Splendid Toastr</button>
-    </p>
-    <p>
+  <div class="jumbotron text-center" style="height: 310px;">
+    <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+      <uib-slide ng-repeat="slide in main.slides track by slide.id" index="slide.id">
+        <img ng-src="{{slide.image}}" style="margin:auto">
+        <div class="carousel-caption">
+          <h4>Slide {{slide.id}}</h4>
+          <p>{{slide.text}}</p>
+        </div>
+      </uib-slide>
+    </uib-carousel>
+   <!-- <p>
       With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
-    </p>
+    </p>-->
   </div>
 
   <div class="row">

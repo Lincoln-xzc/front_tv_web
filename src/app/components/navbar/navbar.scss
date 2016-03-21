@@ -1,3 +1,37 @@
-.acme-navbar-text{
-  color: white;
+.navbar-home {
+  width:140%;
+  position: relative;
+  right: 20%;
+  height: 20px;
+}
+#navbar .navbar-header {
+  margin-left: -200px;
+}
+.navbar-right {
+  position: absolute;
+  left: 85%;
+}
+#bs-example-navbar-collapse-6 {
+  margin-left: -80px;
+}
+#bs-example-navbar-collapse-6 .search {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 80px;
+  opacity: 0.5;
+}
+#bs-example-navbar-collapse-6 .basic-addon2 {
+  position: absolute;
+  margin-left: 277px;
+  margin-top: 10px;
+  opacity: 0.5;
+}
+.basic-addon2 .btn {
+  height: 34px;
+}
+.navbar-btn {
+  margin-right:-80px;
+}
+.navbar-drop {
+  margin-top: 8px;
 }

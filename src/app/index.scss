@@ -26,6 +26,15 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
     width: 50px;
   }
 }
+.form-control {
+  width: auto !important;
+}
+.block {
+  display: block;
+}
+.none {
+  display: none;
+}
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject

@@ -1,20 +1,44 @@
-<nav class="navbar navbar-static-top navbar-inverse">
-  <div class="container-fluid">
+<nav class="navbar navbar-static-top navbar-home navbar-inverse" id="navbar">
+  <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="https://github.com/Swiip/generator-gulp-angular">
-        <span class="glyphicon glyphicon-home"></span> Gulp Angular
+        <span class="glyphicon glyphicon-home"></span>Hot Video
       </a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
       <ul class="nav navbar-nav">
-        <li class="active"><a ng-href="#">Home</a></li>
-        <li><a ng-href="#">About</a></li>
-        <li><a ng-href="#">Contact</a></li>
+        <li class="active"><a ng-href="#">电视剧</a></li>
+        <li><a ui-sref="#">电影</a></li>
+        <li><a ui-sref="#">综艺</a></li>
+        <li><a ui-sref="#">动漫</a></li>
+        <li><a ui-sref="#">健康</a></li>
+        <li><a ui-sref="#">教学</a></li>
+        <li><a ui-sref="#">综艺</a></li>
+        <li>&dot;&dot;&dot;</li>
+        <li>
+          <div class="input-group">
+            <input type="text" class="form-control search" placeholder="Search for...">
+            <span class="input-group-btn basic-addon2">
+              <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+            </span>
+          </div>
+        </li>
       </ul>
-
-      <ul class="nav navbar-nav navbar-right acme-navbar-text">
-        <li>Application was created {{ vm.relativeDate }}.</li>
+      <ul class="nav navbar-nav navbar-right">
+        <li><div class="dropdown navbar-drop">
+          <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true">
+            开启你的电影之旅
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div></li>
+        <li><button class="btn btn-link navbar-btn">登录</button></li>
       </ul>
     </div>
   </div>

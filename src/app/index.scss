@@ -20,10 +20,11 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 }
 
 .thumbnail {
-  height: 200px;
+  height: 100px;
 
   img.pull-right {
-    width: 50px;
+    width: 200px;
+    height: 90px;
   }
 }
 .form-control {
@@ -34,6 +35,40 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 }
 .none {
   display: none;
+}
+#liquid {
+  -moz-border-radius:10px 10px 10px 10px;
+  -webkit-border-radius:10px 10px 10px 10px;
+  border-radius:10px 10px 10px 10px;
+  padding:10px 0;
+}
+#liquid .previous {
+  display:block !important;
+  height:126px;
+  width:64px;
+  background-image:url('../assets/images/liquidcarousel/previous.png');
+  float:left;
+  margin:0;
+  padding:0;
+}
+#liquid .next {
+  display:block !important;
+  height:126px;
+  width:64px;
+  background-image:url('../assets/images/liquidcarousel/next.png');
+  margin:0;
+  padding:0;
+}
+#liquid ul li {
+  width:80px;
+  padding:0 2px;
+  margin-right: 0px !important;
+  margin-left: 80px !important;
+}
+#liquid ul li a img {
+  -moz-box-shadow: 5px 5px 3px #222;
+  -webkit-box-shadow: 5px 5px 3px #222;
+  box-shadow: 5px 5px 3px #222;
 }
 
 /**

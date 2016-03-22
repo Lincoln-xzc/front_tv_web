@@ -99,77 +99,77 @@
       {
         image:'02.jpg',
         text:'I love that',
-        id:1
+        id:2
       },
       {
         image:'03.jpg',
         text:'I love that',
-        id:1
+        id:3
       },
       {
         image:'04.jpg',
         text:'I love that',
-        id:1
+        id:4
       },
       {
         image:'05.jpg',
         text:'I love that',
-        id:1
+        id:5
       },
       {
         image:'06.jpg',
         text:'I love that',
-        id:1
+        id:6
       },
       {
         image:'07.jpg',
         text:'I love that',
-        id:1
+        id:7
       },
       {
         image:'08.jpg',
         text:'I love that',
-        id:1
+        id:8
       },
       {
         image:'09.jpg',
         text:'I love that',
-        id:1
+        id:9
       },
       {
         image:'10.jpg',
         text:'I love that',
-        id:1
+        id:10
       },
       {
         image:'11.jpg',
         text:'I love that',
-        id:1
+        id:11
       },
       {
         image:'12.jpg',
         text:'I love that',
-        id:1
+        id:12
       },
       {
         image:'13.jpg',
         text:'I love that',
-        id:1
+        id:13
       },
       {
         image:'14.jpg',
         text:'I love that',
-        id:1
+        id:14
       },
       {
         image:'15.jpg',
         text:'I love that',
-        id:1
+        id:15
       },
       {
         image:'16.jpg',
         text:'I love that',
-        id:1
+        id:16
       }
     ];
     mainService.getCarouse = function(){
@@ -180,6 +180,11 @@
     mainService.getLike = function(){
       var d = $q.defer();
       d.resolve({'data':like});
+      return d.promise;
+    };
+    mainService.getLiquid = function(){
+      var d = $q.defer();
+      d.resolve({'data':liquids});
       return d.promise;
     }
     return mainService;

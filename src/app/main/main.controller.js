@@ -6,19 +6,25 @@
     .controller('MainController',MainController);
 
   /** @ngInject */
-  function MainController( $modal, MainService) {
+  function MainController( $modal, MainService, $log) {
     var vm = this;
     vm.test = 'test';
 
     MainService.getCarouse().then(function(result){
      vm.slides = result.data;
     },function(err){
-      console.log(err.statusText +':'+ err.status);
+      $log.error(err.statusText +':'+ err.status);
     });
     MainService.getLike().then(function(result){
       vm.likeMovies = result.data;
     },function(err){
-      console.log(err.statusText +':'+ err.status);
+      $log.error(err.statusText +':'+ err.status);
+    });
+    MainService.getLiquid().then(function(result){
+      vm.liquids = result.data;
+      console.log(vm.liquids);
+    },function(err){
+      $log.error(err.status +':'+err.statusText);
     });
 /*  //弹出框
     vm.open = function() {

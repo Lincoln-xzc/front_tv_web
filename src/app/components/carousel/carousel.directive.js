@@ -14,27 +14,30 @@
       restrict: 'EA',
       templateUrl: 'app/components/carousel/carousel.html',
       scope: {
-
+          liquids: '@someAttr'
       },
       controller: liquidController,
       controllerAs: 'vm',
       bindToController: true,
-      link: function(scope, element, attrs, ctrl){
-        $('#liquid').liquidcarousel({
-          height:160,
+      link: function(scope, element, attrs, ctrl) {
+        angular.element('#liquid').liquidcarousel({
+          height: 160,
           duration: 100,
-          hidearrows: true });
+          hidearrows: true
+        });
       }
     };
 
     return directive;
 
 
-    function liquidController(moment,MainService) {
+    function liquidController(MainService, $log) {
       var vm = this;
-
+      vm.liquidsData = JSON.parse(vm.liquids);
+      //console.log(JSON.parse(vm.liquids));
       // "vm.creation" is avaible by directive option "bindToController: true"
-     // vm.relativeDate = moment(vm.creationDate).fromNow();
+     // vm.relativeDate = moment(vm.liquids).fromNow();
+     // console.log(vm.liquids);
     }
   }
 

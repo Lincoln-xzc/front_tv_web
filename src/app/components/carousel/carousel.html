@@ -2,15 +2,7 @@
   <span class="previous"></span>
   <div class="wrapper">
     <ul>
-      <li><a href="#"><img src="/assets/images/liquidcarousel/01.jpg"></a></li>
-      <li><a href="#"><img src="/assets/images/liquidcarousel/02.jpg"></a></li>
-      <li><a href="#"><img src="/assets/images/liquidcarousel/03.jpg"></a></li>
-      <li><a href="#"><img src="/assets/images/liquidcarousel/04.jpg"></a></li>
-      <li><a href="#"><img src="/assets/images/liquidcarousel/05.jpg"></a></li>
-      <li><a href="#"><img src="/assets/images/liquidcarousel/06.jpg"></a></li>
-      <li><a href="#"><img src="/assets/images/liquidcarousel/07.jpg"></a></li>
-      <li><a href="#"><img src="/assets/images/liquidcarousel/08.jpg"></a></li>
-      <li><a href="#"><img src="/assets/images/liquidcarousel/09.jpg"></a></li>
+      <li ng-repeat="liquid in vm.liquidsData"><a href="#"><img ng-src="/assets/images/liquidcarousel/{{liquid.image}}"></a></li>
     </ul>
   </div>
   <span class="next pull-right"></span>

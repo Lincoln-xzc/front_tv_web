@@ -3,50 +3,37 @@
 
   angular
     .module('frontTvWeb')
-    .controller('MainController', MainController);
+    .controller('MainController',MainController);
 
   /** @ngInject */
-  function MainController($uibModal,$log) {
+  function MainController( $modal, MainService) {
     var vm = this;
-   /* vm.slides = [
-      {
-        image:'/assets/images/gulp.png',
-        text:'I love that',
-        id: 1
-      },
-      {
-        image:'/assets/images/karma.png',
-        text:'Nice image',
-        id: 2
-      },
-      {
-        image:'../assets/images/karma.png',
-        text:'Nice image',
-        id: 3
-      },
-      {
-        image:'../assets/images/yeoman.png',
-        text:'Nice images',
-        id: 4
-      }
-    ];*/
-    vm.items = ['item1', 'item2', 'item3'];
+    vm.test = 'test';
 
-    vm.animationsEnabled = true;
+    MainService.getCarouse().then(function(result){
+     vm.slides = result.data;
+    },function(err){
+      console.log(err.statusText +':'+ err.status);
+    });
+    MainService.getLike().then(function(result){
+      vm.likeMovies = result.data;
+    },function(err){
+      console.log(err.statusText +':'+ err.status);
+    });
+/*  //弹出框
+    vm.open = function() {
 
-    vm.open = function () {
-
-      var modalInstance = $uibModal.open({
-        animation: $scope.animationsEnabled,
+      var modalInstance = $modal.open({
+        animation: true,
+        backdrop: true,
         templateUrl: 'myModalContent.html',
-        controller: 'ModalInstanceCtrl',
+        controller: 'NrsController',
         size: 'lg',
         resolve: {
-          items: function () {
-            return vm.items;
+          NRS: function () {
+            return vm.item;
+
           }
-        }
-      });
 
       modalInstance.result.then(function (selectedItem) {
         vm.selected = selectedItem;
@@ -70,4 +57,17 @@
       $uibModalInstance.dismiss('cancel');
     };
   }*/
+
+  } //End of MainController
+
+  /*angular.module('frontTvWeb')
+    .controller('NrsController', function($scope, $modalInstance) {
+      $scope.ok = function () {
+        $modalInstance.close($scope.NRS);
+      };
+
+      $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+      };
+    })*/
 })();

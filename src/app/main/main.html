@@ -2,54 +2,62 @@
   <div>
     <acme-navbar></acme-navbar>
   </div>
-  <div class="jumbotron text-center" style="height: 310px;">
-    <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-      <uib-slide ng-repeat="slide in main.slides track by slide.id" index="slide.id">
-        <img ng-src="{{slide.image}}" style="margin:auto">
+  <div class="carouse text-center carouse-top" style="height: 305px;">
+    <carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+      <slide ng-repeat="slide in main.slides">
+        <img ng-src="assets/images/main/{{slide.image}}" style="margin:auto">
         <div class="carousel-caption">
-          <h4>Slide {{slide.id}}</h4>
           <p>{{slide.text}}</p>
         </div>
-      </uib-slide>
-    </uib-carousel>
+      </slide>
+    </carousel>
    <!-- <p>
       With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
     </p>-->
   </div>
-
-  <div class="row">
-    <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
+  <div class="row" style="margin-top: 180px;">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+        <div class="main-title">
+          <span class="glyphicon glyphicon-heart"></span>
+          <h3>猜你喜欢</h3>
+        </div>
+        <div class="col-sm-2 col-md-2 pull-right right-title">
+            <button class="btn btn-link"><span class="glyphicon glyphicon-refresh"></span>换一换</button>
+        </div>
+    </div>
+    <div class="col-sm-3 col-md-2" ng-repeat="likeMovie in main.likeMovies">
       <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
+        <img class="pull-right" ng-src="assets/images/like/{{ likeMovie.image}}">
         <div class="caption">
-          <h3>{{ awesomeThing.title }}</h3>
-          <p>{{ awesomeThing.description }}</p>
+          <h3>{{ likeMovie.title}}</h3>
+          <!--<p>{{ awesomeThing.description }}</p>-->
           <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
         </div>
       </div>
     </div>
   </div>
   <div class="row">
-      <script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header">
-          <h3 class="modal-title">I'm a modal!</h3>
-        </div>
-        <div class="modal-body">
-          <ul>
-            <li ng-repeat="item in main.items">
-              <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
-            </li>
-          </ul>
-          Selected: <b>{{ selected.item }}</b>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-          <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-        </div>
-      </script>
-
-      <button type="button" class="btn btn-default" ng-click="open()">Open me!</button>
-      <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+    <liquid-carousel></liquid-carousel>
+<!--    <div id="liquid">
+      <span class="previous"></span>
+      <div class="wrapper">
+        <ul>
+          <li><a href="#"><img src="/assets/images/liquidcarousel/01.jpg"></a></li>
+          <li><a href="#"><img src="/assets/images/liquidcarousel/02.jpg"></a></li>
+          <li><a href="#"><img src="/assets/images/liquidcarousel/03.jpg"></a></li>
+          <li><a href="#"><img src="/assets/images/liquidcarousel/04.jpg"></a></li>
+          <li><a href="#"><img src="/assets/images/liquidcarousel/05.jpg"></a></li>
+          <li><a href="#"><img src="/assets/images/liquidcarousel/06.jpg"></a></li>
+        </ul>
+      </div>
+      <span class="next"></span>
     </div>
-
+    <script type="text/javascript">
+        $('#liquid').liquidcarousel({
+          height: 150,		//the height of the list
+        /*  duration: 100,		//the duration of the animation
+          hidearrows: true	//hide arrows if all of the list items are visible
+        */});
+    </script>-->
+  </div>
 </div>

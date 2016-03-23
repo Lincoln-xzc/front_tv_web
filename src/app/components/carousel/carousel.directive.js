@@ -25,6 +25,13 @@
           duration: 100,
           hidearrows: true
         });
+        var liquid =angular.element('#liquid');
+        liquid.find('.previous').click(function(){
+          liquid.find('.wrapper ul').css('margin-left','0px');
+        })
+        liquid.find('.next').click(function(){
+            liquid.find('.wrapper ul').css('margin-left','-980px');
+        })
       }
     };
 

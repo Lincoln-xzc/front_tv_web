@@ -9,7 +9,7 @@
   function MainController( $modal, MainService, $log) {
     var vm = this;
     vm.test = 'test';
-
+    vm.type = 1;
     MainService.getCarouse().then(function(result){
      vm.slides = result.data;
     },function(err){
@@ -22,10 +22,28 @@
     });
     MainService.getLiquid().then(function(result){
       vm.liquids = result.data;
-      console.log(vm.liquids);
     },function(err){
       $log.error(err.status +':'+err.statusText);
     });
+    MainService.getOld().then(function(result){
+      vm.oldMovies = result.data;
+    },function(err){
+      $log.error(err.status + ':' +err.statusText);
+    });
+    MainService.getTvShow(vm.type).then(function(result){
+      vm.tvDatas = result.data;
+    },function(err){
+      $log.error(err.status + ':' +err.statusText);
+    });
+    vm.getTv = function(type){
+      MainService.getTvShow(type).then(function(result){
+        vm.tvDatas = result.data;
+      },function(err){
+        $log.error(err.status + ':' +err.statusText);
+      })
+    }
+
+
 /*  //弹出框
     vm.open = function() {
 

@@ -15,36 +15,38 @@
       restrict: 'EA',
       templateUrl: 'app/components/template/tabset.html',
       scope:{
-        tabDatas:'='
+        tabDatas:'=',
+        index: '@'
       },
-      controller: tabController,
+   /*   controller: tabController,
       controllerAs: 'vm',
-      bindToController: true,
+      bindToController: true,*/
       link: function(scope, element, attrs, ctrl) {
-        angular.element('#tv ul li').mouseenter(function(e){
-
+        var i = scope.index;
+        var block_layout = angular.element('.block-layout').eq(i);
+        block_layout.find('ul li').mouseenter(function(e){
           var index =$(this).index();
-          angular.element('#tv ul li').removeClass('active');
-          angular.element("#tv .tab-pane").removeClass('active');
-          $(this).addClass('active');
-          angular.element("#tv .tab-pane").eq(index).addClass('active');
+          block_layout.find('ul li').removeClass('active');
+          block_layout.find('.tab-pane').removeClass('active');
+          $(this).addClass('active');;
+          block_layout.find(".tab-pane").eq(index).addClass('active');
         });
         }
     };
 
     return directive;
-
+/*
     function tabController($log,$timeout) {
       var vm = this;
-     /* vm.tabDatas =angular.fromJson(vm.tabData);*/
-  /*    $timeout(function(){
+     /!* vm.tabDatas =angular.fromJson(vm.tabData);*!/
+  /!*    $timeout(function(){
         console.log(vm.ngModel);
       });
-*/
+*!/
       // "vm.creation" is avaible by directive option "bindToController: true"
       // vm.relativeDate = moment(vm.liquids).fromNow();
       // console.log(vm.liquids);
-    }
+    }*/
   }
 
 })();

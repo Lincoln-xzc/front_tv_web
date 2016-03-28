@@ -58,7 +58,7 @@
       </div>
     </div>
   </div>
-  <div class="row" id="tv">
+  <div class="row block-layout">
     <div class="title-inline offset-left-2">
       <span class="glyphicon glyphicon-hd-video"></span>
       <h3>电视剧</h3>
@@ -69,14 +69,66 @@
         <li role="presentation"><a ng-mouseenter="main.getTv(4)">港台剧</a></li>
       </ul>
       <input type="hidden" name="test" ng-model="main.tvDatas">
-      <div tab-set tab-datas="main.tvDatas"></div>
+      <div tab-set tab-datas="main.tvDatas" index="0"></div>
     </div>
   </div>
-  <div class="row" id="movie">
+  <div class="row md_carousel" id="movie">
     <div class="title-inline offset-left-2">
       <span class="glyphicon glyphicon-facetime-video"></span>
       <h3>电影</h3>
     </div>
-  <!-- <div liquid-carousel some-attr="main.movies" height="main.mdcarousel.height" width="main.mdcarousel.width" size="main.mdcarousel.size"></div>-->
+    <div md-carousel some-attr="main.movies" index="0"></div>
+  </div>
+  <div class="row block-layout">
+    <div class="title-inline offset-left-2">
+      <span class="glyphicon glyphicon-headphones"></span>
+      <h3>综艺</h3>
+      <ul class="nav nav-pills nav-video" role="tablist" style="margin-bottom: 20px;">
+        <li role="presentation" class="active"><a ng-mouseenter="main.getTv(1)">热播综艺</a></li>
+        <li role="presentation"><a ng-mouseenter="main.getTv(2)">大陆综艺</a></li>
+        <li role="presentation"><a ng-mouseenter="main.getTv(3)">港台综艺</a></li>
+        <li role="presentation"><a ng-mouseenter="main.getTv(4)">海外综艺</a></li>
+      </ul>
+      <!--<input type="hidden" name="test" ng-model="main.tvDatas">-->
+      <div tab-set tab-datas="main.tvDatas" index="1"></div>
+    </div>
+  </div>
+  <div class="row md_carousel">
+    <div class="title-inline offset-left-2">
+      <span class="glyphicon glyphicon-send"></span>
+      <h3>动漫</h3>
+    </div>
+    <div md-carousel some-attr="main.movies" index="1"></div>
+  </div>
+  <div class="row offset-top">
+    <div class="title-inline offset-left-2">
+      <span class="glyphicon glyphicon-book"></span>
+      <h3>技术杂谈</h3>
+    </div>
+    <div class="col-sm-3 col-md-2" ng-repeat="oldMovie in main.oldMovies">
+      <div class="thumbnail">
+        <img class="pull-right" ng-src="assets/images/like/{{oldMovie.image}}">
+        <div class="caption">
+          <h3>{{oldMovie.title}}</h3>
+          <p><a ng-href="#"></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row offset-top">
+    <div class="title-inline offset-left-2">
+      <span class="glyphicon glyphicon-leaf"></span>
+      <h3>健身养生</h3>
+    </div>
+    <div class="col-sm-3 col-md-2" ng-repeat="oldMovie in main.oldMovies">
+      <div class="thumbnail">
+        <img class="pull-right" ng-src="assets/images/like/{{oldMovie.image}}">
+        <div class="caption">
+          <h3>{{oldMovie.title}}</h3>
+          <p><a ng-href="#"></a></p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+

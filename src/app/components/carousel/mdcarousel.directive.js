@@ -6,49 +6,41 @@
    */
   angular
     .module('frontTvWeb')
-    .directive('liquidCarousel', liquidCarousel);
+    .directive('mdCarousel', mdCarousel);
 
   /** @ngInject */
-  function liquidCarousel() {
+  function mdCarousel() {
     var directive = {
       restrict: 'EA',
-      templateUrl: 'app/components/carousel/carousel.html',
+      templateUrl: 'app/components/carousel/mdcarousel.html',
       transculde : true,
       replace : true,
       scope: {
-          liquids: '=someAttr',
-          height : '=',
-          width : '=',
-          size : '=',
+          movies: '=someAttr',
           index : '@'
       },
 
       link: function(scope, element, attr, ctrl) {
-        console.log(scope.liquids);
-        var liquid =angular.element('.liquid');
+        console.log(scope.index);
+        var movie =angular.element('.movie_directive').eq(scope.index);
         var index =0;
-        var height = scope.height +'px';
-        var width = scope.width +'px';
-        console.log(height +':'+ width);
-        liquid.css({"height":height,"width":width});
-        liquid.find('.liquid-content').css({'width':scope.width-100 + 'px','height':height});
-        liquid.find('.previous').click(function(){
+        movie.find('.previous').click(function(){
           index --;
           /*liquid.find('.wrapper ul').css('margin-left','0px');*/
-          var rollobj = angular.element('.liquid .wrapper');
-          var rollWidth = rollobj.find("li").outerWidth()-20;
+          var rollobj = movie.find(".wrapper");
+          var rollWidth = rollobj.find("li").outerWidth()-35;
           rollWidth = rollWidth * 2;
           if(index > -1) {
             rollobj.stop(true, false).animate({left: -rollWidth * index}, 1000);
           }
         })
-        liquid.find('.next').click(function(){
+        movie.find('.next').click(function(){
           index ++;
             //liquid.find('.wrapper ul').css('margin-left','-980px');
-          var rollobj = angular.element('.liquid .wrapper');
-          var rollWidth = rollobj.find("li").outerWidth()+47;
+          var rollobj =movie.find('.wrapper');
+          var rollWidth = rollobj.find("li").outerWidth()+120;
           rollWidth = rollWidth * 2;
-          if(index <5){
+          if(index <4){
             rollobj.stop(true,false).animate({left: -rollWidth *index},1000);
           }
 

@@ -1,9 +1,9 @@
-<div id="liquid">
+<div class="liquid">
   <span class="previous"></span>
   <div class="liquid-content">
     <div class="wrapper">
       <ul>
-        <li ng-repeat="liquid in vm.liquidsData"><a href="#"><img ng-src="/assets/images/liquidcarousel/{{liquid.image}}"></a></li>
+        <li class="photo-{{size}}" ng-repeat="liquid in liquids"><a><img ng-src="{{liquid.image}}"></a></li>
       </ul>
     </div>
   </div>

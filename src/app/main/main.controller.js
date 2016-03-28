@@ -10,6 +10,18 @@
     var vm = this;
     vm.test = 'test';
     vm.type = 1;
+    vm.lg='lg';
+    vm.sm = 'sm';
+    vm.smcarousel ={
+      'size':'sm',
+      'width':'1200',
+      'height':'150'
+    };
+    vm.mdcarousel = {
+      'size':'md',
+      'width':'2000',
+      'height':'350'
+    };
     MainService.getCarouse().then(function(result){
      vm.slides = result.data;
     },function(err){
@@ -35,13 +47,19 @@
     },function(err){
       $log.error(err.status + ':' +err.statusText);
     });
+    MainService.getMovies().then(function(result){
+      vm.movies = result.data;
+      console.log(vm.movies);
+    },function(err){
+      $log.error(err.status + ':' +err.statusText);
+    })
     vm.getTv = function(type){
       MainService.getTvShow(type).then(function(result){
         vm.tvDatas = result.data;
       },function(err){
         $log.error(err.status + ':' +err.statusText);
       })
-    }
+    };
 
 
 /*  //弹出框

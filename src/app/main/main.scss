@@ -49,3 +49,14 @@
   width:400px;
   height:400px;
 }
+.square:first-child{
+  width:33%;
+}
+.square:first-child .thumbnail {
+  height:220px;
+}
+.square:first-child .thumbnail img {
+  width:345px;
+  height: 210px;
+}
+

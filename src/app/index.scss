@@ -31,10 +31,10 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
   width: auto !important;
 }
 .block {
-  display: block;
+  display: block !important;
 }
 .none {
-  display: none;
+  display: none !important;
 }
 ul li {
   list-style: none;

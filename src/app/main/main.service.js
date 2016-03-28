@@ -92,82 +92,82 @@
     ];
     var liquids = [
       {
-        image:'01.jpg',
+        image:'/assets/images/liquidcarousel/01.jpg',
         text:'I love that',
         id:1
       },
       {
-        image:'02.jpg',
+        image:'/assets/images/liquidcarousel/02.jpg',
         text:'I love that',
         id:2
       },
       {
-        image:'03.jpg',
+        image:'/assets/images/liquidcarousel/03.jpg',
         text:'I love that',
         id:3
       },
       {
-        image:'04.jpg',
+        image:'/assets/images/liquidcarousel/04.jpg',
         text:'I love that',
         id:4
       },
       {
-        image:'05.jpg',
+        image:'/assets/images/liquidcarousel/05.jpg',
         text:'I love that',
         id:5
       },
       {
-        image:'06.jpg',
+        image:'/assets/images/liquidcarousel/06.jpg',
         text:'I love that',
         id:6
       },
       {
-        image:'07.jpg',
+        image:'/assets/images/liquidcarousel/07.jpg',
         text:'I love that',
         id:7
       },
       {
-        image:'08.jpg',
+        image:'/assets/images/liquidcarousel/08.jpg',
         text:'I love that',
         id:8
       },
       {
-        image:'09.jpg',
+        image:'/assets/images/liquidcarousel/09.jpg',
         text:'I love that',
         id:9
       },
       {
-        image:'10.jpg',
+        image:'/assets/images/liquidcarousel/10.jpg',
         text:'I love that',
         id:10
       },
       {
-        image:'11.jpg',
+        image:'/assets/images/liquidcarousel/11.jpg',
         text:'I love that',
         id:11
       },
       {
-        image:'12.jpg',
+        image:'/assets/images/liquidcarousel/12.jpg',
         text:'I love that',
         id:12
       },
       {
-        image:'13.jpg',
+        image:'/assets/images/liquidcarousel/13.jpg',
         text:'I love that',
         id:13
       },
       {
-        image:'14.jpg',
+        image:'/assets/images/liquidcarousel/14.jpg',
         text:'I love that',
         id:14
       },
       {
-        image:'15.jpg',
+        image:'/assets/images/liquidcarousel/15.jpg',
         text:'I love that',
         id:15
       },
       {
-        image:'16.jpg',
+        image:'/assets/images/liquidcarousel/16.jpg',
         text:'I love that',
         id:16
       }
@@ -369,12 +369,6 @@
         id:1,
         type:3
       },
-      {
-        image:'b3.jpg',
-        message:'aa',
-        id:1,
-        type:3
-      },
 
       {
         image:'b4.jpg',
@@ -431,6 +425,63 @@
         type:4
       }
     ];
+    var movies = [
+      {
+        image:'/assets/images/movie/a1.jpg',
+        text:'I love that',
+        id:1
+      },
+      {
+        image:'/assets/images/movie/a2.jpg',
+        text:'I love that',
+        id:2
+      },
+      {
+        image:'/assets/images/movie/a3.jpg',
+        text:'I love that',
+        id:3
+      },
+      {
+        image:'/assets/images/movie/a4.jpg',
+        text:'I love that',
+        id:4
+      },
+      {
+        image:'/assets/images/movie/a5.jpg',
+        text:'I love that',
+        id:5
+      },
+      {
+        image:'/assets/images/movie/a6.jpg',
+        text:'I love that',
+        id:6
+      },
+      {
+        image:'/assets/images/movie/a7.jpg',
+        text:'I love that',
+        id:7
+      },
+      {
+        image:'/assets/images/movie/a8.jpg',
+        text:'I love that',
+        id:8
+      },
+      {
+        image:'/assets/images/movie/a9.jpg',
+        text:'I love that',
+        id:9
+      },
+      {
+        image:'/assets/images/movie/a10.jpg',
+        text:'I love that',
+        id:10
+      },
+      {
+        image:'/assets/images/movie/a11.jpg',
+        text:'I love that',
+        id:11
+      }
+    ];
     mainService.getCarouse = function(){
       var d = $q.defer();
       d.resolve({'data':slides});
@@ -449,6 +500,11 @@
     mainService.getOld = function(){
       var d = $q.defer();
       d.resolve({'data':old});
+      return d.promise;
+    };
+    mainService.getMovies = function(){
+      var d = $q.defer();
+      d.resolve({'data':movies});
       return d.promise;
     }
     mainService.getTvShow = function(type){

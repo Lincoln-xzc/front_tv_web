@@ -29,7 +29,7 @@
           $(this).addClass('active');
           angular.element("#tv .tab-pane").eq(index).addClass('active');
         });
-      }
+        }
     };
 
     return directive;

@@ -1,41 +1,46 @@
-#liquid {
+.liquid {
   float: left;
-  height: 150px;
   margin: 10px 0 0 0;
   overflow: hidden;
-  width: 1200px;
 }
-#liquid .liquid-content {
+.liquid .liquid-content {
   float: left;
-  height: 150px;
   overflow: hidden;
   margin: 8px 5px 8px 5px;
-  width:1100px;
   position: relative;
 }
-#liquid .wrapper {
+.liquid .wrapper {
   position: absolute;
   top:0;
-  width:2000px;
   margin-left: -50px;
 }
-#liquid .wrapper li {
+.photo-sm {
   float: left;
   height:150px;
   overflow: hidden;
   padding: 0 5px;
-  margin-right: 44px;
+  margin-right: 43px;
+  margin-left: 5px;
   position: relative;
-  width:95px;
+  width:90px;
 }
-
-#liquid .wrapper li img {
+.photo-md {
+  float: left;
+  height:350px;
+  overflow: hidden;
+  padding: 0 5px;
+  margin-right: 43px;
+  margin-left: 5px;
+  position: relative;
+  width:260px;
+}
+.liquid .wrapper li img {
   left: 5px;
   position: absolute;
   top:0;
 }
-#liquid .previous {
-  display: block !important;
+.liquid .previous {
+  display: block;
   height:126px;
   width:64px;
   background-image:url('../assets/images/liquidcarousel/previous.png');
@@ -43,8 +48,8 @@
   margin:0;
   padding:0;
 }
-#liquid .next {
-  display: block !important;
+.liquid .next {
+  display: block;
   height:126px;
   width:64px;
   background-image:url('../assets/images/liquidcarousel/next.png');

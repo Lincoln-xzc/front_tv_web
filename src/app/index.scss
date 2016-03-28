@@ -36,7 +36,10 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 .none {
   display: none;
 }
-#liquid {
+ul li {
+  list-style: none;
+}
+/*#liquid {
   -moz-border-radius:10px 10px 10px 10px;
   -webkit-border-radius:10px 10px 10px 10px;
   border-radius:10px 10px 10px 10px;
@@ -77,7 +80,7 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
   -moz-box-shadow: 5px 5px 3px #222;
   -webkit-box-shadow: 5px 5px 3px #222;
   box-shadow: 5px 5px 3px #222;
-}
+}*/
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject

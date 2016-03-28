@@ -1,9 +1,11 @@
 <div id="liquid">
   <span class="previous"></span>
-  <div class="wrapper">
-    <ul>
-      <li ng-repeat="liquid in vm.liquidsData"><a href="#"><img ng-src="/assets/images/liquidcarousel/{{liquid.image}}"></a></li>
-    </ul>
+  <div class="liquid-content">
+    <div class="wrapper">
+      <ul>
+        <li ng-repeat="liquid in vm.liquidsData"><a href="#"><img ng-src="/assets/images/liquidcarousel/{{liquid.image}}"></a></li>
+      </ul>
+    </div>
   </div>
-  <span class="next pull-right"></span>
+  <span class="next"></span>
 </div>

@@ -15,31 +15,32 @@
       restrict: 'EA',
       templateUrl: 'app/components/template/tabset.html',
       scope:{
-        tabData:'@tabAttr'
+        tabDatas:'='
       },
       controller: tabController,
       controllerAs: 'vm',
       bindToController: true,
       link: function(scope, element, attrs, ctrl) {
         angular.element('#tv ul li').mouseenter(function(e){
-          e.preventDefault();
+
           var index =$(this).index();
           angular.element('#tv ul li').removeClass('active');
           angular.element("#tv .tab-pane").removeClass('active');
           $(this).addClass('active');
           angular.element("#tv .tab-pane").eq(index).addClass('active');
         });
-        console.log(angular.element('#home'));
-        angular.element('.expand .thumbnail:first-child').addClass('big');
       }
     };
 
     return directive;
 
-    function tabController($log) {
+    function tabController($log,$timeout) {
       var vm = this;
-      vm.tabDatas =JSON.parse(vm.tabData);
-      console.log(vm.tabDatas);
+     /* vm.tabDatas =angular.fromJson(vm.tabData);*/
+  /*    $timeout(function(){
+        console.log(vm.ngModel);
+      });
+*/
       // "vm.creation" is avaible by directive option "bindToController: true"
       // vm.relativeDate = moment(vm.liquids).fromNow();
       // console.log(vm.liquids);

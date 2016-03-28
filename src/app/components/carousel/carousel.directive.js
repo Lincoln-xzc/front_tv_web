@@ -20,17 +20,28 @@
       controllerAs: 'vm',
       bindToController: true,
       link: function(scope, element, attrs, ctrl) {
-        angular.element('#liquid').liquidcarousel({
+      /*  angular.element('#liquid').liquidcarousel({
           height: 160,
           duration: 100,
           hidearrows: true
-        });
+        });*/
         var liquid =angular.element('#liquid');
+        var index =1;
         liquid.find('.previous').click(function(){
-          liquid.find('.wrapper ul').css('margin-left','0px');
+          /*liquid.find('.wrapper ul').css('margin-left','0px');*/
+          var $rollobj = $('#liquid .wrapper');
+          var rollWidth = $rollobj.find("li").outerWidth();
+          rollWidth = rollWidth * 2;
+          $rollobj.stop(true,false).animate({left: -rollWidth *index},1000);
+          index --;
         })
         liquid.find('.next').click(function(){
-            liquid.find('.wrapper ul').css('margin-left','-980px');
+            //liquid.find('.wrapper ul').css('margin-left','-980px');
+          var $rollobj = $('#liquid .wrapper');
+          var rollWidth = $rollobj.find("li").outerWidth()+45;
+          rollWidth = rollWidth * 2;
+          $rollobj.stop(true,false).animate({left: -rollWidth *index},1000);
+          index ++;
         })
       }
     };

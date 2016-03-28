@@ -62,13 +62,20 @@
     <div class="title-inline offset-left-2">
       <span class="glyphicon glyphicon-hd-video"></span>
       <h3>电视剧</h3>
-      <ul class="nav nav-pills nav-video" role="tablist">
+      <ul class="nav nav-pills nav-video" role="tablist" style="margin-bottom: 20px;">
         <li role="presentation" class="active"><a ng-mouseenter="main.getTv(1)">最新</a></li>
         <li role="presentation"><a ng-mouseenter="main.getTv(2)">日韩剧</a></li>
         <li role="presentation"><a ng-mouseenter="main.getTv(3)">英美剧</a></li>
         <li role="presentation"><a ng-mouseenter="main.getTv(4)">港台剧</a></li>
       </ul>
-      <div tab-set tab-attr="{{main.tvDatas}}"></div>
+      <input type="hidden" name="test" ng-model="main.tvDatas">
+      <div tab-set tab-datas="main.tvDatas"></div>
+    </div>
+  </div>
+  <div class="row" id="movie">
+    <div class="title-inline offset-left-2">
+      <span class="glyphicon glyphicon-facetime-video"></span>
+      <h3>电影</h3>
     </div>
   </div>
 </div>

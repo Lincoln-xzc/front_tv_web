@@ -106,6 +106,62 @@
         id:6
       }
     ];
+    var loveDatas = [
+      {
+        image:'b1.jpg',
+        message:'aa',
+        id:1,
+        type:1
+      },
+      {
+        image:'b1.jpg',
+        message:'aa',
+        id:1,
+        type:1
+      },
+      {
+        image:'b1.jpg',
+        message:'aa',
+        id:1,
+        type:1
+      },
+      {
+        image:'b1.jpg',
+        message:'aa',
+        id:1,
+        type:1
+      },
+      {
+        image:'b1.jpg',
+        message:'aa',
+        id:1,
+        type:1
+      },
+      {
+        image:'b1.jpg',
+        message:'aa',
+        id:1,
+        type:1
+      },
+      {
+        image:'b1.jpg',
+        message:'aa',
+        id:1,
+        type:1
+      },
+      {
+        image:'b1.jpg',
+        message:'aa',
+        id:1,
+        type:1
+      },
+      {
+        image:'b1.jpg',
+        message:'aa',
+        id:1,
+        type:1
+      }
+    ];
 
     tvService.getHots = function(){
       var d = $q.defer();
@@ -117,6 +173,11 @@
       d.resolve({'data':select});
       return d.promise;
     };
+    tvService.getLove = function(){
+      var d = $q.defer();
+      d.resolve({'data':loveDatas});
+      return d.promise;
+    }
 
     return tvService;
   }

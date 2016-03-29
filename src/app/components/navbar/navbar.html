@@ -1,15 +1,14 @@
-<nav class="navbar navbar-static-top navbar-home navbar-inverse" id="navbar">
+<nav class="navbar navbar-fixed-top navbar-main navbar-inverse" id="navbar">
   <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand"  ui-sref="main.main">
-        <span class="glyphicon glyphicon-home"></span>Hot Video
-      </a>
-    </div>
-
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
       <ul class="nav navbar-nav">
-        <li class="active"><a ng-href="#">电视剧</a></li>
-        <li><a ui-sref="#">电影</a></li>
+        <li class="active">
+          <a class="navbar-brand"  ui-sref="nav.main">
+          <span class="glyphicon glyphicon-home"></span>Hot Video
+          </a>
+        </li>
+        <li><a ui-sref="nav.tv">电视剧</a></li>
+        <li><a ui-sref="nav.movie">电影</a></li>
         <li><a ui-sref="#">综艺</a></li>
         <li><a ui-sref="#">动漫</a></li>
         <li><a ui-sref="#">健康</a></li>

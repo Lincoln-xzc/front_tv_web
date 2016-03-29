@@ -482,14 +482,11 @@
         id:11
       }
     ];
-    /*轮播数据获取*/
     mainService.getCarouse = function(){
       var d = $q.defer();
       d.resolve({'data':slides});
       return d.promise;
     };
-
-    /*获取推荐的*/
     mainService.getLike = function(){
       var d = $q.defer();
       d.resolve({'data':like});

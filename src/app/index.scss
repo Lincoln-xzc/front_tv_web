@@ -11,7 +11,10 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
  */
 // bower:scss
 // endbower
-
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -39,48 +42,7 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 ul li {
   list-style: none;
 }
-/*#liquid {
-  -moz-border-radius:10px 10px 10px 10px;
-  -webkit-border-radius:10px 10px 10px 10px;
-  border-radius:10px 10px 10px 10px;
-  padding:10px 0;
-}
-#liquid .wrapper {
-  width:1015px;
-}
-#liquid .previous {
-  display: block !important;
-  height:126px;
-  width:64px;
-  background-image:url('../assets/images/liquidcarousel/previous.png');
-  float:left;
-  margin:0;
-  padding:0;
-}
-#liquid .next {
-  display: block !important;
-  height:126px;
-  width:64px;
-  background-image:url('../assets/images/liquidcarousel/next.png');
-  margin:0;
-  padding:0;
-}
 
-#liquid ul li {
-  width:80px;
-  height:126px;
-  padding:0 2px;
-  margin-right: 0px !important;
-  margin-left: 80px !important;
-  margin-bottom: 160px;
-  float: left;
-  display: block;
-}
-#liquid ul li a img {
-  -moz-box-shadow: 5px 5px 3px #222;
-  -webkit-box-shadow: 5px 5px 3px #222;
-  box-shadow: 5px 5px 3px #222;
-}*/
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject

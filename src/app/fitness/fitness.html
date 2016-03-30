@@ -1,18 +1,35 @@
 <div class="container">
-  <div class="carouse text-center carouse-top" style="height: 305px;">
+  <div>
+    <acme-navbar></acme-navbar>
+  </div>
+  <div class="carouse text-center carouse-top" style="height: 305px;margin-top: 50px;">
     <carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-      <slide ng-repeat="slide in main.slides">
-        <img ng-src="{{slide.image}}" style="margin:auto">
+      <slide ng-repeat="slide in fit.slides">
+        <img ng-src="{{slide.image}}" style="margin:auto;width: 100%;height: 408px;">
         <div class="carousel-caption">
           <p>{{slide.text}}</p>
         </div>
       </slide>
     </carousel>
-   <!-- <p>
-      With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
-    </p>-->
   </div>
-  <div class="row" style="margin-top: 180px;">
+  <div class="row" style="margin:125px 0px 0px 0px;">
+    <div class="col-sm-12 col-md-12">
+      <div class="">
+        <ul class="list-unstyled list-inline">
+          <li><a href=""><h1 class="glyphicon glyphicon-sunglasses block"></h1></a>健康男人帮</li>
+          <li><h1 class="glyphicon glyphicon-gift block"></h1>性感女人团</li>
+          <li><h1 class="glyphicon glyphicon-adjust block"></h1>养生</li>
+          <li><h1 class="glyphicon glyphicon-pushpin block"></h1>医疗</li>
+          <li><h1 class="glyphicon glyphicon-bullhorn block"></h1> 资讯</li>
+          <li><h1 class="glyphicon glyphicon-wrench block"></h1>健身</li>
+          <li><h1 class="glyphicon glyphicon-apple block"></h1> 美容</li>
+          <li><h1 class="glyphicon glyphicon-heart block"></h1> 心理</li>
+          <li><h1 class="glyphicon glyphicon-comment block"></h1>交流分享</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 160px;">
     <div class="col-xs-12 col-md-12 col-sm-12">
         <div class="main-title">
           <span class="glyphicon glyphicon-heart"></span>

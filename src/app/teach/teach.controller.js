@@ -8,20 +8,6 @@
   /** @ngInject */
   function MainController( $modal, MainService, $log) {
     var vm = this;
-    vm.test = 'test';
-    vm.type = 1;
-    vm.lg='lg';
-    vm.sm = 'sm';
-    vm.smcarousel ={
-      'size':'sm',
-      'width':'1200',
-      'height':'150'
-    };
-    vm.mdcarousel = {
-      'size':'md',
-      'width':'2000',
-      'height':'350'
-    };
     MainService.getCarouse().then(function(result){
      vm.slides = result.data;
     },function(err){

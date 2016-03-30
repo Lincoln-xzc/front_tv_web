@@ -6,24 +6,44 @@
    */
   angular
     .module('frontTvWeb')
-    .service('MainService',MainService);
+    .service('FitnessService',FitnessService);
 
   /** @ngInject */
-  function MainService($q,$http){
-    var mainService = [];
+  function FitnessService($q,$http){
+    var fitnessService = [];
     var slides = [
       {
-        image:'/assets/images/main/a1.jpg',
+        image:'/assets/images/fitness/a1.jpg',
         text:'I love that',
         id:1
       },
       {
-        image:'/assets/images/main/a2.jpg',
+        image:'/assets/images/fitness/a2.jpg',
         text:'Nice image',
         id:2
       },
       {
-        image:'/assets/images/main/a3.jpg',
+        image:'/assets/images/fitness/a3.jpg',
+        text:'manhua image',
+        id:3
+      },
+      {
+        image:'/assets/images/fitness/a4.jpg',
+        text:'manhua image',
+        id:3
+      },
+      {
+        image:'/assets/images/fitness/a5.jpg',
+        text:'manhua image',
+        id:3
+      },
+      {
+        image:'/assets/images/fitness/a6.jpg',
+        text:'manhua image',
+        id:3
+      },
+      {
+        image:'/assets/images/fitness/a7.jpg',
         text:'manhua image',
         id:3
       }
@@ -482,15 +502,12 @@
         id:11
       }
     ];
-    /*轮播数据获取*/
-    mainService.getCarouse = function(){
+    fitnessService.getCarouse = function(){
       var d = $q.defer();
       d.resolve({'data':slides});
       return d.promise;
     };
-
-    /*获取推荐的*/
-    mainService.getLike = function(){
+/*    mainService.getLike = function(){
       var d = $q.defer();
       d.resolve({'data':like});
       return d.promise;
@@ -521,8 +538,8 @@
       var d = $q.defer();
       d.resolve({'data':datas});
       return d.promise;
-    }
-    return mainService;
+    }*/
+    return fitnessService;
   }
 })();
 

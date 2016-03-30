@@ -108,55 +108,55 @@
     ];
     var loveDatas = [
       {
-        image:'b1.jpg',
+        image:'/assets/images/like/b1.jpg',
         message:'aa',
         id:1,
         type:1
       },
       {
-        image:'b1.jpg',
+        image:'/assets/images/like/b1.jpg',
         message:'aa',
         id:1,
         type:1
       },
       {
-        image:'b1.jpg',
+        image:'/assets/images/like/b1.jpg',
         message:'aa',
         id:1,
         type:1
       },
       {
-        image:'b1.jpg',
+        image:'/assets/images/like/b1.jpg',
         message:'aa',
         id:1,
         type:1
       },
       {
-        image:'b1.jpg',
+        image:'/assets/images/like/b1.jpg',
         message:'aa',
         id:1,
         type:1
       },
       {
-        image:'b1.jpg',
+        image:'/assets/images/like/b1.jpg',
         message:'aa',
         id:1,
         type:1
       },
       {
-        image:'b1.jpg',
+        image:'/assets/images/like/b1.jpg',
         message:'aa',
         id:1,
         type:1
       },
       {
-        image:'b1.jpg',
+        image:'/assets/images/like/b1.jpg',
         message:'aa',
         id:1,
         type:1
       },
       {
-        image:'b1.jpg',
+        image:'/assets/images/like/b1.jpg',
         message:'aa',
         id:1,
         type:1

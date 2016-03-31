@@ -14,131 +14,107 @@
   </div>
   <div class="row" style="margin:125px 0px 0px 0px;">
     <div class="col-sm-12 col-md-12">
-      <div class="">
+      <div class="fit-title">
         <ul class="list-unstyled list-inline">
-          <li><a href=""><h1 class="glyphicon glyphicon-sunglasses block"></h1></a>健康男人帮</li>
-          <li><h1 class="glyphicon glyphicon-gift block"></h1>性感女人团</li>
-          <li><h1 class="glyphicon glyphicon-adjust block"></h1>养生</li>
-          <li><h1 class="glyphicon glyphicon-pushpin block"></h1>医疗</li>
-          <li><h1 class="glyphicon glyphicon-bullhorn block"></h1> 资讯</li>
-          <li><h1 class="glyphicon glyphicon-wrench block"></h1>健身</li>
-          <li><h1 class="glyphicon glyphicon-apple block"></h1> 美容</li>
-          <li><h1 class="glyphicon glyphicon-heart block"></h1> 心理</li>
-          <li><h1 class="glyphicon glyphicon-comment block"></h1>交流分享</li>
+          <li><a href=""><h1 class="glyphicon glyphicon-sunglasses block"></h1><span>健康男人帮</span></a></li>
+          <li><a href=""><h1 class="glyphicon glyphicon-gift block"></h1>性感女人团</a></li>
+          <li><a href=""><h1 class="glyphicon glyphicon-adjust block"></h1>养生</a></li>
+          <li><a href=""><h1 class="glyphicon glyphicon-pushpin block"></h1>医疗</a></li>
+          <li><a href=""><h1 class="glyphicon glyphicon-bullhorn block"></h1> 资讯</a></li>
+          <li><a href=""><h1 class="glyphicon glyphicon-wrench block"></h1>健身</a></li>
+          <li><a href=""><h1 class="glyphicon glyphicon-apple block"></h1> 美容</a></li>
+          <li><a href=""><h1 class="glyphicon glyphicon-heart block"></h1> 心理</a></li>
+          <li><a href=""><h1 class="glyphicon glyphicon-comment block"></h1>交流分享</a></li>
         </ul>
       </div>
     </div>
   </div>
-  <div class="row" style="margin-top: 160px;">
+  <div class="row offset-top">
     <div class="col-xs-12 col-md-12 col-sm-12">
         <div class="main-title">
-          <span class="glyphicon glyphicon-heart"></span>
-          <h3>猜你喜欢</h3>
+          <h2 class="glyphicon glyphicon-bullhorn"></h2>
+          <h3>健康情报站</h3>
         </div>
         <div class="col-sm-2 col-md-2 pull-right right-title">
             <button class="btn btn-link"><span class="glyphicon glyphicon-refresh"></span>换一换</button>
         </div>
     </div>
-    <div class="col-sm-3 col-md-2" ng-repeat="likeMovie in main.likeMovies">
-      <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/like/{{ likeMovie.image}}">
-        <div class="caption">
-          <h3>{{ likeMovie.title}}</h3>
-          <!--<p>{{ awesomeThing.description }}</p>-->
-          <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
-        </div>
+    <div tv-pane tv-datas="fit.health_message"></div>
+  </div>
+  <div class="row offset-top">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h2 class="glyphicon glyphicon-education"></h2>
+        <h3>权威专家</h3>
       </div>
     </div>
-  </div>
-  <div class="row offset-top">
-    <div class="title-inline offset-left-2">
-      <span class="glyphicon glyphicon-film"></span>
-      <h3>近期热门</h3>
-    </div>
-    <div liquid-carousel some-attr="main.liquids" height="main.smcarousel.height" width="main.smcarousel.width" size="main.smcarousel.size"></div>
-  </div>
-  <div class="row offset-top">
-    <div class="title-inline offset-left-2">
-      <span class="glyphicon glyphicon-blackboard"></span>
-      <h3>经典怀旧</h3>
-    </div>
-    <div class="col-sm-3 col-md-2" ng-repeat="oldMovie in main.oldMovies">
+    <div class="col-sm-3 col-md-2" ng-repeat="edu in fit.educations">
       <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/like/{{oldMovie.image}}">
+        <img class="pull-right" ng-src="{{edu.image}}">
         <div class="caption">
-          <h3>{{oldMovie.title}}</h3>
-          <p><a ng-href="#"></a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row block-layout">
-    <div class="title-inline offset-left-2">
-      <span class="glyphicon glyphicon-hd-video"></span>
-      <h3>电视剧</h3>
-      <ul class="nav nav-pills nav-video" role="tablist" style="margin-bottom: 20px;">
-        <li role="presentation" class="active"><a ng-mouseenter="main.getTv(1)">最新</a></li>
-        <li role="presentation"><a ng-mouseenter="main.getTv(2)">日韩剧</a></li>
-        <li role="presentation"><a ng-mouseenter="main.getTv(3)">英美剧</a></li>
-        <li role="presentation"><a ng-mouseenter="main.getTv(4)">港台剧</a></li>
-      </ul>
-      <input type="hidden" name="test" ng-model="main.tvDatas">
-      <div tab-set tab-datas="main.tvDatas" index="0"></div>
-    </div>
-  </div>
-  <div class="row md_carousel" id="movie">
-    <div class="title-inline offset-left-2">
-      <span class="glyphicon glyphicon-facetime-video"></span>
-      <h3>电影</h3>
-    </div>
-    <div md-carousel some-attr="main.movies" index="0"></div>
-  </div>
-  <div class="row block-layout">
-    <div class="title-inline offset-left-2">
-      <span class="glyphicon glyphicon-headphones"></span>
-      <h3>综艺</h3>
-      <ul class="nav nav-pills nav-video" role="tablist" style="margin-bottom: 20px;">
-        <li role="presentation" class="active"><a ng-mouseenter="main.getTv(1)">热播综艺</a></li>
-        <li role="presentation"><a ng-mouseenter="main.getTv(2)">大陆综艺</a></li>
-        <li role="presentation"><a ng-mouseenter="main.getTv(3)">港台综艺</a></li>
-        <li role="presentation"><a ng-mouseenter="main.getTv(4)">海外综艺</a></li>
-      </ul>
-      <!--<input type="hidden" name="test" ng-model="main.tvDatas">-->
-      <div tab-set tab-datas="main.tvDatas" index="1"></div>
-    </div>
-  </div>
-  <div class="row md_carousel">
-    <div class="title-inline offset-left-2">
-      <span class="glyphicon glyphicon-send"></span>
-      <h3>动漫</h3>
-    </div>
-    <div md-carousel some-attr="main.movies" index="1"></div>
-  </div>
-  <div class="row offset-top">
-    <div class="title-inline offset-left-2">
-      <span class="glyphicon glyphicon-book"></span>
-      <h3>技术杂谈</h3>
-    </div>
-    <div class="col-sm-3 col-md-2" ng-repeat="oldMovie in main.oldMovies">
-      <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/like/{{oldMovie.image}}">
-        <div class="caption">
-          <h3>{{oldMovie.title}}</h3>
+          <h3></h3>
           <p><a ng-href="#"></a></p>
         </div>
       </div>
     </div>
   </div>
   <div class="row offset-top">
-    <div class="title-inline offset-left-2">
-      <span class="glyphicon glyphicon-leaf"></span>
-      <h3>健身养生</h3>
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h2 class="glyphicon glyphicon-plus-sign"></h2>
+        <h3>医疗卫生</h3>
+      </div>
     </div>
-    <div class="col-sm-3 col-md-2" ng-repeat="oldMovie in main.oldMovies">
+    <div tv-pane tv-datas="fit.medicals"></div>
+  </div>
+  <div class="row offset-top">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h2 class="glyphicon glyphicon-leaf"></h2>
+        <h3>养生保健</h3>
+      </div>
+    </div>
+    <div tv-pane tv-datas="fit.medicals"></div>
+  </div>
+  <div class="row offset-top">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h2 class="glyphicon glyphicon-flash"></h2>
+        <h3>健身塑形</h3>
+      </div>
+    </div>
+    <div tv-pane tv-datas="fit.medicals"></div>
+  </div>
+  <div class="row offset-top">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h2 class="glyphicon glyphicon-baby-formula"></h2>
+        <h3>儿科诊所</h3>
+      </div>
+    </div>
+    <div tv-pane tv-datas="fit.medicals"></div>
+  </div>
+  <div class="row offset-top">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h2 class="glyphicon glyphicon-search"></h2>
+        <h3>老年健康</h3>
+      </div>
+    </div>
+    <div tv-pane tv-datas="fit.medicals"></div>
+  </div>
+  <div class="row offset-top">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h2 class="glyphicon glyphicon-heart-empty"></h2>
+        <h3>心理健康</h3>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-2" ng-repeat="edu in fit.educations">
       <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/like/{{oldMovie.image}}">
+        <img class="pull-right" ng-src="{{edu.image}}">
         <div class="caption">
-          <h3>{{oldMovie.title}}</h3>
+          <h3></h3>
           <p><a ng-href="#"></a></p>
         </div>
       </div>

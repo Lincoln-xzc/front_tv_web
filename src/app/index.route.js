@@ -15,7 +15,7 @@
       })
       .state('nav.main', {
         url: 'main',
-        templateUrl: 'app/main/main.html',
+        templateUrl: 'app/main/classification.html',
         controller: 'MainController',
         controllerAs: 'main'
       })

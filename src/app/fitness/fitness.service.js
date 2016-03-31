@@ -48,68 +48,7 @@
         id:3
       }
     ];
-    var like = [
-      {
-        image:'b1.jpg',
-        message:'aa',
-        id:1
-      },
-      {
-        image:'b2.jpg',
-        message:'aa',
-        id:2
-      },
-      {
-        image:'b3.jpg',
-        message:'aa',
-        id:3
-      },
-      {
-        image:'b4.jpg',
-        message:'aa',
-        id:4
-      },
-      {
-        image:'b5.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'b6.jpg',
-        message:'aa',
-        id:6
-      },
-      {
-        image:'b7.jpg',
-        message:'aa',
-        id:7
-      },
-      {
-        image:'b8.jpg',
-        message:'aa',
-        id:8
-      },
-      {
-        image:'b9.jpg',
-        message:'aa',
-        id:9
-      },
-      {
-        image:'b10.jpg',
-        message:'aa',
-        id:10
-      },
-      {
-        image:'b10.jpg',
-        message:'aa',
-        id:11
-      },
-      {
-        image:'b10.jpg',
-        message:'aa',
-        id:12
-      }
-    ];
+
     var liquids = [
       {
         image:'/assets/images/liquidcarousel/01.jpg',
@@ -192,314 +131,132 @@
         id:16
       }
     ];
-    var old = [
-      {
-        image:'b1.jpg',
-        message:'aa',
-        id:1
-      },
-      {
-        image:'b2.jpg',
-        message:'aa',
-        id:2
-      },
-      {
-        image:'b3.jpg',
-        message:'aa',
-        id:3
-      },
-      {
-        image:'b4.jpg',
-        message:'aa',
-        id:4
-      },
-      {
-        image:'b5.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'b6.jpg',
-        message:'aa',
-        id:6
-      }
-    ];
-    var tvDatas = [
-      {
-        image:'b1.jpg',
-        message:'aa',
-        id:1,
-        type:1
-      },
-      {
-        image:'b1.jpg',
-        message:'aa',
-        id:1,
-        type:1
-      },
-      {
-        image:'b1.jpg',
-        message:'aa',
-        id:1,
-        type:1
-      },
-      {
-        image:'b1.jpg',
-        message:'aa',
-        id:1,
-        type:1
-      },
-      {
-        image:'b1.jpg',
-        message:'aa',
-        id:1,
-        type:1
-      },
-      {
-        image:'b1.jpg',
-        message:'aa',
-        id:1,
-        type:1
-      },
-      {
-        image:'b1.jpg',
-        message:'aa',
-        id:1,
-        type:1
-      },
-      {
-        image:'b1.jpg',
-        message:'aa',
-        id:1,
-        type:1
-      },
-      {
-        image:'b1.jpg',
-        message:'aa',
-        id:1,
-        type:1
-      },
 
-      {
-        image:'b2.jpg',
-        message:'aa',
-        id:1,
-        type:2
-      },
-      {
-        image:'b2.jpg',
-        message:'aa',
-        id:1,
-        type:2
-      },
-      {
-        image:'b2.jpg',
-        message:'aa',
-        id:1,
-        type:2
-      },
-      {
-        image:'b2.jpg',
-        message:'aa',
-        id:1,
-        type:2
-      },
-      {
-        image:'b2.jpg',
-        message:'aa',
-        id:1,
-        type:2
-      },
-      {
-        image:'b2.jpg',
-        message:'aa',
-        id:1,
-        type:2
-      },
-      {
-        image:'b2.jpg',
-        message:'aa',
-        id:1,
-        type:2
-      },
-      {
-        image:'b2.jpg',
-        message:'aa',
-        id:1,
-        type:2
-      },
-      {
-        image:'b2.jpg',
-        message:'aa',
-        id:1,
-        type:2
-      },
 
+    var healths = [
       {
-        image:'b3.jpg',
-        message:'aa',
-        id:1,
-        type:3
-      },
-      {
-        image:'b3.jpg',
-        message:'aa',
-        id:1,
-        type:3
-      },
-      {
-        image:'b3.jpg',
-        message:'aa',
-        id:1,
-        type:3
-      },
-      {
-        image:'b3.jpg',
-        message:'aa',
-        id:1,
-        type:3
-      },
-      {
-        image:'b3.jpg',
-        message:'aa',
-        id:1,
-        type:3
-      },
-      {
-        image:'b3.jpg',
-        message:'aa',
-        id:1,
-        type:3
-      },
-      {
-        image:'b3.jpg',
-        message:'aa',
-        id:1,
-        type:3
-      },
-      {
-        image:'b3.jpg',
-        message:'aa',
-        id:1,
-        type:3
-      },
-      {
-        image:'b3.jpg',
-        message:'aa',
-        id:1,
-        type:3
-      },
-
-      {
-        image:'b4.jpg',
-        message:'aa',
-        id:1,
-        type:4
-      },
-      {
-        image:'b4.jpg',
-        message:'aa',
-        id:1,
-        type:4
-      },
-      {
-        image:'b4.jpg',
-        message:'aa',
-        id:1,
-        type:4
-      },
-      {
-        image:'b4.jpg',
-        message:'aa',
-        id:1,
-        type:4
-      },
-      {
-        image:'b4.jpg',
-        message:'aa',
-        id:1,
-        type:4
-      },
-      {
-        image:'b4.jpg',
-        message:'aa',
-        id:1,
-        type:4
-      },
-      {
-        image:'b4.jpg',
-        message:'aa',
-        id:1,
-        type:4
-      },
-      {
-        image:'b4.jpg',
-        message:'aa',
-        id:1,
-        type:4
-      },
-      {
-        image:'b4.jpg',
-        message:'aa',
-        id:1,
-        type:4
-      }
-    ];
-    var movies = [
-      {
-        image:'/assets/images/movie/a1.jpg',
+        image:'/assets/images/fitness/01.jpeg',
         text:'I love that',
         id:1
       },
       {
-        image:'/assets/images/movie/a2.jpg',
+        image:'/assets/images/fitness/02.jpeg',
         text:'I love that',
         id:2
       },
       {
-        image:'/assets/images/movie/a3.jpg',
+        image:'/assets/images/fitness/03.jpg',
         text:'I love that',
         id:3
       },
       {
-        image:'/assets/images/movie/a4.jpg',
+        image:'/assets/images/fitness/04.jpeg',
         text:'I love that',
         id:4
       },
       {
-        image:'/assets/images/movie/a5.jpg',
+        image:'/assets/images/fitness/05.jpg',
         text:'I love that',
         id:5
       },
       {
-        image:'/assets/images/movie/a6.jpg',
+        image:'/assets/images/fitness/06.jpg',
         text:'I love that',
         id:6
       },
       {
-        image:'/assets/images/movie/a7.jpg',
+        image:'/assets/images/fitness/07.jpg',
         text:'I love that',
         id:7
       },
       {
-        image:'/assets/images/movie/a8.jpg',
+        image:'/assets/images/fitness/08.jpg',
         text:'I love that',
         id:8
       },
       {
-        image:'/assets/images/movie/a9.jpg',
+        image:'/assets/images/fitness/09.jpg',
         text:'I love that',
         id:9
+      }
+    ];
+    var educations = [
+      {
+        image:'/assets/images/fitness/13.jpg',
+        text:'I love that',
+        id:1
       },
       {
-        image:'/assets/images/movie/a10.jpg',
+        image:'/assets/images/fitness/13.jpg',
         text:'I love that',
-        id:10
+        id:2
       },
       {
-        image:'/assets/images/movie/a11.jpg',
+        image:'/assets/images/fitness/13.jpg',
         text:'I love that',
-        id:11
+        id:3
+      },
+      {
+        image:'/assets/images/fitness/13.jpg',
+        text:'I love that',
+        id:4
+      },
+      {
+        image:'/assets/images/fitness/13.jpg',
+        text:'I love that',
+        id:5
+      },
+      {
+        image:'/assets/images/fitness/13.jpg',
+        text:'I love that',
+        id:6
+      }
+    ];
+    var medicals = [
+      {
+        image:'/assets/images/fitness/01.jpeg',
+        text:'I love that',
+        id:1
+      },
+      {
+        image:'/assets/images/fitness/02.jpeg',
+        text:'I love that',
+        id:2
+      },
+      {
+        image:'/assets/images/fitness/03.jpg',
+        text:'I love that',
+        id:3
+      },
+      {
+        image:'/assets/images/fitness/04.jpeg',
+        text:'I love that',
+        id:4
+      },
+      {
+        image:'/assets/images/fitness/05.jpg',
+        text:'I love that',
+        id:5
+      },
+      {
+        image:'/assets/images/fitness/06.jpg',
+        text:'I love that',
+        id:6
+      },
+      {
+        image:'/assets/images/fitness/07.jpg',
+        text:'I love that',
+        id:7
+      },
+      {
+        image:'/assets/images/fitness/08.jpg',
+        text:'I love that',
+        id:8
+      },
+      {
+        image:'/assets/images/fitness/09.jpg',
+        text:'I love that',
+        id:9
       }
     ];
     fitnessService.getCarouse = function(){
@@ -507,22 +264,22 @@
       d.resolve({'data':slides});
       return d.promise;
     };
-/*    mainService.getLike = function(){
+    fitnessService.getHealth = function(){
       var d = $q.defer();
-      d.resolve({'data':like});
+      d.resolve({'data':healths});
       return d.promise;
     };
-    mainService.getLiquid = function(){
+    fitnessService.getEducation = function(){
       var d = $q.defer();
-      d.resolve({'data':liquids});
+      d.resolve({'data':educations});
       return d.promise;
     };
-    mainService.getOld = function(){
+    fitnessService.getMedical = function(){
       var d = $q.defer();
-      d.resolve({'data':old});
+      d.resolve({'data':medicals});
       return d.promise;
     };
-    mainService.getMovies = function(){
+ /*   mainService.getMovies = function(){
       var d = $q.defer();
       d.resolve({'data':movies});
       return d.promise;

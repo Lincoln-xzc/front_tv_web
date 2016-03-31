@@ -26,10 +26,9 @@
         var block_layout = angular.element('.block-layout').eq(i);
         block_layout.find('ul li').mouseenter(function(e){
           var index =$(this).index();
-          block_layout.find('ul li').removeClass('active');
-          block_layout.find('.tab-pane').removeClass('active');
-          $(this).addClass('active');;
-          block_layout.find(".tab-pane").eq(index).addClass('active');
+          block_layout.find('ul li').removeClass('active-tv');
+          $(this).addClass('active-tv');
+
         });
         }
     };

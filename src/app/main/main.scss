@@ -1,5 +1,13 @@
+a:hover {
+  text-decoration: none;
+  cursor:pointer;
+}
+.active-tv {
+  border-bottom: 3px solid #66AA33;
+}
 .carouse-top {
-  margin-top: -20px;
+  height: 305px;
+  margin-top: 50px;
 }
 
 .main-title, .right-title {
@@ -58,5 +66,8 @@
 .square:first-child .thumbnail img {
   width:345px;
   height: 210px;
+}
+.main-title {
+  color:#dddddd;
 }
 

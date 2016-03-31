@@ -1,56 +1,77 @@
 <div class="container">
-  <div>
-    <acme-navbar></acme-navbar>
+  <div class="row" style="margin-top: 45px;height: 305px;">
+    <div class="col-sm-12 col-md-12">
+      <a ui-sref="#" class="thumbnail" style="border:1px solid #FFFFFF;padding: 0;">
+        <img src="../assets/images/teach/a1.jpg" class="" style="min-width: 100%;height: 428px;">
+      </a>
+    </div>
   </div>
-  <div class="carouse text-center carouse-top" style="height: 305px;">
-    <carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-      <slide ng-repeat="slide in main.slides">
-        <img ng-src="assets/images/main/{{slide.image}}" style="margin:auto">
-        <div class="carousel-caption">
-          <p>{{slide.text}}</p>
-        </div>
-      </slide>
-    </carousel>
-   <!-- <p>
-      With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
-    </p>-->
+  <div class="row" style="margin:125px 0px 0px 0px;">
+    <div class="col-sm-4 col-md-4">
+      <div class="line-tip">
+        <h4>类型</h4>
+      </div>
+      <div class="li-tip">
+        <ul class="list-unstyled list-inline">
+          <li>幼儿</li>
+          <li>小学</li>
+          <li>初中</li>
+          <li>高中</li>
+          <li>外语学习</li>
+          <li>职业教育</li>
+          <li>管理培训</li>
+          <li>使用教程</li>
+          <li>公开课</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-4 col-md-4">
+      <div class="line-tip">
+        <h4>机构</h4>
+      </div>
+      <div class="li-tip">
+        <ul class="list-unstyled list-inline">
+          <li>新东方</li>
+          <li>智课网</li>
+          <li>慕课网</li>
+          <li>腾讯课堂</li>
+          <li>慕课网</li>
+          <li>亲宝网</li>
+          <li>酷学习</li>
+          <li>高顿</li>
+          <li>Koolearn</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-4 col-md-4">
+      <div class="line-tip">
+        <h4>热点</h4>
+      </div>
+      <div class="li-tip">
+        <ul class="list-unstyled list-inline">
+          <li>JAVA</li>
+          <li>JavaScript</li>
+          <li>考研</li>
+          <li>公务员</li>
+          <li>雅思</li>
+          <li>托福</li>
+          <li>启蒙</li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <div class="row" style="margin-top: 180px;">
+  <div class="row offset-top">
     <div class="col-xs-12 col-md-12 col-sm-12">
-        <div class="main-title">
-          <span class="glyphicon glyphicon-heart"></span>
-          <h3>猜你喜欢</h3>
-        </div>
-        <div class="col-sm-2 col-md-2 pull-right right-title">
-            <button class="btn btn-link"><span class="glyphicon glyphicon-refresh"></span>换一换</button>
-        </div>
-    </div>
-    <div class="col-sm-3 col-md-2" ng-repeat="likeMovie in main.likeMovies">
-      <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/like/{{ likeMovie.image}}">
-        <div class="caption">
-          <h3>{{ likeMovie.title}}</h3>
-          <!--<p>{{ awesomeThing.description }}</p>-->
-          <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
-        </div>
+      <div class="main-title">
+        <h3>猜你喜欢</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link">更多></button>
       </div>
     </div>
-  </div>
-  <div class="row offset-top">
-    <div class="title-inline offset-left-2">
-      <span class="glyphicon glyphicon-film"></span>
-      <h3>近期热门</h3>
-    </div>
-    <div liquid-carousel some-attr="main.liquids" height="main.smcarousel.height" width="main.smcarousel.width" size="main.smcarousel.size"></div>
-  </div>
-  <div class="row offset-top">
-    <div class="title-inline offset-left-2">
-      <span class="glyphicon glyphicon-blackboard"></span>
-      <h3>经典怀旧</h3>
-    </div>
-    <div class="col-sm-3 col-md-2" ng-repeat="oldMovie in main.oldMovies">
-      <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/like/{{oldMovie.image}}">
+    <div class="col-sm-3 col-md-2" ng-repeat="guess in teach.guesses">
+      <div class="">
+        <img ng-src="{{guess.image}}">
         <div class="caption">
           <h3>{{oldMovie.title}}</h3>
           <p><a ng-href="#"></a></p>
@@ -58,56 +79,81 @@
       </div>
     </div>
   </div>
-  <div class="row block-layout">
-    <div class="title-inline offset-left-2">
-      <span class="glyphicon glyphicon-hd-video"></span>
-      <h3>电视剧</h3>
-      <ul class="nav nav-pills nav-video" role="tablist" style="margin-bottom: 20px;">
-        <li role="presentation" class="active"><a ng-mouseenter="main.getTv(1)">最新</a></li>
-        <li role="presentation"><a ng-mouseenter="main.getTv(2)">日韩剧</a></li>
-        <li role="presentation"><a ng-mouseenter="main.getTv(3)">英美剧</a></li>
-        <li role="presentation"><a ng-mouseenter="main.getTv(4)">港台剧</a></li>
-      </ul>
-      <input type="hidden" name="test" ng-model="main.tvDatas">
-      <div tab-set tab-datas="main.tvDatas" index="0"></div>
+  <div class="row offset-top tv-panel">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h3>中小学教育</h3>
+        <div class="right-title">
+          <button class="btn btn-link">更多></button>
+        </div>
+      </div>
     </div>
+    <div tv-pane tv-datas="teach.educations"></div>
   </div>
-  <div class="row md_carousel" id="movie">
-    <div class="title-inline offset-left-2">
-      <span class="glyphicon glyphicon-facetime-video"></span>
-      <h3>电影</h3>
+  <div class="row offset-top tv-panel">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h3>启蒙教育</h3>
+        <div class="right-title">
+          <button class="btn btn-link">更多></button>
+        </div>
+      </div>
     </div>
-    <div md-carousel some-attr="main.movies" index="0"></div>
-  </div>
-  <div class="row block-layout">
-    <div class="title-inline offset-left-2">
-      <span class="glyphicon glyphicon-headphones"></span>
-      <h3>综艺</h3>
-      <ul class="nav nav-pills nav-video" role="tablist" style="margin-bottom: 20px;">
-        <li role="presentation" class="active"><a ng-mouseenter="main.getTv(1)">热播综艺</a></li>
-        <li role="presentation"><a ng-mouseenter="main.getTv(2)">大陆综艺</a></li>
-        <li role="presentation"><a ng-mouseenter="main.getTv(3)">港台综艺</a></li>
-        <li role="presentation"><a ng-mouseenter="main.getTv(4)">海外综艺</a></li>
-      </ul>
-      <!--<input type="hidden" name="test" ng-model="main.tvDatas">-->
-      <div tab-set tab-datas="main.tvDatas" index="1"></div>
-    </div>
-  </div>
-  <div class="row md_carousel">
-    <div class="title-inline offset-left-2">
-      <span class="glyphicon glyphicon-send"></span>
-      <h3>动漫</h3>
-    </div>
-    <div md-carousel some-attr="main.movies" index="1"></div>
+    <div tv-pane tv-datas="teach.educations"></div>
   </div>
   <div class="row offset-top">
-    <div class="title-inline offset-left-2">
-      <span class="glyphicon glyphicon-book"></span>
-      <h3>技术杂谈</h3>
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h3>热门精选</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link">更多></button>
+      </div>
     </div>
-    <div class="col-sm-3 col-md-2" ng-repeat="oldMovie in main.oldMovies">
-      <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/like/{{oldMovie.image}}">
+    <div class="col-sm-3 col-md-2" ng-repeat="guess in teach.guesses">
+      <div class="">
+        <img ng-src="{{guess.image}}">
+        <div class="caption">
+          <h3>{{oldMovie.title}}</h3>
+          <p><a ng-href="#"></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row offset-top tv-panel">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h3>外语学习</h3>
+        <div class="right-title">
+          <button class="btn btn-link">更多></button>
+        </div>
+      </div>
+    </div>
+    <div tv-pane tv-datas="teach.educations"></div>
+  </div>
+  <div class="row offset-top tv-panel">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h3>职业培训</h3>
+        <div class="right-title">
+          <button class="btn btn-link">更多></button>
+        </div>
+      </div>
+    </div>
+    <div tv-pane tv-datas="teach.educations"></div>
+  </div>
+  <div class="row offset-top">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h3>学历教育</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link">更多></button>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-2" ng-repeat="guess in teach.guesses">
+      <div class="">
+        <img ng-src="{{guess.image}}">
         <div class="caption">
           <h3>{{oldMovie.title}}</h3>
           <p><a ng-href="#"></a></p>
@@ -116,13 +162,17 @@
     </div>
   </div>
   <div class="row offset-top">
-    <div class="title-inline offset-left-2">
-      <span class="glyphicon glyphicon-leaf"></span>
-      <h3>健身养生</h3>
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h3>生活课堂</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link">更多></button>
+      </div>
     </div>
-    <div class="col-sm-3 col-md-2" ng-repeat="oldMovie in main.oldMovies">
+    <div class="col-sm-3 col-md-2" ng-repeat="live in teach.lives">
       <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/like/{{oldMovie.image}}">
+        <img class="pull-right" ng-src="{{live.image}}">
         <div class="caption">
           <h3>{{oldMovie.title}}</h3>
           <p><a ng-href="#"></a></p>

@@ -13,17 +13,17 @@
     var mainService = [];
     var slides = [
       {
-        image:'a1.jpg',
+        image:'/assets/images/main/a1.jpg',
         text:'I love that',
         id:1
       },
       {
-        image:'a2.jpg',
+        image:'/assets/images/main/a2.jpg',
         text:'Nice image',
         id:2
       },
       {
-        image:'a3.jpg',
+        image:'/assets/images/main/a3.jpg',
         text:'manhua image',
         id:3
       }

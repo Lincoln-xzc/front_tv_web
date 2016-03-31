@@ -28,7 +28,7 @@
           index --;
           /*liquid.find('.wrapper ul').css('margin-left','0px');*/
           var rollobj = movie.find(".wrapper");
-          var rollWidth = rollobj.find("li").outerWidth()-35;
+          var rollWidth = rollobj.find("li").outerWidth()+5;
           rollWidth = rollWidth * 2;
           if(index > -1) {
             rollobj.stop(true, false).animate({left: -rollWidth * index}, 1000);

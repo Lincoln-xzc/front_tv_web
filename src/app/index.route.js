@@ -15,7 +15,7 @@
       })
       .state('nav.main', {
         url: 'main',
-        templateUrl: 'app/main/classification.html',
+        templateUrl: 'app/main/main.html',
         controller: 'MainController',
         controllerAs: 'main'
       })
@@ -54,6 +54,12 @@
         templateUrl: 'app/teach/teach.html',
         controller: 'TeachController',
         controllerAs: 'teach'
+      })
+      .state('nav.classification', {
+        url:'classification',
+        templateUrl: 'app/classification/classification.html',
+        controller: 'ClassificationController',
+        controllerAs: 'classification'
       });
 
     $urlRouterProvider.otherwise('main');

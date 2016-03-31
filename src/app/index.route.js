@@ -55,11 +55,17 @@
         controller: 'TeachController',
         controllerAs: 'teach'
       })
-      .state('nav.classification', {
-        url:'classification',
-        templateUrl: 'app/classification/classification.html',
-        controller: 'ClassificationController',
-        controllerAs: 'classification'
+      .state('nav.tvSort', {
+        url:'tvSort',
+        templateUrl: 'app/tvSort/tvSort.html',
+        controller: 'TvSortController',
+        controllerAs: 'tvSort'
+      })
+      .state('nav.movieSort', {
+        url:'movieSort',
+        templateUrl: 'app/movieSort/movieSort.html',
+        controller: 'MovieSortController',
+        controllerAs: 'movieSort'
       });
 
     $urlRouterProvider.otherwise('main');

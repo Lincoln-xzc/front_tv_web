@@ -66,6 +66,36 @@
         templateUrl: 'app/movieSort/movieSort.html',
         controller: 'MovieSortController',
         controllerAs: 'movieSort'
+      })
+      .state('nav.artsSort', {
+        url:'artsSort',
+        templateUrl: 'app/artsSort/artsSort.html',
+        controller: 'ArtsSortController',
+        controllerAs: 'artsSort'
+      })
+      .state('nav.animationSort', {
+        url:'animationSort',
+        templateUrl: 'app/animationSort/animationSort.html',
+        controller: 'AnimationSortController',
+        controllerAs: 'animationSort'
+      })
+      .state('nav.fitnessSort', {
+        url:'fitnessSort',
+        templateUrl: 'app/fitnessSort/fitnessSort.html',
+        controller: 'FitnessSortController',
+        controllerAs: 'fitnessSort'
+      })
+      .state('nav.teachSort', {
+        url:'teachSort',
+        templateUrl: 'app/teachSort/teachSort.html',
+        controller: 'TeachSortController',
+        controllerAs: 'teachSort'
+      })
+      .state('nav.play', {
+        url:'play',
+        templateUrl: 'app/play/play.html',
+        controller: 'PlayController',
+        controllerAs: 'play'
       });
 
     $urlRouterProvider.otherwise('main');

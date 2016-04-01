@@ -24,7 +24,7 @@
     </div>
     <div class="col-sm-3 col-md-2" ng-repeat="likeMovie in main.likeMovies">
       <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/like/{{ likeMovie.image}}">
+        <a ui-sref="nav.play"><img class="pull-right" ng-src="assets/images/like/{{ likeMovie.image}}"></a>
         <div class="caption">
           <h3>{{ likeMovie.title}}</h3>
           <!--<p>{{ awesomeThing.description }}</p>-->

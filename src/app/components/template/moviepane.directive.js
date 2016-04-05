@@ -15,7 +15,7 @@
       restrict: 'EA',
       templateUrl: 'app/components/template/moviepane.html',
       scope:{
-        movieDatas:'=',
+        movieDatas:'='
       }
     };
 

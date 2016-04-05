@@ -57,14 +57,6 @@
     };
     return directive;
 
-/*    function liquidController(MainService, $log) {
-      var vm = this;
-      console.log(vm.size);
-      //console.log(JSON.parse(vm.liquids));
-      // "vm.creation" is avaible by directive option "bindToController: true"
-     // vm.relativeDate = moment(vm.liquids).fromNow();
-     // console.log(vm.liquids);
-    }*/
   }
 
 })();

@@ -22,6 +22,7 @@
       'width':'2000',
       'height':'350'
     };
+
     MainService.getCarouse().then(function(result){
      vm.slides = result.data;
     },function(err){

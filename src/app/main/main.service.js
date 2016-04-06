@@ -482,6 +482,7 @@
         id:11
       }
     ];
+
     /*轮播数据获取*/
     mainService.getCarouse = function(){
       var d = $q.defer();

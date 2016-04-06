@@ -2,7 +2,7 @@
   <div class="carouse text-center carouse-top">
     <carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
       <slide ng-repeat="slide in main.slides">
-        <img ng-src="{{slide.image}}" style="margin:auto">
+        <img ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{slide.imgId}}" style="margin:auto">
         <div class="carousel-caption">
           <p>{{slide.text}}</p>
         </div>

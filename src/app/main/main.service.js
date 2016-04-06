@@ -11,23 +11,6 @@
   /** @ngInject */
   function MainService($q,$http){
     var mainService = [];
-    var slides = [
-      {
-        image:'/assets/images/main/a1.jpg',
-        text:'I love that',
-        id:1
-      },
-      {
-        image:'/assets/images/main/a2.jpg',
-        text:'Nice image',
-        id:2
-      },
-      {
-        image:'/assets/images/main/a3.jpg',
-        text:'manhua image',
-        id:3
-      }
-    ];
     var like = [
       {
         image:'b1.jpg',
@@ -483,7 +466,8 @@
       }
     ];
 
-    mainService.getTest = function(type, number){
+    /*轮播数据获取*/
+    mainService.getCarouse = function(type, number){
       var data = {
         'type':type,
         'number':number
@@ -495,12 +479,12 @@
       });
     }
 
-    /*轮播数据获取*/
-    mainService.getCarouse = function(){
+
+  /*  mainService.getCarouse = function(){
       var d = $q.defer();
       d.resolve({'data':slides});
       return d.promise;
-    };
+    };*/
 
     /*获取推荐的*/
     mainService.getLike = function(){
@@ -535,6 +519,7 @@
       d.resolve({'data':datas});
       return d.promise;
     }
+
     return mainService;
   }
 })();

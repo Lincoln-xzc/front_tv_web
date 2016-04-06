@@ -23,17 +23,11 @@
     };
 
     vm.type = "movie";
-    vm.number =  "1";
+    vm.number =  3;
 
-    MainService.getTest(vm.type, vm.number).then(function(result){
-      vm.data = result.data;
-      console.log(result);
-    },function(err){
-      $log.error(err.statusText +':'+ err.status);
-    });
-
-    MainService.getCarouse().then(function(result){
-     vm.slides = result.data;
+    MainService.getCarouse(vm.type, vm.number).then(function(result){
+      vm.slides = result.data.data;
+      console.log(vm.slides);
     },function(err){
       $log.error(err.statusText +':'+ err.status);
     });

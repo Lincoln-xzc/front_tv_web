@@ -6,9 +6,8 @@
     .controller('MainController',MainController);
 
   /** @ngInject */
-  function MainController( $modal, MainService, $log) {
+  function MainController(MainService, $log) {
     var vm = this;
-    vm.test = 'test';
     vm.type = 1;
     vm.lg='lg';
     vm.sm = 'sm';
@@ -22,6 +21,16 @@
       'width':'2000',
       'height':'350'
     };
+
+    vm.type = "movie";
+    vm.number =  "1";
+
+    MainService.getTest(vm.type, vm.number).then(function(result){
+      vm.data = result.data;
+      console.log(result);
+    },function(err){
+      $log.error(err.statusText +':'+ err.status);
+    });
 
     MainService.getCarouse().then(function(result){
      vm.slides = result.data;

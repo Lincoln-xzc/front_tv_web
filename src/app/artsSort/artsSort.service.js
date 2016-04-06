@@ -160,14 +160,14 @@
           },
           {
             'title':'教育'
-          },
+          }
         ]
       },
       {
         'title':'地区',
         'datas':[
           {
-            'title':'地区：',
+            'title':'地区：'
           },
           {
             'title':'全部'
@@ -196,7 +196,7 @@
         'title':'类型',
         'datas':[
           {
-            'title':'类型：',
+            'title':'类型：'
           },
           {
             'title':'全部'
@@ -264,7 +264,7 @@
         'title':'时间',
         'datas':[
           {
-            'title':'时间：',
+            'title':'时间：'
           },
           {
             'title':'全部'
@@ -301,9 +301,9 @@
           },
           {
             'title':'更早'
-          },
+          }
         ]
-      },
+      }
     ];
     artsSortService.getArts = function(){
       var d = $q.defer();

@@ -483,6 +483,18 @@
       }
     ];
 
+    mainService.getTest = function(type, number){
+      var data = {
+        'type':type,
+        'number':number
+      };
+      return $http({
+        method:"POST",
+        url:"http://localhost:8080/end_tv_web/movieAction/getMovies",
+        data:data
+      });
+    }
+
     /*轮播数据获取*/
     mainService.getCarouse = function(){
       var d = $q.defer();

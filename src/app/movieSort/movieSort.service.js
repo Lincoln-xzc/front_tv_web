@@ -138,7 +138,7 @@
         'title':'频道',
         'datas':[
           {
-            'title':'频道：',
+            'title':'频道：'
           },
           {
             'title':'电视剧'
@@ -157,14 +157,14 @@
           },
           {
             'title':'教育'
-          },
+          }
         ]
       },
       {
         'title':'地区',
         'datas':[
           {
-            'title':'地区：',
+            'title':'地区：'
           },
           {
             'title':'全部'
@@ -199,7 +199,7 @@
         'title':'类型',
         'datas':[
           {
-            'title':'类型：',
+            'title':'类型：'
           },
           {
             'title':'全部'
@@ -264,7 +264,7 @@
         'title':'时间',
         'datas':[
           {
-            'title':'时间：',
+            'title':'时间：'
           },
           {
             'title':'全部'
@@ -303,7 +303,7 @@
             'title':'更早'
           },
         ]
-      },
+      }
     ];
     movieSortService.getMovies = function(){
       var d = $q.defer();

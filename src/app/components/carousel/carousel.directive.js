@@ -24,12 +24,12 @@
       },
 
       link: function(scope, element, attr, ctrl) {
-        console.log(scope.liquids);
+
         var liquid =angular.element('.liquid');
         var index =0;
         var height = scope.height +'px';
         var width = scope.width +'px';
-        console.log(height +':'+ width);
+
         liquid.css({"height":height,"width":width});
         liquid.find('.liquid-content').css({'width':scope.width-100 + 'px','height':height});
         liquid.find('.previous').click(function(){

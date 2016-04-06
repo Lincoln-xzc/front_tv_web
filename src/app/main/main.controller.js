@@ -9,8 +9,7 @@
   function MainController(MainService, $log) {
     var vm = this;
     vm.type = 1;
-    vm.lg='lg';
-    vm.sm = 'sm';
+
     vm.smcarousel ={
       'size':'sm',
       'width':'1200',
@@ -21,45 +20,63 @@
       'width':'2000',
       'height':'350'
     };
+    vm.carouselData = {
+      'type':'carouselBg',
+      'number':3
+    };
 
-    vm.type = "movie";
-    vm.number =  3;
+    vm.likeData = {
+      'type':'likeMovie',
+      'number':12
+    };
 
-    MainService.getCarouse(vm.type, vm.number).then(function(result){
+    vm.liquidData = {
+      'type':'liquidCarousel',
+      'number':16
+    };
+    vm.oldData = {
+      'type':'oldMovie',
+      'number':6
+    };
+    vm.type ='newTv';
+    vm.movieData = {
+      'type':'movie',
+      'number':11
+    };
+    MainService.getCarouse(vm.carouselData).then(function(result){
       vm.slides = result.data.data;
-      console.log(vm.slides);
     },function(err){
       $log.error(err.statusText +':'+ err.status);
     });
-    MainService.getLike().then(function(result){
-      vm.likeMovies = result.data;
+    MainService.getLike(vm.likeData).then(function(result){
+      vm.likeMovies = result.data.data;
     },function(err){
       $log.error(err.statusText +':'+ err.status);
     });
-    MainService.getLiquid().then(function(result){
-      vm.liquids = result.data;
+    MainService.getLiquid(vm.liquidData).then(function(result){
+      vm.liquids = result.data.data;
     },function(err){
       $log.error(err.status +':'+err.statusText);
     });
-    MainService.getOld().then(function(result){
-      vm.oldMovies = result.data;
+    MainService.getOld(vm.oldData).then(function(result){
+      vm.oldMovies = result.data.data;
     },function(err){
       $log.error(err.status + ':' +err.statusText);
     });
     MainService.getTvShow(vm.type).then(function(result){
-      vm.tvDatas = result.data;
+      vm.tvDatas = result.data.data;
     },function(err){
       $log.error(err.status + ':' +err.statusText);
     });
-    MainService.getMovies().then(function(result){
-      vm.movies = result.data;
-      console.log(vm.movies);
+    MainService.getMovies(vm.movieData).then(function(result){
+      vm.movies = result.data.data;
+
     },function(err){
       $log.error(err.status + ':' +err.statusText);
     })
     vm.getTv = function(type){
       MainService.getTvShow(type).then(function(result){
-        vm.tvDatas = result.data;
+        vm.tvDatas = result.data.data;
       },function(err){
         $log.error(err.status + ':' +err.statusText);
       })

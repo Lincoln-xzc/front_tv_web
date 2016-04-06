@@ -21,7 +21,7 @@
       },
 
       link: function(scope, element, attr, ctrl) {
-        console.log(scope.index);
+
         var movie =angular.element('.movie_directive').eq(scope.index);
         var index =0;
         movie.find('.previous').click(function(){

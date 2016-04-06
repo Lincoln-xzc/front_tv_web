@@ -9,9 +9,22 @@
   function TvController( $modal, MainService, TvService,$log) {
     var vm = this;
 
+    vm.carouselData = {
+      'type':'carouselBg',
+      'number':3
+    };
+
+    vm.oldData = {
+      'type':'oldMovie',
+      'number':6
+    };
+    vm.loveData = {
+      'type':'likeMovie',
+      'number':9
+    };
     /*获取轮播数据*/
-    MainService.getCarouse().then(function(result){
-     vm.slides = result.data;
+    MainService.getCarouse(vm.carouselData).then(function(result){
+     vm.slides = result.data.data;
     },function(err){
       $log.error(err.statusText +':'+ err.status);
     });
@@ -31,15 +44,15 @@
     });
 
     /*精选电影*/
-    MainService.getOld().then(function(result){
-      vm.choiceMovies = result.data;
+    MainService.getOld(vm.oldData).then(function(result){
+      vm.choiceMovies = result.data.data;
     },function(err){
       $log.error(err.statusText + ':'+err.status);
     });
 
     /*爱情剧*/
-    TvService.getLove().then(function(result){
-      vm.tvDatas = result.data;
+    TvService.getLove(vm.loveData).then(function(result){
+      vm.tvDatas = result.data.data;
     },function(err){
       $log.error(err.status + ':' +err.statusText);
     });

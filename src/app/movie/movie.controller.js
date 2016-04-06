@@ -8,15 +8,23 @@
   /** @ngInject */
   function MovieController( $modal, MovieService, TvService, $log) {
     var vm = this;
+    vm.loveData = {
+      'type':'likeMovie',
+      'number':9
+    };
+    vm.movieData = {
+      'type':'movie',
+      'number':5
+    };
 
-    MovieService.getMovies().then(function(result){
-     vm.movies = result.data;
-      console.log(vm.movies);
+    MovieService.getMovies(vm.movieData).then(function(result){
+     vm.movies = result.data.data;
     },function(err){
       $log.error(err.statusText +':'+ err.status);
     });
-    TvService.getLove().then(function(result){
-      vm.tvDatas = result.data;
+
+    TvService.getLove(vm.loveData).then(function(result){
+      vm.tvDatas = result.data.data;
     },function(err){
       $log.error(err.status + ':' +err.statusText);
     });

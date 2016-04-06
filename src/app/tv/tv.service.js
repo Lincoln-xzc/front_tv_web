@@ -106,62 +106,7 @@
         id:6
       }
     ];
-    var loveDatas = [
-      {
-        image:'/assets/images/like/b1.jpg',
-        message:'aa',
-        id:1,
-        type:1
-      },
-      {
-        image:'/assets/images/like/b1.jpg',
-        message:'aa',
-        id:1,
-        type:1
-      },
-      {
-        image:'/assets/images/like/b1.jpg',
-        message:'aa',
-        id:1,
-        type:1
-      },
-      {
-        image:'/assets/images/like/b1.jpg',
-        message:'aa',
-        id:1,
-        type:1
-      },
-      {
-        image:'/assets/images/like/b1.jpg',
-        message:'aa',
-        id:1,
-        type:1
-      },
-      {
-        image:'/assets/images/like/b1.jpg',
-        message:'aa',
-        id:1,
-        type:1
-      },
-      {
-        image:'/assets/images/like/b1.jpg',
-        message:'aa',
-        id:1,
-        type:1
-      },
-      {
-        image:'/assets/images/like/b1.jpg',
-        message:'aa',
-        id:1,
-        type:1
-      },
-      {
-        image:'/assets/images/like/b1.jpg',
-        message:'aa',
-        id:1,
-        type:1
-      }
-    ];
+
 
     tvService.getHots = function(){
       var d = $q.defer();
@@ -173,10 +118,15 @@
       d.resolve({'data':select});
       return d.promise;
     };
-    tvService.getLove = function(){
-      var d = $q.defer();
+    tvService.getLove = function(data){
+      return $http({
+        method:"POST",
+        url:"http://localhost:8080/end_tv_web/movieAction/getMovies",
+        data:data
+      });
+      /*var d = $q.defer();
       d.resolve({'data':loveDatas});
-      return d.promise;
+      return d.promise;*/
     }
 
     return tvService;

@@ -2,7 +2,7 @@
   <div class="carouse text-center carouse-top" style="height: 305px;margin-top: 50px;">
     <carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
       <slide ng-repeat="slide in animation.lgAnimations">
-        <img ng-src="{{slide.image}}" style="margin:auto;min-width:100%;height: 428px;">
+        <img ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{slide.imgId}}" style="margin:auto;min-width:100%;height: 428px;">
         <div class="carousel-caption">
           <p>{{slide.text}}</p>
         </div>
@@ -102,7 +102,7 @@
     </div>
     <div class="col-sm-3 col-md-2" ng-repeat="japan in animation.japanAnimation">
       <div class="thumbnail">
-        <img class="pull-right" ng-src="{{ japan.image}}">
+        <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{japan.imgId}}">
         <div class="caption">
           <h3>{{ new.title}}</h3>
           <!--<p>{{ awesomeThing.description }}</p>-->
@@ -123,7 +123,7 @@
     </div>
     <div class="col-sm-3 col-md-2" ng-repeat="china in animation.chinaAnimation">
       <div class="thumbnail">
-        <img class="pull-right" ng-src="{{ china.image}}">
+        <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{china.imgId}}">
         <div class="caption">
           <h3>{{ new.title}}</h3>
           <!--<p>{{ awesomeThing.description }}</p>-->
@@ -144,7 +144,7 @@
     </div>
     <div class="col-sm-3 col-md-2" ng-repeat="famous in animation.famousAnimation">
       <div class="thumbnail">
-        <img class="pull-right" ng-src="{{ famous.image}}">
+        <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{famous.imgId}}">
         <div class="caption">
           <h3>{{ new.title}}</h3>
           <!--<p>{{ awesomeThing.description }}</p>-->
@@ -165,7 +165,7 @@
     </div>
     <div class="col-sm-3 col-md-2" ng-repeat="movie in animation.movieAnimation">
       <div class="thumbnail">
-        <img class="pull-right" ng-src="{{ movie.image}}">
+        <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{movie.imgId}}">
         <div class="caption">
           <h3>{{ new.title}}</h3>
           <!--<p>{{ awesomeThing.description }}</p>-->
@@ -186,7 +186,7 @@
     </div>
     <div class="col-sm-3 col-md-2" ng-repeat="classic in animation.classicAnimation">
       <div class="thumbnail">
-        <img class="pull-right" ng-src="{{ classic.image}}">
+        <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{classic.imgId}}">
         <div class="caption">
           <h3>{{ new.title}}</h3>
           <!--<p>{{ awesomeThing.description }}</p>-->

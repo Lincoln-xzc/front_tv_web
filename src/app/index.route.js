@@ -8,6 +8,12 @@
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
+      .state('login',{
+        url:'/login',
+        templateUrl:'app/login/login.html',
+        controller:'LoginController',
+        controllerAs:'login'
+      })
       .state('nav', {
         abstract:true,
         url: '/',
@@ -96,7 +102,29 @@
         templateUrl: 'app/play/play.html',
         controller: 'PlayController',
         controllerAs: 'play'
+      })
+      .state('nav.message', {
+        url:'message',
+        templateUrl:'app/message/message.html',
+        controller: 'MessageController',
+        controllerAs: 'message'
       });
+     /* .state('modal',{
+        onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state,$modal){
+          $modal.open({
+            templateUrl:'app/components/navbar/modal.html',
+            controller:'NewModalController',
+            controllerAs: 'modal',
+            animation: true,
+            size: 'lg',
+          }).result.then(function(){
+
+            },function(){
+              $state.go('nav.main');
+            });
+        }],
+
+      });*/
 
     $urlRouterProvider.otherwise('main');
   }

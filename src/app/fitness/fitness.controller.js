@@ -9,26 +9,42 @@
   function FitnessController( $modal, FitnessService, $log) {
     var vm = this;
 
-    FitnessService.getCarouse().then(function(result){
-     vm.slides = result.data;
+    vm.fitnessCarousel = {
+      'type':'fitnessCarousel',
+      'number':7
+    };
+    vm.healthData = {
+      'type': 'fitness',
+      'number':9
+    };
+    vm.educationData = {
+      'type': 'fitness',
+      'number':6
+    };
+    vm.medicalData = {
+      'type':'fitness',
+      'number':9
+    };
+    FitnessService.getCarouse(vm.fitnessCarousel).then(function(result){
+     vm.slides = result.data.data;
     },function(err){
       $log.error(err.statusText +':'+ err.status);
     });
 
-    FitnessService.getHealth().then(function(result){
-      vm.health_message = result.data;
+    FitnessService.getHealth(vm.healthData).then(function(result){
+      vm.health_message = result.data.data;
     },function(err){
       $log.error(err.statusText+':'+err.status);
     });
 
-    FitnessService.getEducation().then(function(result){
-      vm.educations = result.data;
+    FitnessService.getEducation(vm.educationData).then(function(result){
+      vm.educations = result.data.data;
     },function(err){
       $log.error(err.statusText+':'+err.status);
     });
 
-    FitnessService.getMedical().then(function(result){
-      vm.medicals = result.data;
+    FitnessService.getMedical(vm.medicalData).then(function(result){
+      vm.medicals = result.data.data;
     },function(err){
       $log.error(err.statusText+':'+err.status);
     });

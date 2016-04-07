@@ -21,11 +21,33 @@
     return directive;
 
     /** @ngInject */
-    function NavbarController(moment) {
+    function NavbarController($modal) {
       var vm = this;
 
-      // "vm.creation" is avaible by directive option "bindToController: true"
-      //vm.relativeDate = moment(vm.creationDate).fromNow();
+      //弹出框
+       vm.open = function() {
+
+         var modalInstance = $modal.open({
+           animation: true,
+           backdrop: true,
+           templateUrl: 'app/components/navbar/modal.html',
+           controller: 'NewModalController',
+           controllerAs:'modal',
+           size: 'md',
+           resolve: {
+             login: function () {
+               return vm.item;
+           }
+         }
+       });
+
+       modalInstance.result.then(function (selectedItem,$log) {
+           vm.selected = selectedItem;
+         }, function () {
+              $log.info('Modal dismissed at: ' + new Date());
+       });
+    };
+
     }
   }
 

@@ -71,7 +71,7 @@
     </div>
     <div class="col-sm-3 col-md-2" ng-repeat="guess in teach.guesses">
       <div class="">
-        <img ng-src="{{guess.image}}">
+        <img ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{guess.imgId}}">
         <div class="caption">
           <h3>{{oldMovie.title}}</h3>
           <p><a ng-href="#"></a></p>
@@ -112,7 +112,7 @@
     </div>
     <div class="col-sm-3 col-md-2" ng-repeat="guess in teach.guesses">
       <div class="">
-        <img ng-src="{{guess.image}}">
+        <img ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{guess.imgId}}">
         <div class="caption">
           <h3>{{oldMovie.title}}</h3>
           <p><a ng-href="#"></a></p>
@@ -153,7 +153,7 @@
     </div>
     <div class="col-sm-3 col-md-2" ng-repeat="guess in teach.guesses">
       <div class="">
-        <img ng-src="{{guess.image}}">
+        <img ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{guess.imgId}}">
         <div class="caption">
           <h3>{{oldMovie.title}}</h3>
           <p><a ng-href="#"></a></p>
@@ -172,7 +172,7 @@
     </div>
     <div class="col-sm-3 col-md-2" ng-repeat="live in teach.lives">
       <div class="thumbnail">
-        <img class="pull-right" ng-src="{{live.image}}">
+        <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{live.imgId}}">
         <div class="caption">
           <h3>{{oldMovie.title}}</h3>
           <p><a ng-href="#"></a></p>

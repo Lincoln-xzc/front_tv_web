@@ -8,18 +8,36 @@
   /** @ngInject */
   function TeachController( $modal, TeachService, $log) {
     var vm = this;
-    TeachService.getLikes().then(function(result){
-      vm.guesses = result.data;
+
+    vm.likeData ={
+      'type':'teach',
+      'number':6
+    };
+    vm.educationData = {
+      'type':'teach',
+      'number':9
+    };
+    vm.liveData = {
+      'type':'teach',
+      'number':12
+    };
+    /*可能喜欢*/
+    TeachService.getLikes(vm.likeData).then(function(result){
+      vm.guesses = result.data.data;
     },function(err){
       $log.error(err.status + ':'+err.statusText);
     });
-    TeachService.getEducations().then(function(result){
-      vm.educations = result.data;
+
+    /*中小学教育*/
+    TeachService.getEducations(vm.educationData).then(function(result){
+      vm.educations = result.data.data;
     },function(err){
       $log.error(err.status + ':'+err.statusText);
     });
-    TeachService.getLives().then(function(result){
-      vm.lives = result.data;
+
+    /**/
+    TeachService.getLives(vm.liveData).then(function(result){
+      vm.lives = result.data.data;
     },function(err){
       $log.error(err.status + ':'+err.statusText);
     });

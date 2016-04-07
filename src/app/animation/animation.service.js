@@ -12,216 +12,7 @@
   function AnimationService($q,$http){
     var animationService = [];
 
-    var animations = [
-      {
-        image:'/assets/images/animation/01.jpg',
-        message:'aa',
-        id:1
-      },
-      {
-        image:'/assets/images/animation/02.jpg',
-        message:'aa',
-        id:2
-      },
-      {
-        image:'/assets/images/animation/03.jpg',
-        message:'aa',
-        id:3
-      },
-      {
-        image:'/assets/images/animation/04.jpg',
-        message:'aa',
-        id:4
-      },
-      {
-        image:'/assets/images/animation/05.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/animation/06.jpg',
-        message:'aa',
-        id:6
-      },
-      {
-        image:'/assets/images/animation/07.jpg',
-        message:'aa',
-        id:7
-      }
-    ];
-    var newAnimations = [
-      {
-        image:'/assets/images/animation/a1.jpg',
-        message:'aa',
-        id:1
-      },
-      {
-        image:'/assets/images/animation/a2.jpg',
-        message:'aa',
-        id:2
-      },
-      {
-        image:'/assets/images/animation/a3.jpg',
-        message:'aa',
-        id:3
-      },
-      {
-        image:'/assets/images/animation/a4.jpg',
-        message:'aa',
-        id:4
-      },
-      {
-        image:'/assets/images/animation/a5.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/animation/a6.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/animation/a7.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/animation/a8.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/animation/a9.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/animation/a10.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/animation/a11.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/animation/a12.jpg',
-        message:'aa',
-        id:5
-      }
-    ];
 
-    var popularData = [
-      {
-        image:'/assets/images/animation/b1.jpg',
-        message:'aa',
-        id:1
-      },
-      {
-        image:'/assets/images/animation/b2.jpg',
-        message:'aa',
-        id:2
-      },
-      {
-        image:'/assets/images/animation/b3.jpg',
-        message:'aa',
-        id:3
-      },
-      {
-        image:'/assets/images/animation/b4.jpg',
-        message:'aa',
-        id:4
-      },
-      {
-        image:'/assets/images/animation/b1.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/animation/b2.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/animation/b3.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/animation/b4.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/animation/b1.jpg',
-        message:'aa',
-        id:5
-      }
-    ]
-
-    var japanData = [
-      {
-        image:'/assets/images/animation/b3.jpg',
-        message:'aa',
-        id:1
-      },
-      {
-        image:'/assets/images/animation/b3.jpg',
-        message:'aa',
-        id:2
-      },
-      {
-        image:'/assets/images/animation/b3.jpg',
-        message:'aa',
-        id:3
-      },
-      {
-        image:'/assets/images/animation/b3.jpg',
-        message:'aa',
-        id:4
-      },
-      {
-        image:'/assets/images/animation/b3.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/animation/b3.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/animation/b3.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/animation/b3.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/animation/b3.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/animation/b3.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/animation/b3.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/animation/b3.jpg',
-        message:'aa',
-        id:5
-      }
-    ];
     var chinaData = [
       {
         image:'/assets/images/animation/b1.jpg',
@@ -440,45 +231,67 @@
         id:5
       }
     ];
-    animationService.getCarousels = function(){
-      var d = $q.defer();
+    animationService.getCarousels = function(data){
+      return $http({
+        method:"POST",
+        url:"http://localhost:8080/end_tv_web/movieAction/getMovies",
+        data:data
+      });
+      /*var d = $q.defer();
       d.resolve({'data':animations});
-      return d.promise;
+      return d.promise;*/
     };
-    animationService.getNewAnimations = function(){
-      var d = $q.defer();
-      d.resolve({'data':newAnimations});
-      return d.promise;
+    animationService.getNewAnimations = function(data){
+      return $http({
+        method:"POST",
+        url:"http://localhost:8080/end_tv_web/movieAction/getMovies",
+        data:data
+      });
     };
-    animationService.getPopular = function(){
-      var d = $q.defer();
-      d.resolve({'data':popularData});
-      return d.promise;
+    animationService.getPopular = function(data){
+      return $http({
+        method:"POST",
+        url:"http://localhost:8080/end_tv_web/movieAction/getMovies",
+        data:data
+      });
     };
-    animationService.getJapanAnimation = function(){
-      var d = $q.defer();
-      d.resolve({'data':japanData});
-      return d.promise;
+    animationService.getJapanAnimation = function(data){
+      return $http({
+        method:"POST",
+        url:"http://localhost:8080/end_tv_web/movieAction/getMovies",
+        data:data
+      });
     };
-    animationService.getChinaAnimation = function(){
-      var d = $q.defer();
-      d.resolve({'data':chinaData});
-      return d.promise;
+    animationService.getChinaAnimation = function(data){
+      return $http({
+        method:"POST",
+        url:"http://localhost:8080/end_tv_web/movieAction/getMovies",
+        data:data
+      });
     };
-    animationService.getFamousAnimation = function(){
-      var d = $q.defer();
-      d.resolve({'data':famousData});
-      return d.promise;
+    animationService.getFamousAnimation = function(data){
+      return $http({
+        method:"POST",
+        url:"http://localhost:8080/end_tv_web/movieAction/getMovies",
+        data:data
+      });
     };
-    animationService.getMovieAnimation = function(){
-      var d = $q.defer();
-      d.resolve({'data':movieData});
-      return d.promise;
+    animationService.getMovieAnimation = function(data){
+      return $http({
+        method:"POST",
+        url:"http://localhost:8080/end_tv_web/movieAction/getMovies",
+        data:data
+      });
     };
-    animationService.getClassicAnimation = function(){
-      var d = $q.defer();
+    animationService.getClassicAnimation = function(data){
+      return $http({
+        method:"POST",
+        url:"http://localhost:8080/end_tv_web/movieAction/getMovies",
+        data:data
+      });
+     /* var d = $q.defer();
       d.resolve({'data':classicData});
-      return d.promise;
+      return d.promise;*/
     };
     return animationService;
   }

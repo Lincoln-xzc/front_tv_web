@@ -48,7 +48,7 @@
     </div>
     <div class="col-sm-tv col-md-tv" ng-repeat="tv in tv.hot_tvs">
       <div class="tv">
-        <img class="img_tv" ng-src="{{ tv.image}}">
+        <a ui-sref="nav.message"><img class="img_tv" ng-src="{{ tv.image}}"></a>
         <div class="caption">
           <h5>{{ tv.message}}</h5>
           <p>{{ tv.id }}</p>

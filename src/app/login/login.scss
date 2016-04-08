@@ -61,7 +61,7 @@
   content: "";
   height: 1px;
   position: absolute;
-  top: 35px;
+  top: 5px;
   width: 25%;
 }
 .login_content h1:after {
@@ -84,6 +84,7 @@
 }
 .login_content {
   margin-left: 120px;
+  margin-top: -30px;
 }
 .login_content input{
   margin-bottom: 20px;
@@ -102,4 +103,31 @@
 }
 .login_content .change_link {
   margin-left: 90px;
+}
+.login_content .agree {
+  margin-top: -15px;
+}
+.login_content .agree a {
+  font-size: 12px;
+}
+.login_content .agree .btn {
+  margin-left: 100px;
+}
+.login_content .create_account {
+  width: 240px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  background-color: #7FB52B;
+  color: #ffffff;
+}
+.login_content .change_link {
+  color: #d2d2d2;
+}
+.modal-top {
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-left: 560px;
+}
+.modal-top span {
+  color: #dddddd;
 }

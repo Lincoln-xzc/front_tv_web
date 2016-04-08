@@ -24,7 +24,7 @@
     function NavbarController($modal) {
       var vm = this;
 
-      //弹出框
+      //登录弹出框
        vm.open = function() {
 
          var modalInstance = $modal.open({
@@ -33,21 +33,35 @@
            templateUrl: 'app/components/navbar/modal.html',
            controller: 'NewModalController',
            controllerAs:'modal',
-           size: 'md',
-           resolve: {
-             login: function () {
-               return vm.item;
-           }
-         }
+           size: 'md'
        });
 
-       modalInstance.result.then(function (selectedItem,$log) {
-           vm.selected = selectedItem;
+       modalInstance.result.then(function (data,$log) {
+           vm.user = data;
+         console.log(vm.user);
          }, function () {
               $log.info('Modal dismissed at: ' + new Date());
        });
     };
 
+      //注册弹出框
+      vm.create = function() {
+
+        var modalInstance = $modal.open({
+          animation: true,
+          backdrop: true,
+          templateUrl: 'createModal.html',
+          controller: 'createAccountController',
+          controllerAs:'create',
+          size: 'md'
+        });
+
+        modalInstance.result.then(function (selectedItem,$log) {
+          vm.selected = selectedItem;
+        }, function () {
+          $log.info('Modal dismissed at: ' + new Date());
+        });
+      };
     }
   }
 

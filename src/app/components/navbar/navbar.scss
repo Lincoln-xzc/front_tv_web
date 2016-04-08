@@ -5,7 +5,13 @@
 }
 .navbar-right {
   position: absolute;
-  left: 80%;
+  left: 75%;
+}
+._login, ._create_account {
+  margin-top: 11px;
+}
+.user_center {
+  margin-top: 8px;
 }
 #bs-example-navbar-collapse-6 .search {
   position: absolute;

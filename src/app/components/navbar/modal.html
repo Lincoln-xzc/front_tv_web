@@ -1,27 +1,24 @@
+<div class="modal-top">
+  <button class="btn btn-link btn-xs" ng-click="modal.cancel()"><span class="glyphicon glyphicon-remove"></span></button>
+</div>
 <div class="modal-body">
   <section class="login_content">
     <form>
       <h1>Login Form</h1>
       <div>
-      <input type="text" class="form-control" size="40" placeholder="Username" required="" />
+      <input type="text" class="form-control" size="40" placeholder="Username" name="name" ng-model="modal.user.name" required="" />
       </div>
       <div>
-        <input type="password" class="form-control" size="40" placeholder="Password" required="" />
+        <input type="password" class="form-control" size="40" placeholder="Password" name="password" ng-model="modal.user.password" required="" />
       </div>
       <div>
-        <a class="btn btn-default submit" href="index.html">Log in</a>
-        <a class="reset_pass" href="#">Lost your password?</a>
+        <a class="btn btn-primary submit" ng-click="modal.ok()">登录</a>
+        <a class="reset_pass">忘记密码?</a>
       </div>
       <div class="clearfix"></div>
       <div class="separator">
-      <p class="change_link">New to site?
-        <a href="#toregister" class="to_register"> Create Account </a>
-      </p>
-
+      <p class="change_link">Welcome To Hot Tv Web </p>
       <br />
-      <div>
-        <h1><i class="fa fa-paw" style="font-size: 26px;"></i> 热门视频网站</h1>
-      </div>
     </div>
   </form>
   </section>

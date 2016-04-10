@@ -108,6 +108,29 @@
         templateUrl:'app/message/message.html',
         controller: 'MessageController',
         controllerAs: 'message'
+      })
+      .state('nav.personalCenter', {
+        url:'personal',
+        templateUrl:'app/userCenter/personalCenter.html',
+        controller:'UserCenterController',
+        controllerAs:'center'
+      })
+      .state('nav.upload', {
+        url:'upload',
+        templateUrl:'app/userCenter/upload.html',
+        controller:'UserCenterController',
+        controllerAs:'upload'
+      })
+      .state('end', {
+        abstract:true,
+        url: '/',
+        templateUrl: 'app/end/end_index.html'
+      })
+      .state('end.main', {
+        url:'endMain',
+        templateUrl:'app/end/main/end_main.html',
+        controller:'EndMainController',
+        controllerAs:'endMain'
       });
      /* .state('modal',{
         onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state,$modal){

@@ -1,10 +1,29 @@
-<div class="container-fluid">
+<div class="container">
   <div class="">
     <div class="col-sm-3 col-md-3 left_col">
       <left-menu></left-menu>
     </div>
-    <div class="right_col">
+    <div class="top_nav row">
+      <div class="nav_menu">
+        <nav class="" role="navigation">
+          <h4>热门视频网站后台管理</h4>
+        </nav>
+      </div>
+      <div class="btn-group navbar-down" dropdown is-open="false">
+          <span id="single-button1" type="button" class="btn" dropdown-toggle ng-disabled="disabled">
+          xzc <span class="caret"></span>
+          </span>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="single-button1">
+          <li role="menuitem"><a href="#">最多播放</a></li>
+          <li role="menuitem"><a href="#">最多评论</a></li>
+          <li role="menuitem"><a href="#">最受欢迎</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="right_col" role="main">
+      <div class="container-fluid">
       <div ui-view></div>
+      </div>
     </div>
   </div>
 

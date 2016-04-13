@@ -17,6 +17,7 @@
 }
 .side-menu span {
   float: right;
+  padding-left: 90px;
 }
 .side-menu > li a:hover,
 .side-menu > li a:focus,
@@ -27,7 +28,11 @@
 .side-menu> li.current-page,
 .side-menu> li.active {
   border-right: 5px solid #1ABB9C;
-  margin-right: 5px;
+}
+.side-menu li.active .one-menu {
+  background-color: #2e4356;
+  border:1px solid #536271;
+  box-shadow: 0 0 1px 1px #999999;
 }
 .side-menu li i {
   margin-right: 7px;
@@ -64,8 +69,4 @@
 .right_col {
   padding: 10px 20px 0;
   margin-left: 230px;
-}
-.container {
-  width: 100%;
-  padding: 0;
 }

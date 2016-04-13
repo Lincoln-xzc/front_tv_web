@@ -1,4 +1,11 @@
-<div class="row">
+<div class="row all-search">
+  <h3>全网搜索&nbsp;&nbsp;<small>找你所爱</small></h3>
+  <div class="input-group end-search">
+    <input type="text" class="form-control" placeholder="Search for..." size="60">
+      <span class="input-group-btn" style="width: auto;">
+        <button class="btn btn-default" style="height: 34px;"><span class="glyphicon glyphicon-search"></span></button>
+      </span>
+  </div>
   <p>总结230898条记录</p>
 </div>
 <div class="row">
@@ -20,7 +27,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><input type="checkbox" name=""></td>
+        <td><input type="checkbox" name="" ng-checked="endMain.checkValue"></td>
         <td>1</td>
         <td>海贼王</td>
         <td>1990-3-20</td>
@@ -33,7 +40,7 @@
         <td>电影</td>
       </tr>
       <tr>
-        <td><input type="checkbox" name=""></td>
+        <td><input type="checkbox" name=""  ng-checked="endMain.checkValue"></td>
         <td>2</td>
         <td>海贼王</td>
         <td>1990-3-20</td>
@@ -49,7 +56,8 @@
   </table>
   <div class="row">
     <label class="selectAll">
-      <input type="checkbox" name="">
+      <input type="checkbox" name="" ng-model="endMain.check" ng-true-value="'YES'" ng-false-value="'NO'"ng-click="endMain.selectAll()">
+
       <span>全选</span>
     </label>
     <pagination  total-items="totalItems" ng-model="currentPage" class="pagination-sm pull-right" previous-text="&lsaquo;" next-text="&rsaquo;"></pagination>

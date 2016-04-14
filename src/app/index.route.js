@@ -104,7 +104,7 @@
         controllerAs: 'play'
       })
       .state('nav.message', {
-        url:'message',
+        url:'message/:movieName',
         templateUrl:'app/message/message.html',
         controller: 'MessageController',
         controllerAs: 'message'

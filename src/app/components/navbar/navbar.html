@@ -16,9 +16,9 @@
         <li></li>
         <li>
           <div class="input-group">
-            <input type="text" class="form-control search" placeholder="Search for...">
+            <input type="text" class="form-control search" placeholder="Search for..." ng-model="vm.movieName">
             <span class="input-group-btn basic-addon2">
-              <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+              <button class="btn btn-default" type="button" ng-click="vm.search()"><span class="glyphicon glyphicon-search"></span></button>
             </span>
           </div>
         </li>

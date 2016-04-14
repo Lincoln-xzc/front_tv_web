@@ -21,8 +21,14 @@
     return directive;
 
     /** @ngInject */
-    function NavbarController($modal) {
+    function NavbarController($modal,$scope,$state) {
       var vm = this;
+
+      //搜索
+      vm.search = function(){
+       // $scope.$broadcast('movieName',vm.movieName);
+        $state.go('nav.message',{'movieName': vm.movieName});
+      };
 
       //登录弹出框
        vm.open = function() {

@@ -117,7 +117,7 @@
       })
       .state('nav.upload', {
         url:'upload',
-        templateUrl:'app/userCenter/upload.html',
+        templateUrl:'app/userCenter/photo.html',
         controller:'UserCenterController',
         controllerAs:'upload'
       })

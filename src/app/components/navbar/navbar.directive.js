@@ -21,7 +21,7 @@
     return directive;
 
     /** @ngInject */
-    function NavbarController($modal,$scope,$state) {
+    function NavbarController($modal,$scope,$log,$state) {
       var vm = this;
 
       //搜索
@@ -62,7 +62,7 @@
           size: 'md'
         });
 
-        modalInstance.result.then(function (selectedItem,$log) {
+        modalInstance.result.then(function (selectedItem) {
           vm.selected = selectedItem;
         }, function () {
           $log.info('Modal dismissed at: ' + new Date());

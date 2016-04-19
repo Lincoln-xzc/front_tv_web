@@ -40,6 +40,10 @@
         "key": "ui-router",
         "module": "ui.router"
       },
+      "crop": {
+        "key":"cropper",
+        "module": "ng.imgCrop"
+      },
       "ui": {
         "key": "bootstrap",
         "module": null

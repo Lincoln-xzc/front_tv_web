@@ -15,17 +15,20 @@
       vm.myImage='';
       vm.myCroppedImage='';
 
-      var handleFileSelect=function(evt) {
-        var file=evt.currentTarget.files[0];
+      vm.handleFileSelect=function(evt) {
+        console.log(evt[0]);
+
+        var file=evt[0];
+
         var reader = new FileReader();
         reader.onload = function (evt) {
-          $scope.$apply(function($scope){
-            $scope.myImage=evt.target.result;
+          $scope.$apply(function(){
+            vm.myImage=evt.target.result;
           });
         };
         reader.readAsDataURL(file);
       };
-      angular.element(document.querySelector('#fileInput')).on('change',handleFileSelect);
+     /* angular.element(document.querySelector("#fileInput")).on('change',handleFileSelect);*/
     };
 
 })();

@@ -1,5 +1,8 @@
 <div class="container">
   <div class="row" style="margin-top: 75px;">
+
+  </div>
+  <div class="row" style="margin-top: 75px;">
     <tabset>
       <tab heading="基础信息">
         <div class="row offset-top basic-message">
@@ -37,15 +40,22 @@
             <img src="../assets/images/yeoman.png" class="img-circle" style="width: 200px;height: 200px;">
           </div>
           <div class="col-sm-9 col-md-9">
-            <div>Select an image file: <input type="file" id="fileInput" /></div>
-            <div class="cropArea">
-              <img-crop image="center.myImage" result-image="center.myCroppedImage"></img-crop>
-            </div>
-            <div>Cropped Image:</div>
-            <div><img ng-src="{{center.myCroppedImage}}" /></div>
             <!--<div class="">
-              <div photo-upload></div>
-            </div>-->
+            <div photo-upload></div>
+          </div>-->
+            <label class="control-label">Select an image file: <input type="file" ng-model="center.image" id="fileInput" class="form-control" onchange="angular.element(this).scope().center.handleFileSelect(this.files)" style="display: inline;margin-bottom: 10px;" /></label>
+            <div class="row">
+              <div class="cropArea col-sm-9 col-md-9">
+                <img-crop image="center.myImage" result-image="center.myCroppedImage"></img-crop>
+              </div>
+              <div class="col-sm-3 col-md-3">
+                 <h5>Cropped Image:</h5>
+                <div><img ng-src="{{center.myCroppedImage}}"/></div>
+              </div>
+            </div>
+            <div class="footer" style="margin-top: 20px;">
+              <button class="btn btn-success">修改成功</button>
+            </div>
           </div>
         </div>
       </tab>

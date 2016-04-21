@@ -27,7 +27,7 @@
       })
       .state('nav.tv', {
         url:'tv',
-        templateUrl: 'app/tv/tv.html',
+        templateUrl: 'app/tv/movie.html',
         controller: 'TvController',
         controllerAs: 'tv'
       })
@@ -131,6 +131,58 @@
         templateUrl:'app/end/main/end_main.html',
         controller:'EndMainController',
         controllerAs:'endMain'
+      })
+      .state('end.tv', {
+        url:'endMain',
+        templateUrl:'app/end/tv/tv.html',
+        controller:'EndTvController',
+        controllerAs:'endTv'
+      })
+      .state('end.movie', {
+        url:'endMovie',
+        templateUrl:'app/end/movie/movie.html',
+        controller:'EndMovieController',
+        controllerAs:'endMovie'
+      })
+      .state('end.art', {
+        url:'endArt',
+        templateUrl:'app/end/art/art.html',
+        controller:'EndArtController',
+        controllerAs:'endArt'
+      })
+      .state('end.animation', {
+        url:'endAnimation',
+        templateUrl:'app/end/animation/animation.html',
+        controller:'EndAniamtionController',
+        controllerAs:'endAnimation'
+      })
+      .state('end.fitness', {
+        url:'endFitness',
+        templateUrl:'app/end/fitness/fitness.html',
+        controller:'EndFitnessController',
+        controllerAs:'endFitness'
+      })
+      .state('end.teach', {
+        url:'endTeach',
+        templateUrl:'app/end/teach/teach.html',
+        controller:'EndTeachController',
+        controllerAs:'endTeach'
+      })
+      .state('modal',{
+        onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state,$modal){
+          $modal.open({
+            templateUrl:'app/end/main/copy.html',
+            controller:'copyDataController',
+            controllerAs: 'copy',
+            animation: true,
+            size: 'lg',
+          }).result.then(function(){
+
+            },function(){
+              $state.go('nav.main');
+            });
+        }],
+
       });
      /* .state('modal',{
         onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state,$modal){

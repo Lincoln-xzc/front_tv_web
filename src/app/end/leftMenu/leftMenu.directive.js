@@ -29,7 +29,7 @@
         angular.element('.side-menu li').click(function(event){
          $(this).find("ul").toggleClass('none');
          $(this).toggleClass('active');
-          scope.$watch(oldVal, newVal, scope);
+         /* scope.$watch(oldVal, newVal, scope);*/
         })
       }
     };

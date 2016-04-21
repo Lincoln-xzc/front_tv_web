@@ -24,9 +24,12 @@
       },
 
       link: function(scope, element, attr, ctrl) {
+        var lastNode;
+
         angular.element('.side-menu li').click(function(event){
          $(this).find("ul").toggleClass('none');
          $(this).toggleClass('active');
+          scope.$watch(oldVal, newVal, scope);
         })
       }
     };

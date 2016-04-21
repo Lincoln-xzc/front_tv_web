@@ -59,7 +59,19 @@
           </div>
         </div>
       </tab>
-      <tab heading="修改密码">dfdf</tab>
+      <tab heading="修改密码">
+        <div class="row offset-top" style="margin-left: 20px;">
+          <div class="form-group">
+            <label class="control-label">&nbsp;&nbsp;&nbsp;旧密码：<input type="password" name="email" class="form-control" ng-model="center.user.oldPassword"></label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">&nbsp;&nbsp;&nbsp;新密码：<input type="password" name="email" class="form-control" ng-model="center.user.newPassword"></label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">确认密码：<input type="password" name="tel" class="form-control" ng-model="center.user.rePassword"></label>
+          </div>
+        </div>
+      </tab>
       <tab heading="视频管理"></tab>
       <tab heading="我的关注"></tab>
     </tabset>

@@ -23,6 +23,16 @@
       return d.promise;*/
     }
 
+    endTvService.save = function(data){
+      return $http({
+        method:"POST",
+        url:"http://localhost:8080/end_tv_web/movieAction/save",
+        data:data
+      });
+      /*var d = $q.defer();
+       d.resolve({'data':loveDatas});
+       return d.promise;*/
+    }
     return endTvService;
   }
 })();

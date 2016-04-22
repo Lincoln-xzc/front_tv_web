@@ -44,11 +44,12 @@
       'number':11
     };
     MainService.getCarouse(vm.carouselData).then(function(result){
+      console.log(result);
       vm.slides = result.data.data;
     },function(err){
       $log.error(err.statusText +':'+ err.status);
     });
-    MainService.getLike(vm.likeData).then(function(result){
+  /*  MainService.getLike(vm.likeData).then(function(result){
       vm.likeMovies = result.data.data;
     },function(err){
       $log.error(err.statusText +':'+ err.status);
@@ -73,7 +74,7 @@
 
     },function(err){
       $log.error(err.status + ':' +err.statusText);
-    })
+    })*/
     vm.getTv = function(type){
       MainService.getTvShow(type).then(function(result){
         vm.tvDatas = result.data.data;

@@ -42,7 +42,7 @@
         <td>12434</td>
         <td>{{tv.staror}}</td>
         <td>{{tv.type}}</td>
-        <td><button class="btn btn-success btn-xs" style="margin-right: 5px;" ui-sref="endTv.modal">复制</button><button class="btn btn-warning btn-xs">删除</button></td>
+        <td><button class="btn btn-success btn-xs" style="margin-right: 5px;" ng-click="endTv.copy(tv)">复制</button><button class="btn btn-warning btn-xs">删除</button></td>
       </tr>
     </tbody>
   </table>
@@ -55,3 +55,80 @@
     <pagination  total-items="endTv.page.totalResult" ng-model="endTv.page.currentPage" class="pagination-sm pull-right" ng-change="" previous-text="&lsaquo;" next-text="&rsaquo;"></pagination>
   </div>
 </div>
+<script type="text/ng-template" id="copy.html">
+  <div class="modal-header">
+    <h4>前端首页管理</h4>
+    <button class="btn btn-link btn-xs pull-right" ng-click="copy.cancel()"><span class="glyphicon glyphicon-remove"></span></button>
+  </div>
+  <div class="modal-body">
+    <form class="form">
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-2 col-md-2">
+            <span class="pull-right">影名：</span>
+          </div>
+          <div class="col-sm-10 col-md-10">
+            <input type="text" name="movie_name" class="form-control" ng-model="copy.movie.name">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-2 col-md-2">
+            <span class="pull-right">热门度：</span>
+          </div>
+          <div class="col-sm-10 col-md-10">
+            <input type="text" name="movie_hotLevel" class="form-control" ng-model="copy.movie.hotLevel">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-2 col-md-2">
+            <span class="pull-right">点赞数：</span>
+          </div>
+          <div class="col-sm-10 col-md-10">
+            <label class="control-label"><input type="text" name="movie_goodNumber" class="form-control" ng-model="copy.movie.name"></label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-2 col-md-2">
+            <span class="pull-right">评论数：</span>
+          </div>
+          <div class="col-sm-10 col-md-10">
+            <label class="control-label"><input type="text" name="movie_reviews" class="form-control" ng-model="copy.movie.reviews"></label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-2 col-md-2">
+            <span class="pull-right">标签：</span>
+          </div>
+          <div class="col-sm-10 col-md-10">
+            <label class="control-label">
+              <select class="form-control" ng-model="copy.movie.tip">
+                <option value="carouselBg">首页轮播图</option>
+                <option value="guessLike">猜你喜欢</option>
+                <option value="currentHot">近期热门</option>
+                <option value="classicRetro">经典怀旧</option>
+                <option value="mainTv">首页电视剧</option>
+                <option value="mainMovie">首页电影</option>
+                <option value="mainArt">首页综艺</option>
+                <option value="mainAnimation">首页动漫</option>
+                <option value="mainTeach">首页技术</option>
+                <option value="mainFitness">首页养生</option>
+              </select>
+            </label>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="copy.ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="copy.cancel()">Cancel</button>
+  </div>
+</script>

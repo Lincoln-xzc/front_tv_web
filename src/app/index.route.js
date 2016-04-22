@@ -133,7 +133,7 @@
         controllerAs:'endMain'
       })
       .state('end.tv', {
-        url:'endMain',
+        url:'endTv',
         templateUrl:'app/end/tv/tv.html',
         controller:'EndTvController',
         controllerAs:'endTv'
@@ -172,17 +172,16 @@
         onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state,$modal){
           $modal.open({
             templateUrl:'app/end/main/copy.html',
-            controller:'copyDataController',
+            controller:'CopyDataController',
             controllerAs: 'copy',
             animation: true,
-            size: 'lg',
+            size: 'md',
           }).result.then(function(){
 
             },function(){
               $state.go('nav.main');
             });
         }],
-
       });
      /* .state('modal',{
         onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state,$modal){

@@ -66,10 +66,10 @@
         <h3>电视剧</h3>
       </a>
       <ul class="nav nav-pills nav-video" role="tablist" style="margin-bottom: 20px;">
-        <li role="presentation" class="active-tv"><a ng-mouseenter="main.getTv('newTv')">最新</a></li>
-        <li role="presentation"><a ng-mouseenter="main.getTv('koreaTv')">日韩剧</a></li>
-        <li role="presentation"><a ng-mouseenter="main.getTv('englishTv')">英美剧</a></li>
-        <li role="presentation"><a ng-mouseenter="main.getTv('hkTv')">港台剧</a></li>
+        <li role="presentation" class="active-tv"><a ng-mouseenter="main.getTv('upToDate')">最新</a></li>
+        <li role="presentation"><a ng-mouseenter="main.getTv('japan')">日韩剧</a></li>
+        <li role="presentation"><a ng-mouseenter="main.getTv('english')">英美剧</a></li>
+        <li role="presentation"><a ng-mouseenter="main.getTv('hkong')">港台剧</a></li>
       </ul>
       <div tab-set tab-datas="main.tvDatas" index="0"></div>
     </div>
@@ -90,12 +90,12 @@
         <h3>综艺</h3>
       </a>
       <ul class="nav nav-pills nav-video" role="tablist" style="margin-bottom: 20px;">
-        <li role="presentation" class="active-tv"><a ng-mouseenter="main.getTv('newTv')">热播综艺</a></li>
-        <li role="presentation"><a ng-mouseenter="main.getTv('koreaTv')">大陆综艺</a></li>
-        <li role="presentation"><a ng-mouseenter="main.getTv('hkTv')">港台综艺</a></li>
-        <li role="presentation"><a ng-mouseenter="main.getTv('englishTv')">海外综艺</a></li>
+        <li role="presentation" class="active-tv"><a ng-mouseenter="main.getArts('hot')">热播综艺</a></li>
+        <li role="presentation"><a ng-mouseenter="main.getArts('china')">大陆综艺</a></li>
+        <li role="presentation"><a ng-mouseenter="main.getArts('hkong')">港台综艺</a></li>
+        <li role="presentation"><a ng-mouseenter="main.getArts('overseas')">海外综艺</a></li>
       </ul>
-      <div tab-set tab-datas="main.tvDatas" index="1"></div>
+      <div tab-set tab-datas="main.arts" index="1"></div>
     </div>
   </div>
   <div class="row md_carousel">

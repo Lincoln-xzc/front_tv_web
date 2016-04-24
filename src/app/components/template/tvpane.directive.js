@@ -15,7 +15,7 @@
       restrict: 'EA',
       templateUrl: 'app/components/template/tvpane.html',
       scope:{
-        tvDatas:'=',
+        tvDatas:'='
       }
     };
 

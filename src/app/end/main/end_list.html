@@ -1,58 +1,67 @@
 <div class="row all-search">
-  <div class="col-sm-4 col-md-4">
-    <h4>电视剧列表管理</h4>
-  </div>
-  <div class="col-sm-4 col-md-4 pull-right">
-    <div class="input-group">
-      <input type="text" class="form-control pull-right" placeholder="Search for...">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
-        </span>
-    </div><!-- /input-group -->
+  <div class="">
+    <h4>首页列表管理</h4>
+    <div class="btn-group" dropdown is-open="false">
+      <span id="single-button1" type="button" class="btn" dropdown-toggle ng-disabled="disabled">
+        首页排版 <span class="caret"></span>
+      </span>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="single-button1" style="min-width: 20px;">
+        <li role="menuitem"><a ng-click="endMainList.change('carouselBg')">首页轮播资源</a></li>
+        <li role="menuitem"><a ng-click="endMainList.change('guessLike')">猜你喜欢资源</a></li>
+        <li role="menuitem"><a ng-click="endMainList.change('currentHot')">近期热门资源</a></li>
+        <li role="menuitem"><a ng-click="endMainList.change('classicRetro')">经典怀旧资源</a></li>
+        <li role="menuitem"><a ng-click="endMainList.change('mainTv')">首页电视剧资源</a></li>
+        <li role="menuitem"><a ng-click="endMainList.change('mainMovie')">首页电影资源</a></li>
+        <li role="menuitem"><a ng-click="endMainList.change('mainArt')">首页综艺资源</a></li>
+        <li role="menuitem"><a ng-click="endMainList.change('mainAnimation')">首页动漫资源</a></li>
+        <li role="menuitem"><a ng-click="endMainList.change('mainTeach')">首页技术资源</a></li>
+        <li role="menuitem"><a ng-click="endMainList.change('mainFitness')">首页养生资源</a></li>
+      </ul>
+    </div>
   </div>
 </div>
 <div class="row offset-top">
   <table class="table table-responsive table-hover">
     <thead>
-      <tr>
-        <th>选择</th>
-        <th>编号</th>
-        <th>影名</th>
-        <th>上映时间</th>
-        <th>热门程度</th>
-        <th>上传时间</th>
-        <th>评论数</th>
-        <th>点赞数</th>
-        <th>不点赞数</th>
-        <th>上传人</th>
-        <th>类别</th>
-        <th>操作</th>
-      </tr>
+    <tr>
+      <th>选择</th>
+      <th>编号</th>
+      <th>影名</th>
+      <th>上映时间</th>
+      <th>热门程度</th>
+      <th>上传时间</th>
+      <th>评论数</th>
+      <th>点赞数</th>
+      <th>不点赞数</th>
+      <th>上传人</th>
+      <th>类别</th>
+      <th>操作</th>
+    </tr>
     </thead>
-    <tbody ng-init="index ==0">
-      <tr ng-repeat="tv in endTv.datas">
-        <td><input type="checkbox" name="" ng-checked="endTv.checkValue"></td>
-        <td>{{$index+1}}</td>
-        <td>{{tv.name}}</td>
-        <td>{{tv.createData}}</td>
-        <td>热门</td>
-        <td>{{tv.createData}}</td>
-        <td>{{tv.score}}</td>
-        <td>2342342</td>
-        <td>12434</td>
-        <td>{{tv.staror}}</td>
-        <td>{{tv.type}}</td>
-        <td><button class="btn btn-success btn-xs" style="margin-right: 5px;" ng-click="endTv.copy(tv)">复制</button><button class="btn btn-warning btn-xs">删除</button></td>
-      </tr>
+    <tbody>
+    <tr ng-repeat="data in endMainList.datas">
+      <td><input type="checkbox" name="" ng-checked="endMainList.checkValue"></td>
+      <td>{{$index+1}}</td>
+      <td>{{data.name}}</td>
+      <td>{{data.createData}}</td>
+      <td>热门</td>
+      <td>{{data.createData}}</td>
+      <td>{{data.score}}</td>
+      <td>2342342</td>
+      <td>12434</td>
+      <td>{{data.staror}}</td>
+      <td>{{data.type}}</td>
+      <td><button class="btn btn-success btn-xs" style="margin-right: 5px;" ng-click="endMainList.copy(data)">查看</button><button class="btn btn-warning btn-xs" ng-click="endMainList.delete(data.id)">删除</button></td>
+    </tr>
     </tbody>
   </table>
   <div class="row">
     <label class="selectAll">
-      <input type="checkbox" name="" ng-model="endTv.check" ng-true-value="'YES'" ng-false-value="'NO'"ng-click="endTv.selectAll()">
+      <input type="checkbox" name="" ng-model="endTv.check" ng-true-value="'YES'" ng-false-value="'NO'"ng-click="endMainList.selectAll()">
 
       <span>全选</span>
     </label>
-    <pagination  total-items="endTv.page.totalResult" items-per-page="20" ng-model="endTv.page.currentPage" class="pagination-sm pull-right" ng-change="endTv.changePage()" previous-text="&lsaquo;" next-text="&rsaquo;"></pagination>
+    <pagination  total-items="endMainList.page.totalResult" items-per-page="20" ng-model="endMainList.page.currentPage" class="pagination-sm pull-right" ng-change="endMainList.changePage()" previous-text="&lsaquo;" next-text="&rsaquo;"></pagination>
   </div>
 </div>
 <script type="text/ng-template" id="copy.html">

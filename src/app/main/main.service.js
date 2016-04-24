@@ -65,7 +65,8 @@
     }
     mainService.getTvShow = function(type){
       var data = {
-        'type':type,
+        'type':'mainTv',
+        'tip':type,
         'number':9
       }
       return $http({
@@ -73,6 +74,7 @@
         url: "http://localhost:8080/end_tv_web/movieAction/getMovies",
         data: data
       });
+
     /*  var datas =[];
       angular.forEach(tvDatas, function(value){
         if(value.type == type){
@@ -84,7 +86,18 @@
       d.resolve({'data':datas});
       return d.promise;*/
     }
-
+    mainService.getArtShow = function(type) {
+      var data = {
+        'type': 'mainArt',
+        'tip': type,
+        'number': 9
+      }
+      return $http({
+        method: "POST",
+        url: "http://localhost:8080/end_tv_web/movieAction/getMovies",
+        data: data
+      });
+    }
     return mainService;
   }
 })();

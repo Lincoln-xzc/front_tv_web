@@ -22,26 +22,32 @@
     };
     vm.carouselData = {
       'type':'carouselBg',
-      'number':3
+      'number':3,
+      'tip':''
     };
 
     vm.likeData = {
-      'type':'likeMovie',
-      'number':12
+      'type':'guessLike',
+      'number':12,
+      'tip':''
     };
 
     vm.liquidData = {
-      'type':'liquidCarousel',
-      'number':16
+      'type':'currentHot',
+      'number':16,
+      'tip':''
     };
     vm.oldData = {
-      'type':'oldMovie',
-      'number':6
+      'type':'classicRetro',
+      'number':6,
+      'tip':''
     };
-    vm.type ='newTv';
+    vm.type ='upToDate';
+    vm.artType = 'hot';
     vm.movieData = {
-      'type':'movie',
-      'number':11
+      'type':'mainMovie',
+      'number':11,
+      'tip':''
     };
     MainService.getCarouse(vm.carouselData).then(function(result){
       console.log(result);
@@ -49,7 +55,7 @@
     },function(err){
       $log.error(err.statusText +':'+ err.status);
     });
-  /*  MainService.getLike(vm.likeData).then(function(result){
+    MainService.getLike(vm.likeData).then(function(result){
       vm.likeMovies = result.data.data;
     },function(err){
       $log.error(err.statusText +':'+ err.status);
@@ -74,7 +80,12 @@
 
     },function(err){
       $log.error(err.status + ':' +err.statusText);
-    })*/
+    });
+    MainService.getArtShow(vm.artType).then(function(result){
+      vm.arts = result.data.data;
+    },function(err){
+      $log.error(err.status + ':' +err.statusText);
+    });
     vm.getTv = function(type){
       MainService.getTvShow(type).then(function(result){
         vm.tvDatas = result.data.data;
@@ -82,7 +93,13 @@
         $log.error(err.status + ':' +err.statusText);
       })
     };
-
+    vm.getArts = function(type){
+      MainService.getArtShow(type).then(function(result){
+        vm.arts = result.data.data;
+      },function(err){
+        $log.error(err.status + ':' +err.statusText);
+      })
+    };
 
 /*  //弹出框
     vm.open = function() {

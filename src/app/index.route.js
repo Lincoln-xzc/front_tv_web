@@ -27,7 +27,7 @@
       })
       .state('nav.tv', {
         url:'tv',
-        templateUrl: 'app/tv/movie.html',
+        templateUrl: 'app/tv/tv.html',
         controller: 'TvController',
         controllerAs: 'tv'
       })
@@ -126,11 +126,23 @@
         url: '/',
         templateUrl: 'app/end/end_index.html'
       })
+      .state('end.index', {
+        url:'endIndex',
+        templateUrl:'app/end/main/index.html',
+        controller:'EndMainController',
+        controllerAs:'endIndex'
+      })
       .state('end.main', {
         url:'endMain',
         templateUrl:'app/end/main/end_main.html',
         controller:'EndMainController',
         controllerAs:'endMain'
+      })
+      .state('end.mainList', {
+        url:'endMainList',
+        templateUrl:'app/end/main/end_list.html',
+        controller:'EndMainController',
+        controllerAs:'endMainList'
       })
       .state('end.tv', {
         url:'endTv',

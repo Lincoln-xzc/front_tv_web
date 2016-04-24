@@ -8,19 +8,20 @@
   /** @ngInject */
   function EndTvController($log,$modal, EndTvService) {
     var vm = this;
-    vm.page ={
+    vm.initpage ={
       'size':20,
       'type':'tv',
       'currentPage':1
     };
-    EndTvService.getTvs(vm.page).then(function(result){
+    EndTvService.getTvs(vm.initpage).then(function(result){
 
       vm.tvs = result.data.data[0];
+      console.log(vm.tvs);
       vm.datas = vm.tvs.resultList;
       vm.page ={
-        "currentPage":vm.datas.currentPage,
-        "totalPage":vm.datas.totalPage,
-        "totalResult":vm.datas.totalResult
+        "currentPage":vm.tvs.currentPage,
+        "totalPage":vm.tvs.totalPage,
+        "totalResult":vm.tvs.totalResult
       };
 
     },function(err){
@@ -33,6 +34,26 @@
       } else {
         vm.checkValue = false;
       }
+    };
+
+    vm.changePage = function(){
+      vm.pageData ={
+        'size':20,
+        'type':'tv',
+        'currentPage':vm.page.currentPage
+      };
+      EndTvService.getTvs(vm.pageData).then(function(result){
+        vm.tvs = result.data.data[0];
+        console.log(vm.tvs);
+        vm.datas = vm.tvs.resultList;
+        vm.page ={
+          "currentPage":vm.tvs.currentPage,
+          "totalPage":vm.tvs.totalPage,
+          "totalResult":vm.tvs.totalResult
+        };
+      },function(err){
+        $log.error(err.status +':'+ err.statusText);
+      });
     };
 
     vm.copy = function(data){

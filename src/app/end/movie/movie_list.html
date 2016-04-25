@@ -6,16 +6,14 @@
         首页排版 <span class="caret"></span>
       </span>
       <ul class="dropdown-menu" role="menu" aria-labelledby="single-button1" style="min-width: 20px;">
-        <li role="menuitem"><a ng-click="endMainList.change('carouselBg')">首页轮播资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('guessLike')">猜你喜欢资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('currentHot')">近期热门资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('classicRetro')">经典怀旧资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainTv')">首页电视剧资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainMovie')">首页电影资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainArt')">首页综艺资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainAnimation')">首页动漫资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainTeach')">首页技术资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainFitness')">首页养生资源</a></li>
+        <li role="menuitem"><a ng-click="endMovieList.change('upToDateMovie')">最新上线</a></li>
+        <li role="menuitem"><a ng-click="endMovieList.change('likeMovie')">为您精选</a></li>
+        <li role="menuitem"><a ng-click="endMovieList.change('chineseMoive')">华语电影</a></li>
+        <li role="menuitem"><a ng-click="endMovieList.change('comedyMovie')">喜剧电影</a></li>
+        <li role="menuitem"><a ng-click="endMovieList.change('hotMovie')">影院热映</a></li>
+        <li role="menuitem"><a ng-click="endMovieList.change('artMovie')">动作电影</a></li>
+        <li role="menuitem"><a ng-click="endMovieList.change('hollywoodMovie')">好莱坞电影</a></li>
+        <li role="menuitem"><a ng-click="endMovieList.change('cantoneseMovie')">粤语电影</a></li>
       </ul>
     </div>
   </div>
@@ -39,8 +37,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="data in endMainList.datas">
-      <td><input type="checkbox" name="" ng-checked="endMainList.checkValue"></td>
+    <tr ng-repeat="data in endMovieList.resources">
+      <td><input type="checkbox" name="" ng-checked="endMovieList.checkValue"></td>
       <td>{{$index+1}}</td>
       <td>{{data.name}}</td>
       <td>{{data.createData}}</td>

@@ -150,11 +150,23 @@
         controller:'EndTvController',
         controllerAs:'endTv'
       })
+      .state('end.tvList',{
+        url:'tvList',
+        templateUrl:'app/end/tv/tv_list.html',
+        controller:'EndTvController',
+        controllerAs:'endTvList'
+      })
       .state('end.movie', {
         url:'endMovie',
         templateUrl:'app/end/movie/movie.html',
         controller:'EndMovieController',
         controllerAs:'endMovie'
+      })
+      .state('end.movieList',{
+        url:'movieList',
+        templateUrl:'app/end/movie/movie_list.html',
+        controller:'EndMovieController',
+        controllerAs:'endMovieList'
       })
       .state('end.art', {
         url:'endArt',
@@ -162,11 +174,23 @@
         controller:'EndArtController',
         controllerAs:'endArt'
       })
+      .state('end.artList',{
+        url:'artList',
+        templateUrl:'app/end/art/art_list.html',
+        controller:'EndArtController',
+        controllerAs:'endArtList'
+      })
       .state('end.animation', {
         url:'endAnimation',
         templateUrl:'app/end/animation/animation.html',
         controller:'EndAniamtionController',
         controllerAs:'endAnimation'
+      })
+      .state('end.animationList',{
+        url:'animationList',
+        templateUrl:'app/end/animation/animation_list.html',
+        controller:'EndAnimationController',
+        controllerAs:'endAnimationList'
       })
       .state('end.fitness', {
         url:'endFitness',
@@ -174,11 +198,23 @@
         controller:'EndFitnessController',
         controllerAs:'endFitness'
       })
+      .state('end.fitnessList',{
+        url:'tvList',
+        templateUrl:'app/end/fitness/fitness_list.html',
+        controller:'EndFitnessController',
+        controllerAs:'endFitnessList'
+      })
       .state('end.teach', {
         url:'endTeach',
         templateUrl:'app/end/teach/teach.html',
         controller:'EndTeachController',
         controllerAs:'endTeach'
+      })
+      .state('end.teachList',{
+        url:'teachList',
+        templateUrl:'app/end/teach/teach_list.html',
+        controller:'EndTeachController',
+        controllerAs:'endTeachList'
       })
       .state('modal',{
         onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state,$modal){

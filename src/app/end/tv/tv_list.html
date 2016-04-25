@@ -6,16 +6,17 @@
         首页排版 <span class="caret"></span>
       </span>
       <ul class="dropdown-menu" role="menu" aria-labelledby="single-button1" style="min-width: 20px;">
-        <li role="menuitem"><a ng-click="endMainList.change('carouselBg')">首页轮播资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('guessLike')">猜你喜欢资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('currentHot')">近期热门资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('classicRetro')">经典怀旧资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainTv')">首页电视剧资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainMovie')">首页电影资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainArt')">首页综艺资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainAnimation')">首页动漫资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainTeach')">首页技术资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainFitness')">首页养生资源</a></li>
+        <li role="menuitem"><a ng-click="endTvList.change('carouselTv')">首页轮播资源</a></li>
+        <li role="menuitem"><a ng-click="endTvList.change('hotTv')">同步热播资源</a></li>
+        <li role="menuitem"><a ng-click="endTvList.change('likeTv')">为你精选资源</a></li>
+        <li role="menuitem"><a ng-click="endTvList.change('globalTv')">全球剧场资源</a></li>
+        <li role="menuitem"><a ng-click="endTvList.change('japanaTv')">最新日韩资源</a></li>
+        <li role="menuitem"><a ng-click="endTvList.change('americanTv')">最新美剧资源</a></li>
+        <li role="menuitem"><a ng-click="endTvList.change('hkongTv')">最新港台资源</a></li>
+        <li role="menuitem"><a ng-click="endTvList.change('loveTv')">爱情热播资源</a></li>
+        <li role="menuitem"><a ng-click="endTvList.change('artTv')">武侠热播资源</a></li>
+        <li role="menuitem"><a ng-click="endTvList.change('copTv')">警匪热播资源</a></li>
+        <li role="menuitem"><a ng-click="endTvList.change('thrillerTv')">惊悚热播资源</a></li>
       </ul>
     </div>
   </div>
@@ -39,8 +40,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="data in endMainList.datas">
-      <td><input type="checkbox" name="" ng-checked="endMainList.checkValue"></td>
+    <tr ng-repeat="data in endTvList.resources">
+      <td><input type="checkbox" name="" ng-checked="endTvList.checkValue"></td>
       <td>{{$index+1}}</td>
       <td>{{data.name}}</td>
       <td>{{data.createData}}</td>
@@ -51,13 +52,13 @@
       <td>12434</td>
       <td>{{data.staror}}</td>
       <td>{{data.type}}</td>
-      <td><button class="btn btn-success btn-xs" style="margin-right: 5px;" ng-click="endMainList.copy(data)">查看</button><button class="btn btn-warning btn-xs" ng-click="endMainList.delete(data.id)">删除</button></td>
+      <td><button class="btn btn-success btn-xs" style="margin-right: 5px;" ng-click="endTvList.copy(data)">查看</button><button class="btn btn-warning btn-xs" ng-click="endTvList.delete(data.id)">删除</button></td>
     </tr>
     </tbody>
   </table>
   <div class="row">
     <label class="selectAll">
-      <input type="checkbox" name="" ng-model="endTv.check" ng-true-value="'YES'" ng-false-value="'NO'"ng-click="endMainList.selectAll()">
+      <input type="checkbox" name="" ng-model="endTv.check" ng-true-value="'YES'" ng-false-value="'NO'"ng-click="endTvList.selectAll()">
 
       <span>全选</span>
     </label>

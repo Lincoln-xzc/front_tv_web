@@ -48,7 +48,7 @@
     </div>
     <div class="col-sm-tv col-md-tv" ng-repeat="tv in tv.hot_tvs">
       <div class="tv">
-        <a ui-sref="nav.message"><img class="img_tv" ng-src="{{ tv.image}}"></a>
+        <a ui-sref="nav.message"><img class="img_tv" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{tv.imgId}}"></a>
         <div class="caption">
           <h5>{{ tv.message}}</h5>
           <p>{{ tv.id }}</p>
@@ -64,9 +64,9 @@
         <h3>为您精选</h3>
       </div>
     </div>
-    <div class="col-sm-tv col-md-tv" ng-repeat="tv in tv.selects">
+    <div class="col-sm-tv col-md-tv" ng-repeat="tv in tv.like_tvs">
       <div class="tv">
-        <img class="img_tv" ng-src="{{ tv.image}}">
+        <img class="img_tv" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{tv.imgId}}">
         <div class="caption">
           <h5>{{ tv.message}}</h5>
           <p>{{ tv.id }}</p>
@@ -82,9 +82,9 @@
         <h3>全球剧场</h3>
       </div>
     </div>
-    <div class="col-sm-3 col-md-2" ng-repeat="choice in tv.choiceMovies">
+    <div class="col-sm-3 col-md-2" ng-repeat="global in tv.global_tvs">
       <div class="thumbnail">
-        <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{ choice.imgId}}">
+        <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{ global.imgId}}">
         <div class="caption">
           <h3>{{oldMovie.title}}</h3>
           <p><a ng-href="#"></a></p>
@@ -102,7 +102,7 @@
         </div>
       </div>
     </div>
-    <div tv-pane tv-datas="tv.tvDatas"></div>
+    <div tv-pane tv-datas="tv.japan_tvs"></div>
   </div>
   <div class="row offset-top tv-panel">
     <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
@@ -114,7 +114,7 @@
         </div>
       </div>
     </div>
-    <div tv-pane tv-datas="tv.tvDatas"></div>
+    <div tv-pane tv-datas="tv.american_tvs"></div>
   </div>
   <div class="row offset-top tv-panel">
     <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
@@ -126,7 +126,7 @@
         </div>
       </div>
     </div>
-    <div tv-pane tv-datas="tv.tvDatas"></div>
+    <div tv-pane tv-datas="tv.hkong_tvs"></div>
   </div>
   <div class="row offset-top tv-panel">
     <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
@@ -138,7 +138,7 @@
         </div>
       </div>
     </div>
-    <div tv-pane tv-datas="tv.tvDatas"></div>
+    <div tv-pane tv-datas="tv.love_tvs"></div>
   </div>
   <div class="row offset-top tv-panel">
     <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
@@ -150,7 +150,7 @@
         </div>
       </div>
     </div>
-    <div tv-pane tv-datas="tv.tvDatas"></div>
+    <div tv-pane tv-datas="tv.art_tvs"></div>
   </div>
   <div class="row offset-top tv-panel">
     <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
@@ -162,7 +162,7 @@
         </div>
       </div>
     </div>
-    <div tv-pane tv-datas="tv.tvDatas"></div>
+    <div tv-pane tv-datas="tv.cop_tvs"></div>
   </div>
   <div class="row offset-top">
     <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
@@ -171,9 +171,9 @@
         <h3>惊悚热剧榜</h3>
       </div>
     </div>
-    <div class="col-sm-3 col-md-2" ng-repeat="choice in tv.choiceMovies">
+    <div class="col-sm-3 col-md-2" ng-repeat="thriller in tv.thriller_tvs">
       <div class="thumbnail">
-        <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{ choice.imgId}}">
+        <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{ thriller.imgId}}">
         <div class="caption">
           <h3>{{oldMovie.title}}</h3>
           <p><a ng-href="#"></a></p>

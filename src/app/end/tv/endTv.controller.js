@@ -6,7 +6,7 @@
     .controller('EndTvController',EndTvController);
 
   /** @ngInject */
-  function EndTvController($log,$modal, EndTvService) {
+  function EndTvController($log,$modal, EndTvService,EndMainService) {
     var vm = this;
     vm.initpage ={
       'size':20,
@@ -16,14 +16,12 @@
     EndTvService.getTvs(vm.initpage).then(function(result){
 
       vm.tvs = result.data.data[0];
-      console.log(vm.tvs);
       vm.datas = vm.tvs.resultList;
       vm.page ={
         "currentPage":vm.tvs.currentPage,
         "totalPage":vm.tvs.totalPage,
         "totalResult":vm.tvs.totalResult
       };
-
     },function(err){
       $log.error(err.status +':'+ err.statusText);
     });
@@ -44,7 +42,6 @@
       };
       EndTvService.getTvs(vm.pageData).then(function(result){
         vm.tvs = result.data.data[0];
-        console.log(vm.tvs);
         vm.datas = vm.tvs.resultList;
         vm.page ={
           "currentPage":vm.tvs.currentPage,
@@ -55,7 +52,40 @@
         $log.error(err.status +':'+ err.statusText);
       });
     };
+    //查看资源列表
+    vm.dataType;
+    vm.change = function(data){
+      vm.dataType = data;
+      vm.typeData = {
+        'type':data,
+        'number':10,
+        'tip':''
+      };
+      EndMainService.getEndMainList(vm.typeData).then(function(result){
+        vm.resources = result.data.data;
+      },function(err){
+        $log.error(err.status +":"+ err.statusText);
+      })
+    };
+    //删除
+    vm.delete = function(id){
+      vm.typeData = {
+        'type':vm.dataType,
+        'number':10,
+        'tip':''
+      };
+      EndMainService.delete(id).then(function(result){
+        EndMainService.getEndMainList(vm.typeData).then(function(result){
+          vm.resources = result.data.data;
+        },function(err){
+          $log.error(err.status +":"+ err.statusText);
+        })
+      },function(err){
+        $log.error(err.status +":"+err.statusText);
+      });
+    };
 
+    //复制
     vm.copy = function(data){
       var modalInstance = $modal.open({
         templateUrl:'copy.html',
@@ -70,8 +100,8 @@
         }
       });
 
-      modalInstance.result.then(function (selectItem){
-        vm.selected = selectItem;
+      modalInstance.result.then(function (data){
+        vm.selected = data;
       },function(){
         $log.info("Modal dismissed at:" + new Date());
       })
@@ -90,9 +120,8 @@
     vm.ok = function(){
       vm.data ={
         'movieId':vm.movie.id,
-        'recommand':vm.movie.tip
+        'recommand':vm.movie.recommand
       };
-      console.log(vm.data);
       EndTvService.save(vm.data).then(function(result){
         vm.data = result.data;
       },function(err){

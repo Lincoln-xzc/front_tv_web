@@ -26,6 +26,7 @@
         <th>不点赞数</th>
         <th>上传人</th>
         <th>类别</th>
+        <th>种类</th>
         <th>操作</th>
       </tr>
     </thead>
@@ -42,7 +43,8 @@
         <td>12434</td>
         <td>{{tv.staror}}</td>
         <td>{{tv.type}}</td>
-        <td><button class="btn btn-success btn-xs" style="margin-right: 5px;" ng-click="endTv.copy(tv)">复制</button><button class="btn btn-warning btn-xs">删除</button></td>
+        <td>{{tv.tip}}</td>
+        <td><button class="btn btn-success btn-xs" style="margin-right: 5px;" ng-click="endTv.copy(tv)">复制</button><button class="btn btn-warning btn-xs">编辑</button> <button class="btn btn-danger btn-xs">删除</button></td>
       </tr>
     </tbody>
   </table>
@@ -109,17 +111,18 @@
           </div>
           <div class="col-sm-10 col-md-10">
             <label class="control-label">
-              <select class="form-control" ng-model="copy.movie.tip">
-                <option value="carouselBg">首页轮播图</option>
-                <option value="guessLike">猜你喜欢</option>
-                <option value="currentHot">近期热门</option>
-                <option value="classicRetro">经典怀旧</option>
-                <option value="mainTv">首页电视剧</option>
-                <option value="mainMovie">首页电影</option>
-                <option value="mainArt">首页综艺</option>
-                <option value="mainAnimation">首页动漫</option>
-                <option value="mainTeach">首页技术</option>
-                <option value="mainFitness">首页养生</option>
+              <select class="form-control" ng-model="copy.movie.recommand">
+                <option value="carouselTv">轮播图片</option>
+                <option value="hotTv">同步热播</option>
+                <option value="likeTv">为您精选</option>
+                <option value="globalTv">全球剧场</option>
+                <option value="japanaTv">最新日韩同步</option>
+                <option value="americanTv">最新美剧同步</option>
+                <option value="hkongTv">最新港台同步</option>
+                <option value="loveTv">爱情热播剧</option>
+                <option value="artTv">武侠热播剧</option>
+                <option value="copTv">警匪热播剧</option>
+                <option value="thrillerTv">惊悚热播剧</option>
               </select>
             </label>
           </div>

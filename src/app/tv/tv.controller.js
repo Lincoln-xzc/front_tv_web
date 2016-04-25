@@ -10,17 +10,60 @@
     var vm = this;
 
     vm.carouselData = {
-      'type':'carouselBg',
-      'number':3
+      'type':'carouselTv',
+      'number':3,
+      'tip':''
     };
 
-    vm.oldData = {
-      'type':'oldMovie',
-      'number':6
+    vm.hotData = {
+      'type':'hotTv',
+      'number':6,
+      'tip':''
+    };
+    vm.likeData = {
+      'type':'likeTv',
+      'number':9,
+      'tip':''
+    };
+    vm.globalData = {
+      'type':'globalTv',
+      'number':9,
+      'tip':''
+    };
+    vm.japanData = {
+      'type':'japanaTv',
+      'number':9,
+      'tip':''
+    };
+    vm.americanData = {
+      'type':'americanTv',
+      'number':9,
+      'tip':''
+    };
+    vm.hkongData = {
+      'type':'hkongTv',
+      'number':9,
+      'tip':''
     };
     vm.loveData = {
-      'type':'likeMovie',
-      'number':9
+      'type':'loveTv',
+      'number':9,
+      'tip':''
+    };
+    vm.artData = {
+      'type':'artTv',
+      'number':9,
+      'tip':''
+    };
+    vm.copData = {
+      'type':'copTv',
+      'number':9,
+      'tip':''
+    };
+    vm.thrillerData = {
+      'type':'thrillerTv',
+      'number':9,
+      'tip':''
     };
     /*获取轮播数据*/
     MainService.getCarouse(vm.carouselData).then(function(result){
@@ -30,33 +73,69 @@
     });
 
     /*获取热播数据*/
-    TvService.getHots().then(function(result){
-      vm.hot_tvs = result.data;
+    MainService.getCarouse(vm.hotData).then(function(result){
+      vm.hot_tvs = result.data.data;
+
     },function(err){
       $log.error(err.statusText +':'+ err.status);
     });
 
     /*获取精选数据*/
-    TvService.getSelects().then(function(result){
-      vm.selects = result.data;
+    MainService.getCarouse(vm.likeData).then(function(result){
+      vm.like_tvs = result.data.data;
     },function(err){
       $log.error(err.statusText +':'+ err.status);
     });
 
-    /*精选电影*/
-    MainService.getOld(vm.oldData).then(function(result){
-      vm.choiceMovies = result.data.data;
+    /*全球剧场*/
+    MainService.getCarouse(vm.globalData).then(function(result){
+      vm.global_tvs = result.data.data;
     },function(err){
       $log.error(err.statusText + ':'+err.status);
     });
 
-    /*爱情剧*/
-    TvService.getLove(vm.loveData).then(function(result){
-      vm.tvDatas = result.data.data;
+    /*日韩剧场*/
+    MainService.getCarouse(vm.japanData).then(function(result){
+      vm.japan_tvs = result.data.data;
     },function(err){
-      $log.error(err.status + ':' +err.statusText);
+      $log.error(err.statusText + ':'+err.status);
     });
-
+    /*美剧剧场*/
+    MainService.getCarouse(vm.americanData).then(function(result){
+      vm.american_tvs = result.data.data;
+    },function(err){
+      $log.error(err.statusText + ':'+err.status);
+    });
+    /*日韩剧场*/
+    MainService.getCarouse(vm.hkongData).then(function(result){
+      vm.hkong_tvs = result.data.data;
+    },function(err){
+      $log.error(err.statusText + ':'+err.status);
+    });
+    /*爱情剧*/
+    MainService.getCarouse(vm.loveData).then(function(result){
+      vm.love_tvs = result.data.data;
+    },function(err){
+      $log.error(err.statusText + ':'+err.status);
+    });
+    /*武侠剧*/
+    MainService.getCarouse(vm.artData).then(function(result){
+      vm.art_tvs = result.data.data;
+    },function(err){
+      $log.error(err.statusText + ':'+err.status);
+    });
+    /*警匪*/
+    MainService.getCarouse(vm.copData).then(function(result){
+      vm.cop_tvs = result.data.data;
+    },function(err){
+      $log.error(err.statusText + ':'+err.status);
+    });
+    /*惊悚剧场*/
+    MainService.getCarouse(vm.thrillerData).then(function(result){
+      vm.thriller_tvs = result.data.data;
+    },function(err){
+      $log.error(err.statusText + ':'+err.status);
+    });
   } //End of MainController
 
 })();

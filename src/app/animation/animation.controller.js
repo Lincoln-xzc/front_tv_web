@@ -10,36 +10,44 @@
     var vm = this;
 
     vm.animationCarousel={
-      'type':'animationCarousel',
-      'number':7
+      'type':'carouselAnimation',
+      'number':7,
+      'tip':''
     };
     vm.newAnimationData = {
-      'type':'newAnimation',
-      'number':12
+      'type':'japanNewAnimation',
+      'number':12,
+      'tip':''
     };
     vm.popularAnimationData = {
       'type': 'popularAnimation',
-      'number':9
+      'number':9,
+      'tip':''
     };
     vm.japanAnimationData = {
-      'type':'popularAnimation',
-      'number':12
+      'type':'japanAnimation',
+      'number':12,
+      'tip':''
     };
     vm.chinaAnimationData = {
-      'type':'popularAnimation',
-      'number':12
+      'type':'chinaAnimation',
+      'number':12,
+      'tip':''
     };
     vm.famousAnimationData = {
-      'type':'popularAnimation',
-      'number':6
+      'type':'famousAnimation',
+      'number':6,
+      'tip':''
     };
     vm.movieAnimationData = {
-      'type':'popularAnimation',
-      'number':12
+      'type':'movieAnimation',
+      'number':12,
+      'tip':''
     };
     vm.classicAnimationData = {
-      'type':'popularAnimation',
-      'number':12
+      'type':'classficAnimation',
+      'number':12,
+      'tip':''
     };
     /*头部轮播*/
     AnimationService.getCarousels(vm.animationCarousel).then(function(result){
@@ -78,6 +86,7 @@
     });
     AnimationService.getMovieAnimation(vm.movieAnimationData).then(function(result){
       vm.movieAnimation = result.data.data;
+      console.log(vm.movieAnimation);
     },function(err){
       $log.error(err.status + ':'+err.statusText);
     });

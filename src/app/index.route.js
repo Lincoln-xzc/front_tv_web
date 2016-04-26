@@ -183,7 +183,7 @@
       .state('end.animation', {
         url:'endAnimation',
         templateUrl:'app/end/animation/animation.html',
-        controller:'EndAniamtionController',
+        controller:'EndAnimationController',
         controllerAs:'endAnimation'
       })
       .state('end.animationList',{
@@ -199,7 +199,7 @@
         controllerAs:'endFitness'
       })
       .state('end.fitnessList',{
-        url:'tvList',
+        url:'fitnessList',
         templateUrl:'app/end/fitness/fitness_list.html',
         controller:'EndFitnessController',
         controllerAs:'endFitnessList'

@@ -1,69 +1,43 @@
-<div class="avatar-body">
-  <!-- Upload image and data -->
-  <div class="avatar-upload">
-    <input class="avatar-src" name="avatar_src" type="hidden">
-    <input class="avatar-data" name="avatar_data" type="hidden" value="{&quot;x&quot;:-9.852713986342232,&quot;y&quot;:-9.852713986342254,&quot;height&quot;:147.7054279726845,&quot;width&quot;:147.7054279726845,&quot;rotate&quot;:0}">
-    <label for="avatarInput">Local upload</label>
-    <input class="avatar-input" id="avatarInput" name="avatar_file" type="file">
-  </div>
-
-  <!-- Crop and preview -->
-  <div class="row">
-    <div class="col-md-9">
-      <div class="avatar-wrapper">
-        <img src="../assets/images/gulp.png" class="cropper-hidden">
-        <div class="cropper-container cropper-bg" style="width: 624px; height: 364px;">
-          <img src="../assets/images/gulp.png" class="" style="width: 252.351px; height: 252.351px; margin-left: 185.825px; margin-top: 55.8245px; transform: none;">
-          <div class="cropper-canvas cropper-modal cropper-move"></div>
-          <div class="cropper-cropbox" style="width: 291.2px; height: 291.2px; left: 166.4px; top: 36.4px;">
-                          <span class="cropper-viewer">
-                            <img src="../assets/images/gulp.png" style="width: 252.351px; height: 252.351px; margin-left: 19.4245px; margin-top: 19.4245px; transform: none;">
-                          </span>
-            <span class="cropper-dashed dashed-h"></span>
-            <span class="cropper-dashed dashed-v"></span>
-            <span class="cropper-face" data-directive="all"></span>
-            <span class="cropper-line line-e" data-directive="e"></span>
-            <span class="cropper-line line-n" data-directive="n"></span>
-            <span class="cropper-line line-w" data-directive="w"></span>
-            <span class="cropper-line line-s" data-directive="s"></span>
-            <span class="cropper-point point-e" data-directive="e"></span>
-            <span class="cropper-point point-n" data-directive="n"></span>
-            <span class="cropper-point point-w" data-directive="w"></span>
-            <span class="cropper-point point-s" data-directive="s"></span>
-            <span class="cropper-point point-ne" data-directive="ne"></span>
-            <span class="cropper-point point-nw" data-directive="nw"></span>
-            <span class="cropper-point point-sw" data-directive="sw"></span>
-            <span class="cropper-point point-se" data-directive="se"></span>
-          </div>
-        </div>
+<div class="container">
+  <div class="row" style="height: 305px;margin-top: 60px;">
+    <h5>上传视频</h5>
+    <form class="form offset-top" novalidate>
+      <div class="form-group">
+        <label class="control-label">上传：<input type="file"class="form-control" name="file" ng-model="center.video.file" style="display: inline" ></label>
       </div>
-    </div>
-    <div class="col-md-3">
-      <div class="avatar-preview preview-lg" style="width: 148px; height: 148px;">
-        <img src="../assets/images/gulp.png" style="display: block; width: 126.522px; min-width: 0px !important; min-height: 0px !important; max-width: none !important; max-height: none !important; height: 126.522px; margin-left: 9.73895px; margin-top: 9.73895px; transform: none;">
+      <div class="form-group">
+        <label class="control-label">标题：<input type="text"class="form-control" name="name" ng-model="center.video.name" size="30"></label>
       </div>
-      <div class="avatar-preview preview-md" style="width: 78px; height: 78px;"><img src="../assets/images/gulp.png" style="display: block; width: 65.8608px; min-width: 0px !important; min-height: 0px !important; max-width: none !important; max-height: none !important; height: 65.8608px; margin-left: 5.06959px; margin-top: 5.06959px; transform: none;"></div>
-      <div class="avatar-preview preview-sm" style="width: 39px; height: 39px;"><img src="../assets/images/gulp.png" style="display: block; width: 32.0638px; min-width: 0px !important; min-height: 0px !important; max-width: none !important; max-height: none !important; height: 32.0638px; margin-left: 2.46809px; margin-top: 2.46809px; transform: none;"></div>
-    </div>
-  </div>
-
-  <div class="row avatar-btns">
-    <div class="col-md-9">
-      <div class="btn-group">
-        <button class="btn btn-primary" data-method="rotate" data-option="-90" type="button" title="Rotate -90 degrees">Rotate Left</button>
-        <button class="btn btn-primary" data-method="rotate" data-option="-15" type="button">-15deg</button>
-        <button class="btn btn-primary" data-method="rotate" data-option="-30" type="button">-30deg</button>
-        <button class="btn btn-primary" data-method="rotate" data-option="-45" type="button">-45deg</button>
+      <div class="form-group">
+        <label class="control-label">简介：<textarea class="form-control" ng-model="center.video.shortmessage" cols="32"></textarea></label>
       </div>
-      <div class="btn-group">
-        <button class="btn btn-primary" data-method="rotate" data-option="90" type="button" title="Rotate 90 degrees">Rotate Right</button>
-        <button class="btn btn-primary" data-method="rotate" data-option="15" type="button">15deg</button>
-        <button class="btn btn-primary" data-method="rotate" data-option="30" type="button">30deg</button>
-        <button class="btn btn-primary" data-method="rotate" data-option="45" type="button">45deg</button>
+      <div class="form-group">
+        <label class="control-label">分类：
+          <select class="form-control" ng-model="center.video.type">
+            <option value="tv">电视剧</option>
+            <option value="movie">电影</option>
+            <option value="art">综艺</option>
+            <option value="animation">动漫</option>
+            <option value="fitness">健康</option>
+            <option value="teach">教育</option>
+          </select>
+        </label>
       </div>
-    </div>
-    <div class="col-md-3">
-      <button class="btn btn-primary btn-block avatar-save" type="submit">Done</button>
-    </div>
+      <div class="form-group">
+        <label class="control-label">地区：
+          <select class="form-control" ng-model="center.video.area">
+            <option value="china">大陆</option>
+            <option value="hkong">香港</option>
+            <option value="taiwan">台湾</option>
+            <option value="korea">韩国</option>
+            <option value="american">美国</option>
+            <option value="japan">日本</option>
+          </select>
+        </label>
+      </div>
+      <div class="form-group">
+        <label class="control-label">标签：<input type="text"class="form-control" name="name" ng-model="center.video.tip" size="30"></label>
+      </div>
+    </form>
   </div>
 </div>

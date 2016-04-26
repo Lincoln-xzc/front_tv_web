@@ -1,6 +1,6 @@
 <div class="row all-search">
   <div class="col-sm-4 col-md-4">
-    <h4>电影列表管理</h4>
+    <h4>综艺列表管理</h4>
   </div>
   <div class="col-sm-4 col-md-4 pull-right">
     <div class="input-group">
@@ -14,46 +14,47 @@
 <div class="row offset-top">
   <table class="table table-responsive table-hover">
     <thead>
-      <tr>
-        <th>选择</th>
-        <th>编号</th>
-        <th>影名</th>
-        <th>上映时间</th>
-        <th>热门程度</th>
-        <th>上传时间</th>
-        <th>评论数</th>
-        <th>点赞数</th>
-        <th>不点赞数</th>
-        <th>上传人</th>
-        <th>类别</th>
-        <th>种类</th>
-        <th>操作</th>
-      </tr>
+    <tr>
+      <th>选择</th>
+      <th>编号</th>
+      <th>影名</th>
+      <th>上映时间</th>
+      <th>热门程度</th>
+      <th>上传时间</th>
+      <th>评论数</th>
+      <th>点赞数</th>
+      <th>不点赞数</th>
+      <th>上传人</th>
+      <th>类别</th>
+      <th>种类</th>
+      <th>操作</th>
+    </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="movie in endMovie.datas">
-        <td><input type="checkbox" name="" ng-checked="endMovie.checkValue"></td>
-        <td>{{$index+1}}</td>
-        <td>{{movie.name}}</td>
-        <td>{{movie.createData}}</td>
-        <td>热门</td>
-        <td>{{movie.createData}}</td>
-        <td>1023248</td>
-        <td>2342342</td>
-        <td>{{movie.staror}}</td>
-        <td>{{movie.type}}</td>
-        <td>{{movie.tip}}</td>
-        <td><button class="btn btn-success btn-xs" style="margin-right: 5px;" ng-click="endMovie.copy(movie)">复制</button><button class="btn btn-warning btn-xs">编辑</button> <button class="btn btn-danger btn-xs">删除</button></td>
-      </tr>
+    <tr ng-repeat="art in endArt.arts">
+      <td><input type="checkbox" name="" ng-checked="endArt.checkValue"></td>
+      <td>{{$index+1}}</td>
+      <td>{{art.name}}</td>
+      <td>{{art.createData}}</td>
+      <td>热门</td>
+      <td>{{art.createData}}</td>
+      <td>{{art.score}}</td>
+      <td>2342342</td>
+      <td>12434</td>
+      <td>{{art.staror}}</td>
+      <td>{{art.type}}</td>
+      <td>{{art.tip}}</td>
+      <td><button class="btn btn-success btn-xs" style="margin-right: 5px;" ng-click="endArt.copy(art)">复制</button><button class="btn btn-warning btn-xs">编辑</button> <button class="btn btn-danger btn-xs">删除</button></td>
+    </tr>
     </tbody>
   </table>
   <div class="row">
     <label class="selectAll">
-      <input type="checkbox" name="" ng-model="endMain.check" ng-true-value="'YES'" ng-false-value="'NO'"ng-click="endMain.selectAll()">
+      <input type="checkbox" name="" ng-model="endTv.check" ng-true-value="'YES'" ng-false-value="'NO'"ng-click="endTv.selectAll()">
 
       <span>全选</span>
     </label>
-    <pagination  total-items="endMovie.page.totalResult" items-per-page="20" ng-model="endMovie.page.currentPage" class="pagination-sm pull-right" ng-change="endMovie.changePage()" previous-text="&lsaquo;" next-text="&rsaquo;"></pagination>
+    <pagination  total-items="endArt.page.totalResult" items-per-page="20" ng-model="endArt.page.currentPage" class="pagination-sm pull-right" ng-change="endArt.changePage()" previous-text="&lsaquo;" next-text="&rsaquo;"></pagination>
   </div>
 </div>
 <script type="text/ng-template" id="copy.html">
@@ -111,15 +112,15 @@
           <div class="col-sm-10 col-md-10">
             <label class="control-label">
               <select class="form-control" ng-model="copy.movie.recommand">
-                <option value="upToDateMovie">最新上线</option>
-                <option value="likeMovie">为您精选</option>
-                <option value="chineseMovie">华语电影</option>
-                <option value="comedyMovie">喜剧电影</option>
-                <option value="hotMovie">影院热映</option>
-                <option value="commingMovie">即将上映</option>
-                <option value="artMovie">动作电影</option>
-                <option value="hollywoodMovie">好莱坞电影</option>
-                <option value="cantoneseMovie">粤语电影</option>
+                <option value="carouselArt">轮播图</option>
+                <option value="recommendArt">强档推荐</option>
+                <option value="upToDateArt">最新更新</option>
+                <option value="hotArt">综艺劲爆点</option>
+                <option value="chinaArt">大陆综艺</option>
+                <option value="koreaArt">韩国综艺</option>
+                <option value="hkongArt">港台综艺</option>
+                <option value="gameArt">游戏解说</option>
+                <option value="crosstalkArt">相声之乡</option>
               </select>
             </label>
           </div>

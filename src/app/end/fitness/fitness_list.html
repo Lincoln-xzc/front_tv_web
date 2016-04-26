@@ -6,16 +6,15 @@
         首页排版 <span class="caret"></span>
       </span>
       <ul class="dropdown-menu" role="menu" aria-labelledby="single-button1" style="min-width: 20px;">
-        <li role="menuitem"><a ng-click="endMainList.change('carouselBg')">首页轮播资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('guessLike')">猜你喜欢资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('currentHot')">近期热门资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('classicRetro')">经典怀旧资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainTv')">首页电视剧资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainMovie')">首页电影资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainArt')">首页综艺资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainAnimation')">首页动漫资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainTeach')">首页技术资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainFitness')">首页养生资源</a></li>
+        <li role="menuitem"><a ng-click="endFitnessList.change('carouselFitness')">首页轮播资源</a></li>
+        <li role="menuitem"><a ng-click="endFitnessList.change('healthFitness')">健康情报站</a></li>
+        <li role="menuitem"><a ng-click="endFitnessList.change('expertFitness')">权威专家</a></li>
+        <li role="menuitem"><a ng-click="endFitnessList.change('medicalFitness')">医疗卫生</a></li>
+        <li role="menuitem"><a ng-click="endFitnessList.change('careFitness')">样式保健</a></li>
+        <li role="menuitem"><a ng-click="endFitnessList.change('slimFitness')">健身塑形</a></li>
+        <li role="menuitem"><a ng-click="endFitnessList.change('childFitness')">儿科诊所</a></li>
+        <li role="menuitem"><a ng-click="endFitnessList.change('oldFitness')">老年健康</a></li>
+        <li role="menuitem"><a ng-click="endFitnessList.change('psyFitness')">心理健康</a></li>
       </ul>
     </div>
   </div>
@@ -39,29 +38,29 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="data in endMainList.datas">
-      <td><input type="checkbox" name="" ng-checked="endMainList.checkValue"></td>
+    <tr ng-repeat="fitness in endFitnessList.resources">
+      <td><input type="checkbox" name="" ng-checked="endFitnessList.checkValue"></td>
       <td>{{$index+1}}</td>
-      <td>{{data.name}}</td>
-      <td>{{data.createData}}</td>
+      <td>{{fitness.name}}</td>
+      <td>{{fitness.createData}}</td>
       <td>热门</td>
-      <td>{{data.createData}}</td>
-      <td>{{data.score}}</td>
+      <td>{{fitness.createData}}</td>
+      <td>{{fitness.score}}</td>
       <td>2342342</td>
       <td>12434</td>
-      <td>{{data.staror}}</td>
-      <td>{{data.type}}</td>
-      <td><button class="btn btn-success btn-xs" style="margin-right: 5px;" ng-click="endMainList.copy(data)">查看</button><button class="btn btn-warning btn-xs" ng-click="endMainList.delete(data.id)">删除</button></td>
+      <td>{{fitness.staror}}</td>
+      <td>{{fitness.type}}</td>
+      <td><button class="btn btn-success btn-xs" style="margin-right: 5px;" ng-click="endFitnessList.copy(fitness)">查看</button><button class="btn btn-warning btn-xs" ng-click="endFitnessList.delete(endFitnessList.id)">删除</button></td>
     </tr>
     </tbody>
   </table>
   <div class="row">
     <label class="selectAll">
-      <input type="checkbox" name="" ng-model="endTv.check" ng-true-value="'YES'" ng-false-value="'NO'"ng-click="endMainList.selectAll()">
+      <input type="checkbox" name="" ng-model="endFitnessList.check" ng-true-value="'YES'" ng-false-value="'NO'"ng-click="endFitnessList.selectAll()">
 
       <span>全选</span>
     </label>
-    <pagination  total-items="endMainList.page.totalResult" items-per-page="20" ng-model="endMainList.page.currentPage" class="pagination-sm pull-right" ng-change="endMainList.changePage()" previous-text="&lsaquo;" next-text="&rsaquo;"></pagination>
+    <pagination  total-items="endFitnessList.page.totalResult" items-per-page="20" ng-model="endFitnessList.page.currentPage" class="pagination-sm pull-right" ng-change="endFitnessList.changePage()" previous-text="&lsaquo;" next-text="&rsaquo;"></pagination>
   </div>
 </div>
 <script type="text/ng-template" id="copy.html">

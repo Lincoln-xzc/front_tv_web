@@ -12,21 +12,7 @@
   function TeachService($q,$http){
     var teachService = [];
 
-    teachService.getLikes = function(data){
-      return $http({
-        method:"POST",
-        url:"http://localhost:8080/end_tv_web/movieAction/getMovies",
-        data:data
-      });
-    };
-    teachService.getEducations = function(data){
-      return $http({
-        method:"POST",
-        url:"http://localhost:8080/end_tv_web/movieAction/getMovies",
-        data:data
-      });
-    };
-    teachService.getLives = function(data){
+    teachService.getTeaches = function(data){
       return $http({
         method:"POST",
         url:"http://localhost:8080/end_tv_web/movieAction/getMovies",

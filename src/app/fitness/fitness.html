@@ -48,7 +48,7 @@
         <h3>权威专家</h3>
       </div>
     </div>
-    <div class="col-sm-3 col-md-2" ng-repeat="edu in fit.educations">
+    <div class="col-sm-3 col-md-2" ng-repeat="edu in fit.expertFitness">
       <div class="thumbnail">
         <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{edu.imgId}}">
         <div class="caption">
@@ -74,7 +74,7 @@
         <h3>养生保健</h3>
       </div>
     </div>
-    <div tv-pane tv-datas="fit.medicals"></div>
+    <div tv-pane tv-datas="fit.careFitness"></div>
   </div>
   <div class="row offset-top">
     <div class="col-xs-12 col-md-12 col-sm-12">
@@ -83,7 +83,7 @@
         <h3>健身塑形</h3>
       </div>
     </div>
-    <div tv-pane tv-datas="fit.medicals"></div>
+    <div tv-pane tv-datas="fit.slimFitness"></div>
   </div>
   <div class="row offset-top">
     <div class="col-xs-12 col-md-12 col-sm-12">
@@ -92,7 +92,7 @@
         <h3>儿科诊所</h3>
       </div>
     </div>
-    <div tv-pane tv-datas="fit.medicals"></div>
+    <div tv-pane tv-datas="fit.childFitness"></div>
   </div>
   <div class="row offset-top">
     <div class="col-xs-12 col-md-12 col-sm-12">
@@ -101,7 +101,7 @@
         <h3>老年健康</h3>
       </div>
     </div>
-    <div tv-pane tv-datas="fit.medicals"></div>
+    <div tv-pane tv-datas="fit.oldFitness"></div>
   </div>
   <div class="row offset-top">
     <div class="col-xs-12 col-md-12 col-sm-12">
@@ -110,7 +110,7 @@
         <h3>心理健康</h3>
       </div>
     </div>
-    <div class="col-sm-3 col-md-2" ng-repeat="edu in fit.educations">
+    <div class="col-sm-3 col-md-2" ng-repeat="edu in fit.psyFitness">
       <div class="thumbnail">
         <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{edu.imgId}}">
         <div class="caption">

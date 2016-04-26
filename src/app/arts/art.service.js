@@ -22,23 +22,7 @@
       d.resolve({'data':arts});
       return d.promise;*/
     };
-    artService.getShows = function(data){
-      return $http({
-        method:"POST",
-        url:"http://localhost:8080/end_tv_web/movieAction/getMovies",
-        data:data
-      });
-    };
-    artService.getNews = function(data){
-      return $http({
-        method:"POST",
-        url:"http://localhost:8080/end_tv_web/movieAction/getMovies",
-        data:data
-      });
-     /* var d = $q.defer();
-      d.resolve({'data':news});
-      return d.promise;*/
-    }
+
 
 
     return artService;

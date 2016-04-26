@@ -21,7 +21,7 @@
     return directive;
 
     /** @ngInject */
-    function NavbarController($modal,$scope,$log,$state) {
+    function NavbarController($modal,$scope,$log,$cookieStore, $state) {
       var vm = this;
 
       //搜索
@@ -44,12 +44,13 @@
 
        modalInstance.result.then(function (data,$log) {
            vm.user = data;
-         console.log(vm.user);
+           $cookieStore.put("user",data);
+
          }, function () {
               $log.info('Modal dismissed at: ' + new Date());
        });
     };
-
+      vm.user = $cookieStore.get('user');
       //注册弹出框
       vm.create = function() {
 
@@ -68,6 +69,12 @@
           $log.info('Modal dismissed at: ' + new Date());
         });
       };
+
+      //退出
+      vm.logout = function(){
+        $cookieStore.remove("user");
+        vm.user= "";
+      }
     }
   }
 

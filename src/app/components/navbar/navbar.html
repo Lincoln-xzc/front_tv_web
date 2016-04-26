@@ -46,9 +46,9 @@
           <ul class="dropdown-menu" role="menu" aria-labelledby="simple-btn-keyboard-nav" style="min-width: 30px;margin-right: -40px;">
             <li role="menuitem"><a ui-sref="nav.personalCenter">个人中心</a></li>
             <li role="menuitem"><a href="#">我的关注</a></li>
-            <li role="menuitem"><a href="#">上传</a></li>
+            <li role="menuitem"><a ui-sref="nav.upload">上传</a></li>
             <li class="divider"></li>
-            <li role="menuitem"><a href="#">退出</a></li>
+            <li role="menuitem"><a ng-click="vm.logout()">退出</a></li>
           </ul>
         </div></li>
         <script type="text/ng-template" id="createModal.html">

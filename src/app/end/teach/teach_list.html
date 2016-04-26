@@ -6,16 +6,14 @@
         首页排版 <span class="caret"></span>
       </span>
       <ul class="dropdown-menu" role="menu" aria-labelledby="single-button1" style="min-width: 20px;">
-        <li role="menuitem"><a ng-click="endMainList.change('carouselBg')">首页轮播资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('guessLike')">猜你喜欢资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('currentHot')">近期热门资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('classicRetro')">经典怀旧资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainTv')">首页电视剧资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainMovie')">首页电影资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainArt')">首页综艺资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainAnimation')">首页动漫资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainTeach')">首页技术资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainFitness')">首页养生资源</a></li>
+        <li role="menuitem"><a ng-click="endTeachList.change('likeTeach')">猜你喜欢</a></li>
+        <li role="menuitem"><a ng-click="endTeachList.change('primaryTeach')">中小学教育</a></li>
+        <li role="menuitem"><a ng-click="endTeachList.change('enlightenTeach')">启蒙教育</a></li>
+        <li role="menuitem"><a ng-click="endTeachList.change('popularTeach')">热门精选</a></li>
+        <li role="menuitem"><a ng-click="endTeachList.change('foreignTeach')">外语学习</a></li>
+        <li role="menuitem"><a ng-click="endTeachList.change('vocationnalTeach')">职业培训</a></li>
+        <li role="menuitem"><a ng-click="endTeachList.change('academicTeach')">学历教育</a></li>
+        <li role="menuitem"><a ng-click="endTeachList.change('lifeTeach')">生活课堂</a></li>
       </ul>
     </div>
   </div>
@@ -39,29 +37,29 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="data in endMainList.datas">
-      <td><input type="checkbox" name="" ng-checked="endMainList.checkValue"></td>
+    <tr ng-repeat="resource in endTeachList.resources">
+      <td><input type="checkbox" name="" ng-checked="endTeachList.checkValue"></td>
       <td>{{$index+1}}</td>
-      <td>{{data.name}}</td>
-      <td>{{data.createData}}</td>
+      <td>{{resource.name}}</td>
+      <td>{{resource.createData}}</td>
       <td>热门</td>
-      <td>{{data.createData}}</td>
-      <td>{{data.score}}</td>
+      <td>{{resource.createData}}</td>
+      <td>{{resource.score}}</td>
       <td>2342342</td>
       <td>12434</td>
-      <td>{{data.staror}}</td>
-      <td>{{data.type}}</td>
-      <td><button class="btn btn-success btn-xs" style="margin-right: 5px;" ng-click="endMainList.copy(data)">查看</button><button class="btn btn-warning btn-xs" ng-click="endMainList.delete(data.id)">删除</button></td>
+      <td>{{resource.staror}}</td>
+      <td>{{resource.type}}</td>
+      <td><button class="btn btn-success btn-xs" style="margin-right: 5px;" ng-click="endTeachList.copy(resource)">查看</button><button class="btn btn-warning btn-xs" ng-click="endTeachList.delete(resource.id)">删除</button></td>
     </tr>
     </tbody>
   </table>
   <div class="row">
     <label class="selectAll">
-      <input type="checkbox" name="" ng-model="endTv.check" ng-true-value="'YES'" ng-false-value="'NO'"ng-click="endMainList.selectAll()">
+      <input type="checkbox" name="" ng-model="endTeachList.check" ng-true-value="'YES'" ng-false-value="'NO'"ng-click="endTeachList.selectAll()">
 
       <span>全选</span>
     </label>
-    <pagination  total-items="endMainList.page.totalResult" items-per-page="20" ng-model="endMainList.page.currentPage" class="pagination-sm pull-right" ng-change="endMainList.changePage()" previous-text="&lsaquo;" next-text="&rsaquo;"></pagination>
+    <pagination  total-items="endTeachList.page.totalResult" items-per-page="20" ng-model="endTeachList.page.currentPage" class="pagination-sm pull-right" ng-change="endTeachList.changePage()" previous-text="&lsaquo;" next-text="&rsaquo;"></pagination>
   </div>
 </div>
 <script type="text/ng-template" id="copy.html">

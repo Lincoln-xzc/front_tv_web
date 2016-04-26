@@ -6,16 +6,14 @@
         首页排版 <span class="caret"></span>
       </span>
       <ul class="dropdown-menu" role="menu" aria-labelledby="single-button1" style="min-width: 20px;">
-        <li role="menuitem"><a ng-click="endMainList.change('carouselBg')">首页轮播资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('guessLike')">猜你喜欢资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('currentHot')">近期热门资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('classicRetro')">经典怀旧资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainTv')">首页电视剧资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainMovie')">首页电影资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainArt')">首页综艺资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainAnimation')">首页动漫资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainTeach')">首页技术资源</a></li>
-        <li role="menuitem"><a ng-click="endMainList.change('mainFitness')">首页养生资源</a></li>
+        <li role="menuitem"><a ng-click="endAnimationList.change('carouselAnimation')">首页轮播资源</a></li>
+        <li role="menuitem"><a ng-click="endAnimationList.change('japanNewAnimation')">日漫新番</a></li>
+        <li role="menuitem"><a ng-click="endAnimationList.change('popularAnimation')">人气风标</a></li>
+        <li role="menuitem"><a ng-click="endAnimationList.change('japanAnimation')">日本动漫</a></li>
+        <li role="menuitem"><a ng-click="endAnimationList.change('chinaAnimation')">国内动漫</a></li>
+        <li role="menuitem"><a ng-click="endAnimationList.change('famousAnimation')">名气之作</a></li>
+        <li role="menuitem"><a ng-click="endAnimationList.change('movieAnimatin')">剧场版</a></li>
+        <li role="menuitem"><a ng-click="endAnimationList.change('classficAnimation')">经典专区</a></li>
       </ul>
     </div>
   </div>
@@ -39,29 +37,29 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="data in endMainList.datas">
-      <td><input type="checkbox" name="" ng-checked="endMainList.checkValue"></td>
+    <tr ng-repeat="animation in endAnimationList.resources">
+      <td><input type="checkbox" name="" ng-checked="endAnimationList.checkValue"></td>
       <td>{{$index+1}}</td>
-      <td>{{data.name}}</td>
-      <td>{{data.createData}}</td>
+      <td>{{animation.name}}</td>
+      <td>{{animation.createData}}</td>
       <td>热门</td>
-      <td>{{data.createData}}</td>
-      <td>{{data.score}}</td>
+      <td>{{animation.createData}}</td>
+      <td>{{animation.score}}</td>
       <td>2342342</td>
       <td>12434</td>
-      <td>{{data.staror}}</td>
-      <td>{{data.type}}</td>
-      <td><button class="btn btn-success btn-xs" style="margin-right: 5px;" ng-click="endMainList.copy(data)">查看</button><button class="btn btn-warning btn-xs" ng-click="endMainList.delete(data.id)">删除</button></td>
+      <td>{{animation.staror}}</td>
+      <td>{{animation.type}}</td>
+      <td><button class="btn btn-success btn-xs" style="margin-right: 5px;" ng-click="endAnimationList.copy(animation)">查看</button><button class="btn btn-warning btn-xs" ng-click="endAnimationList.delete(animation.id)">删除</button></td>
     </tr>
     </tbody>
   </table>
   <div class="row">
     <label class="selectAll">
-      <input type="checkbox" name="" ng-model="endTv.check" ng-true-value="'YES'" ng-false-value="'NO'"ng-click="endMainList.selectAll()">
+      <input type="checkbox" name="" ng-model="endAnimationList.check" ng-true-value="'YES'" ng-false-value="'NO'"ng-click="endAnimationList.selectAll()">
 
       <span>全选</span>
     </label>
-    <pagination  total-items="endMainList.page.totalResult" items-per-page="20" ng-model="endMainList.page.currentPage" class="pagination-sm pull-right" ng-change="endMainList.changePage()" previous-text="&lsaquo;" next-text="&rsaquo;"></pagination>
+    <pagination  total-items="endAnimationList.page.totalResult" items-per-page="20" ng-model="endAnimationList.page.currentPage" class="pagination-sm pull-right" ng-change="endAnimationList.changePage()" previous-text="&lsaquo;" next-text="&rsaquo;"></pagination>
   </div>
 </div>
 <script type="text/ng-template" id="copy.html">

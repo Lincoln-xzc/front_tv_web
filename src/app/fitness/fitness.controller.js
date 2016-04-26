@@ -10,20 +10,49 @@
     var vm = this;
 
     vm.fitnessCarousel = {
-      'type':'fitnessCarousel',
-      'number':7
+      'type':'carouselFitness',
+      'number':7,
+      'tip':''
     };
     vm.healthData = {
-      'type': 'fitness',
-      'number':9
+      'type': 'healthFitness',
+      'number':9,
+      'tip':''
     };
-    vm.educationData = {
-      'type': 'fitness',
-      'number':6
+    vm.expertData = {
+      'type': 'expertFitness',
+      'number':9,
+      'tip':''
     };
     vm.medicalData = {
-      'type':'fitness',
-      'number':9
+      'type':'medicalFitness',
+      'number':9,
+      'tip':''
+    };
+    vm.careData = {
+      'type': 'careFitness',
+      'number':6,
+      'tip':''
+    };
+    vm.slimData = {
+      'type': 'slimFitness',
+      'number':6,
+      'tip':''
+    };
+    vm.childData = {
+      'type': 'childFitness',
+      'number':6,
+      'tip':''
+    };
+    vm.oldData = {
+      'type': 'oldFitness',
+      'number':6,
+      'tip':''
+    };
+    vm.psyData = {
+      'type': 'psyFitness',
+      'number':6,
+      'tip':''
     };
     FitnessService.getCarouse(vm.fitnessCarousel).then(function(result){
      vm.slides = result.data.data;
@@ -37,8 +66,8 @@
       $log.error(err.statusText+':'+err.status);
     });
 
-    FitnessService.getEducation(vm.educationData).then(function(result){
-      vm.educations = result.data.data;
+    FitnessService.getHealth(vm.expertData).then(function(result){
+      vm.expertFitness = result.data.data;
     },function(err){
       $log.error(err.statusText+':'+err.status);
     });
@@ -48,6 +77,38 @@
     },function(err){
       $log.error(err.statusText+':'+err.status);
     });
+
+    FitnessService.getMedical(vm.careData).then(function(result){
+      vm.careFitness = result.data.data;
+    },function(err){
+      $log.error(err.statusText+':'+err.status);
+    });
+
+    FitnessService.getMedical(vm.slimData).then(function(result){
+      vm.slimFitness = result.data.data;
+    },function(err){
+      $log.error(err.statusText+':'+err.status);
+    });
+
+    FitnessService.getMedical(vm.childData).then(function(result){
+      vm.childFitness = result.data.data;
+    },function(err){
+      $log.error(err.statusText+':'+err.status);
+    });
+
+    FitnessService.getMedical(vm.oldData).then(function(result){
+      vm.oldFitness = result.data.data;
+    },function(err){
+      $log.error(err.statusText+':'+err.status);
+    });
+
+    FitnessService.getEducation(vm.psyData).then(function(result){
+      vm.psyFitness = result.data.data;
+    },function(err){
+      $log.error(err.statusText+':'+err.status);
+    });
+
+
 
   } //End of MainController
 

@@ -70,7 +70,7 @@
             <button class="btn btn-link" ui-sref="nav.artsSort">更多></button>
         </div>
     </div>
-    <div tv-pane tv-datas="art.artShows"></div>
+    <div tv-pane tv-datas="art.recommendArt"></div>
   </div>
 
   <div class="row" style="margin-top: 20px;">
@@ -83,7 +83,7 @@
         <button class="btn btn-link">更多></button>
       </div>
     </div>
-    <div class="col-sm-3 col-md-2" ng-repeat="new in art.artNews">
+    <div class="col-sm-3 col-md-2" ng-repeat="new in art.upToDataArt">
       <div class="thumbnail">
         <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{new.imgId}}">
         <div class="caption">
@@ -104,7 +104,7 @@
         <button class="btn btn-link">更多></button>
       </div>
     </div>
-    <div tv-pane tv-datas="art.artShows"></div>
+    <div tv-pane tv-datas="art.hotArt"></div>
   </div>
   <div class="row" style="margin-top: 20px;">
     <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
@@ -116,7 +116,7 @@
         <button class="btn btn-link">更多></button>
       </div>
     </div>
-    <div tv-pane tv-datas="art.artShows"></div>
+    <div tv-pane tv-datas="art.chinaArt"></div>
   </div>
   <div class="row" style="margin-top: 20px;">
     <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
@@ -128,7 +128,7 @@
         <button class="btn btn-link">更多></button>
       </div>
     </div>
-    <div tv-pane tv-datas="art.artShows"></div>
+    <div tv-pane tv-datas="art.koreaArt"></div>
   </div>
   <div class="row" style="margin-top: 20px;">
     <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
@@ -140,7 +140,7 @@
         <button class="btn btn-link">更多></button>
       </div>
     </div>
-    <div tv-pane tv-datas="art.artShows"></div>
+    <div tv-pane tv-datas="art.hkongArt"></div>
   </div>
   <div class="row" style="margin-top: 20px;">
     <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
@@ -152,7 +152,7 @@
         <button class="btn btn-link">更多></button>
       </div>
     </div>
-    <div class="col-sm-3 col-md-2" ng-repeat="new in art.artNews">
+    <div class="col-sm-3 col-md-2" ng-repeat="new in art.gameArt">
       <div class="thumbnail">
         <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{new.imgId}}">
         <div class="caption">
@@ -173,7 +173,7 @@
         <button class="btn btn-link">更多></button>
       </div>
     </div>
-    <div class="col-sm-3 col-md-2" ng-repeat="new in art.artNews">
+    <div class="col-sm-3 col-md-2" ng-repeat="new in art.crosstalkArt">
       <div class="thumbnail">
         <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{new.imgId}}">
         <div class="caption">

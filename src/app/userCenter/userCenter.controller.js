@@ -10,11 +10,12 @@
     .module('frontTvWeb')
     .controller("UserCenterController", UserCenterController);
 
-    function UserCenterController($scope){
+    function UserCenterController($scope, $log, FileUploader){
       var vm = this;
       vm.myImage='';
       vm.myCroppedImage='';
 
+      //头像编辑
       vm.handleFileSelect=function(evt) {
         console.log(evt[0]);
 
@@ -29,7 +30,11 @@
         reader.readAsDataURL(file);
       };
      /* angular.element(document.querySelector("#fileInput")).on('change',handleFileSelect);*/
-    };
 
+      //上传文件
+      vm.uploader = new FileUploader();
+
+
+    };
 })();
 

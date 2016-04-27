@@ -7,6 +7,10 @@
 .basic-message .form-group:nth-of-type(5),{
   margin-left: 2px;
 }
+.my-drop-zone { border: dotted 3px lightgray; width: 600px; height: 260px;margin-left: 50px;margin-top: -20px;}
+.nv-file-over { border: dotted 3px red; width: 600px; } /* Default class applied to drop zones on over */
+.another-file-over-class { border: dotted 3px green;width: 600px; }
+
 .cropArea {
   background: #E4E4E4;
   overflow: hidden;

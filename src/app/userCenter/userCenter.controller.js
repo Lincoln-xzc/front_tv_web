@@ -10,7 +10,7 @@
     .module('frontTvWeb')
     .controller("UserCenterController", UserCenterController);
 
-    function UserCenterController($scope, $log, FileUploader){
+    function UserCenterController($scope, $log, FileUploader, UserCenterService){
       var vm = this;
       vm.myImage='';
       vm.myCroppedImage='';
@@ -30,11 +30,32 @@
         reader.readAsDataURL(file);
       };
      /* angular.element(document.querySelector("#fileInput")).on('change',handleFileSelect);*/
+      vm.open = function($event){
+        vm.status.opened = true;
+      }
+      vm.status = {
+        opened: false
+      }
 
       //上传文件
-      vm.uploader = new FileUploader();
+      var uploader = vm.uploader = new FileUploader();
+      uploader.onCompleteItem = function(fileItem, response, status, headers) {
+        vm.image = response.data;
+        vm.video = {
+          'imgId':vm.image.id,
+          'name':vm.image.name
+        };
+      };
 
-
+      //上传影片
+      vm.submit = function(){
+        console.log(vm.video);
+        UserCenterService.save(vm.video).then(function(result){
+          vm.myVideo = result.data;
+        },function(err){
+          $log.error(err.status +":"+err.statusText);
+        });
+      }
     };
 })();
 

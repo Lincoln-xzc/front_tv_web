@@ -44,7 +44,12 @@ body {
 ul li {
   list-style: none;
 }
-
+.datetime-btn {
+  height: 34px;
+}
+.control-label {
+  font-weight: normal;
+}
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject

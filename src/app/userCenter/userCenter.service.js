@@ -10,9 +10,16 @@
     .service('UserCenterService', UserCenterService);
 
     /*@Inject*/
-    function UserCenterService(){
+    function UserCenterService($http){
       var userCenterService = [];
 
+      userCenterService.save = function(data){
+        return $http({
+          method:'POST',
+          url:'http://localhost:8080/end_tv_web/movieAction/upload',
+          data:data
+        });
+      };
       return userCenterService;
     }
-})
+})();

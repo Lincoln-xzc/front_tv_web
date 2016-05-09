@@ -2,7 +2,9 @@
   <hr>
   <div class="row sort">
     <ul class="list-unstyled list-inline list-underline" ng-repeat="menu in tvSort.menus">
-      <li ng-repeat="data in menu.datas">{{data.title}}</li>
+      <li ng-repeat="data in menu.datas" ng-class="{'url-tip':data.tip ===tvSort.data.tip,'area-tip':data.area == tvSort.data.area,'type-tip':data.type === tvSort.data.type,'date-tip':data.date === tvSort.data.releaseDate}">
+        <a ng-click="tvSort.select(data.url,data.tip,data.area,data.type,data.date)">{{data.title}}</a>
+      </li>
     </ul>
   </div>
   <div class="row offset-top query">
@@ -31,9 +33,9 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-tv col-md-tv" ng-repeat="tvsort in tvSort.tvs">
+    <div class="col-sm-tv col-md-tv" ng-repeat="tv in tvSort.datas">
       <div class="tv">
-        <img class="img_tv" ng-src="{{ tvsort.image}}">
+        <img class="img_tv" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{tv.imgId}}">
         <div class="caption">
           <h5>{{ tv.message}}</h5>
           <p>{{ tv.id }}</p>
@@ -43,7 +45,7 @@
     </div>
   </div>
   <div class="row" align="center">
-    <pagination  total-items="totalItems" ng-model="currentPage" ng-change="" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;"></pagination>
+    <pagination  total-items="tvSort.page.totalResult" items-per-page="20" ng-model="tvSort.page.currentPage" ng-change="tvSort.changePage()" class="pagination-sm pull-right" previous-text="&lsaquo;" next-text="&rsaquo;"></pagination>
   </div>
 </div>
 

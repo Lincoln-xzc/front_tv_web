@@ -14,6 +14,9 @@
       vm.pageData ={
         'size':20,
         'type':vm.name,
+        'tip':'',
+        'area':'',
+        'releaseDate':'',
         'currentPage':1
       };
       EndMainService.getResources(vm.pageData).then(function(result){
@@ -35,6 +38,9 @@
       vm.pageData ={
         'size':20,
         'type':vm.name,
+        'tip':'',
+        'area':'',
+        'releaseDate':'',
         'currentPage':vm.page.currentPage
       };
       EndMainService.getResources(vm.pageData).then(function(result){

@@ -11,7 +11,7 @@
   /** @ngInject */
   function TvSortService($q,$http){
     var tvSortService = [];
-    var tvs = [
+/*    var tvs = [
       {
         image:'/assets/images/tv/01.jpg',
         message:'aa',
@@ -132,31 +132,44 @@
         message:'aa',
         id:12
       }
-    ];
+    ];*/
     var menus = [
       {
         title:'频道',
         datas:[
           {
-            title:'频道：'
+            title:'频道：',
+            url:''
           },
           {
-            title:'电视剧'
+            'title':'电视剧',
+            'url':'tvSort',
+            'type':'tv'
           },
           {
-            'title':'电影'
+            'title':'电影',
+            'url':'movieSort',
+            'type':'movie'
           },
           {
-            'title':'综艺'
+            'title':'综艺',
+            'url':'artSort',
+            'type':'art'
           },
           {
-            'title':'动漫'
+            'title':'动漫',
+            'url':'animationSort',
+            'type':'animation'
           },
           {
-            'title':'健康'
+            'title':'健康',
+            'url':'fitnessSort',
+            'type':'fitness'
           },
           {
-            'title':'教育'
+            'title':'教育',
+            'url':'teachSort',
+            'type':'teach'
           }
         ]
       },
@@ -167,31 +180,40 @@
             'title':'地区：'
           },
           {
-            'title':'全部'
+            'title':'全部',
+            'area':''
           },
           {
-            'title':'大陆'
+            'title':'大陆',
+            'area':'china'
           },
           {
-            'title':'香港'
+            'title':'香港',
+            'area':'hkong'
           },
           {
-            'title':'韩国'
+            'title':'韩国',
+            'area':'korea'
           },
           {
-            'title':'美国'
+            'title':'美国',
+            'area':'american'
           },
           {
-            'title':'英国'
+            'title':'英国',
+            'area':'english'
           },
           {
-            'title':'台湾'
+            'title':'台湾',
+            'area':'taiwan'
           },
           {
-            'title':'泰国'
+            'title':'泰国',
+            'area':'thailand'
           },
           {
-            'title':'新加坡'
+            'title':'新加坡',
+            'area':'singapore'
           }
         ]
       },
@@ -202,52 +224,68 @@
             'title':'类型：'
           },
           {
-            'title':'全部'
+            'title':'全部',
+            'tip':''
           },
           {
-            'title':'武侠'
+            'title':'武侠',
+            'tip':'art'
           },
           {
-            'title':'警匪'
+            'title':'警匪',
+            'tip':'cop'
           },
           {
-            'title':'军事'
+            'title':'军事',
+            'tip':'military'
           },
           {
-            'title':'神话'
+            'title':'神话',
+            'tip':'myth'
           },
           {
-            'title':'科幻'
+            'title':'科幻',
+            'tip':'fiction'
           },
           {
-            'title':'悬疑'
+            'title':'悬疑',
+            'tip':'mystery'
           },
           {
-            'title':'历史'
+            'title':'历史',
+            'tip':'history'
           },
           {
-            'title':'儿童'
+            'title':'儿童',
+            'tip':'children'
           },
           {
-            'title':'农村'
+            'title':'农村',
+            'tip':'countryside'
           },
           {
-            'title':'都市'
+            'title':'都市',
+            'tip':'city'
           },
           {
-            'title':'家庭'
+            'title':'家庭',
+            'tip':'home'
           },
           {
-            'title':'搞笑'
+            'title':'搞笑',
+            'tip':'funny'
           },
           {
-            'title':'偶像'
+            'title':'偶像',
+            'tip':'idol'
           },
           {
-            'title':'言情'
+            'title':'言情',
+            'tip':'romance'
           },
           {
-            'title':'粤语'
+            'title':'粤语',
+            'tip':'cantonese'
           }
         ]
       },
@@ -258,48 +296,65 @@
             'title':'时间：'
           },
           {
-            'title':'全部'
+            'title':'全部',
+            'date':''
           },
           {
-            'title':'2016'
+            'title':'2016',
+            'date':'2016'
           },
           {
-            'title':'2015'
+            'title':'2015',
+            'date':'2015'
           },
           {
-            'title':'2014'
+            'title':'2014',
+            'date':'2014'
           },
           {
-            'title':'2013'
+            'title':'2013',
+            'date':'2013'
           },
           {
-            'title':'2012'
+            'title':'2012',
+            'date':'2012'
           },
           {
-            'title':'2011'
+            'title':'2011',
+            'date':'2011'
           },
           {
-            'title':'00年代'
+            'title':'00年代',
+            'date':'2000'
           },
           {
-            'title':'90年代'
+            'title':'90年代',
+            'date':'1990'
           },
           {
-            'title':'80年代'
+            'title':'80年代',
+            'date':'1980'
           },
           {
-            'title':'70年代'
+            'title':'70年代',
+            'date':'1970'
           },
           {
-            'title':'更早'
+            'title':'更早',
+            'date':'1960'
           }
         ]
       }
     ];
-    tvSortService.getTvs = function(){
-      var d = $q.defer();
+    tvSortService.getTvs = function(data){
+    /*  var d = $q.defer();
       d.resolve({'data':tvs});
-      return d.promise;
+      return d.promise;*/
+      return $http({
+        method:"POST",
+        url:"http://localhost:8080/end_tv_web/movieAction/find",
+        data:data
+      });
     };
     tvSortService.getMenus = function(){
       var d = $q.defer();

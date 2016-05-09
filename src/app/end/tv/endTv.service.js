@@ -13,7 +13,6 @@
     var endTvService = [];
 
     endTvService.getTvs = function(data){
-      console.log(data);
       return $http({
         method:"POST",
         url:"http://localhost:8080/end_tv_web/movieAction/findAll",

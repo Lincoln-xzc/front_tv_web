@@ -11,6 +11,9 @@
     vm.initpage ={
       'size':20,
       'type':'movie',
+      'tip':'',
+      'area':'',
+      'releaseDate':'',
       'currentPage':1
     };
     EndTvService.getTvs(vm.initpage).then(function(result){
@@ -28,7 +31,10 @@
     vm.changePage = function(){
       vm.pageData ={
         'size':20,
-        'type':'tv',
+        'type':'movie',
+        'tip':'',
+        'area':'',
+        'releaseDate':'',
         'currentPage':vm.page.currentPage
       };
       EndTvService.getTvs(vm.pageData).then(function(result){

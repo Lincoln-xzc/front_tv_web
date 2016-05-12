@@ -24,7 +24,6 @@
     EndTvService.getTvs(vm.data).then(function(result){
       vm.tvs = result.data.data[0];
       vm.datas = vm.tvs.resultList;
-      console.log(vm.datas);
       vm.page ={
         "currentPage":vm.tvs.currentPage,
         "totalPage":vm.tvs.totalPage,

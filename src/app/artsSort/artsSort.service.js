@@ -11,155 +11,44 @@
   /** @ngInject */
   function ArtsSortService($q,$http){
     var artsSortService = [];
-    var arts = [
-      {
-        image:'/assets/images/tv/01.jpg',
-        message:'aa',
-        id:1
-      },
-      {
-        image:'/assets/images/tv/02.jpg',
-        message:'aa',
-        id:2
-      },
-      {
-        image:'/assets/images/tv/03.jpg',
-        message:'aa',
-        id:3
-      },
-      {
-        image:'/assets/images/tv/04.jpg',
-        message:'aa',
-        id:4
-      },
-      {
-        image:'/assets/images/tv/05.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/tv/06.jpg',
-        message:'aa',
-        id:6
-      },
-      {
-        image:'/assets/images/tv/07.jpg',
-        message:'aa',
-        id:7
-      },
-      {
-        image:'/assets/images/tv/08.jpg',
-        message:'aa',
-        id:8
-      },
-      {
-        image:'/assets/images/tv/09.jpg',
-        message:'aa',
-        id:9
-      },
-      {
-        image:'/assets/images/tv/05.jpg',
-        message:'aa',
-        id:10
-      },
-      {
-        image:'/assets/images/tv/04.jpg',
-        message:'aa',
-        id:11
-      },
-      {
-        image:'/assets/images/tv/03.jpg',
-        message:'aa',
-        id:12
-      },
-      {
-        image:'/assets/images/tv/01.jpg',
-        message:'aa',
-        id:1
-      },
-      {
-        image:'/assets/images/tv/02.jpg',
-        message:'aa',
-        id:2
-      },
-      {
-        image:'/assets/images/tv/03.jpg',
-        message:'aa',
-        id:3
-      },
-      {
-        image:'/assets/images/tv/04.jpg',
-        message:'aa',
-        id:4
-      },
-      {
-        image:'/assets/images/tv/05.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/tv/06.jpg',
-        message:'aa',
-        id:6
-      },
-      {
-        image:'/assets/images/tv/07.jpg',
-        message:'aa',
-        id:7
-      },
-      {
-        image:'/assets/images/tv/08.jpg',
-        message:'aa',
-        id:8
-      },
-      {
-        image:'/assets/images/tv/09.jpg',
-        message:'aa',
-        id:9
-      },
-      {
-        image:'/assets/images/tv/05.jpg',
-        message:'aa',
-        id:10
-      },
-      {
-        image:'/assets/images/tv/04.jpg',
-        message:'aa',
-        id:11
-      },
-      {
-        image:'/assets/images/tv/03.jpg',
-        message:'aa',
-        id:12
-      }
-    ];
+
     var menus = [
       {
         'title':'频道',
-        'datas':[
+        datas:[
           {
-            'title':'频道：'
+            title:'频道：',
+            url:''
           },
           {
-            'title':'全部'
+            'title':'电视剧',
+            'url':'nav.tvSort',
+            'type':'tv'
           },
           {
-            'title':'电视剧'
+            'title':'电影',
+            'url':'nav.movieSort',
+            'type':'movie'
           },
           {
-            'title':'电影'
+            'title':'综艺',
+            'url':'nav.artsSort',
+            'type':'art'
           },
           {
-            'title':'综艺'
+            'title':'动漫',
+            'url':'nav.animationSort',
+            'type':'animation'
           },
           {
-            'title':'动漫'
+            'title':'健康',
+            'url':'nav.fitnessSort',
+            'type':'fitness'
           },
           {
-            'title':'健康'
-          },
-          {
-            'title':'教育'
+            'title':'教育',
+            'url':'nav.teachSort',
+            'type':'teach'
           }
         ]
       },
@@ -170,25 +59,40 @@
             'title':'地区：'
           },
           {
-            'title':'全部'
+            'title':'全部',
+            'area':''
           },
           {
-            'title':'大陆'
+            'title':'大陆',
+            'area':'china'
           },
           {
-            'title':'香港'
+            'title':'香港',
+            'area':'hkong'
           },
           {
-            'title':'韩国'
+            'title':'韩国',
+            'area':'korea'
           },
           {
-            'title':'美国'
+            'title':'美国',
+            'area':'american'
           },
           {
-            'title':'台湾'
+            'title':'英国',
+            'area':'english'
           },
           {
-            'title':'其他'
+            'title':'台湾',
+            'area':'taiwan'
+          },
+          {
+            'title':'泰国',
+            'area':'thailand'
+          },
+          {
+            'title':'新加坡',
+            'area':'singapore'
           }
         ]
       },
@@ -199,64 +103,76 @@
             'title':'类型：'
           },
           {
-            'title':'全部'
+            'title':'全部',
+            'tip':''
           },
           {
-            'title':'脱口秀'
+            'title':'脱口秀',
+            'tip':'talkShow'
           },
           {
-            'title':'真人秀'
+            'title':'真人秀',
+            'tip':'realityShow'
           },
           {
-            'title':'选秀'
+            'title':'选秀',
+            'tip':'draft'
           },
           {
-            'title':'美食'
+            'title':'美食',
+            'tip':'food'
           },
           {
-            'title':'旅游'
+            'title':'旅游',
+            'tip':'tourism'
           },
           {
-            'title':'汽车'
+            'title':'汽车',
+            'tip':'automobile'
           },
           {
-            'title':'访谈'
+            'title':'访谈',
+            'tip':'interview'
           },
           {
-            'title':'搞笑'
+            'title':'搞笑',
+            'tip':'funny'
           },
           {
-            'title':'时尚'
+            'title':'时尚',
+            'tip':'popular'
           },
           {
-            'title':'晚会'
+            'title':'晚会',
+            'tip':'part'
           },
           {
-            'title':'理财'
+            'title':'理财',
+            'tip':'conduct'
           },
           {
-            'title':'演唱会'
+            'title':'演唱会',
+            'tip':'concert'
           },
           {
-            'title':'曲艺'
+            'title':'曲艺',
+            'tip':'quyi'
           },
           {
-            'title':'益智'
+            'title':'音乐',
+            'tip':'music'
           },
           {
-            'title':'音乐'
+            'title':'舞蹈',
+            'tip':'disco'
           },
           {
-            'title':'舞蹈'
+            'title':'体育娱乐',
+            'tip':'sports'
           },
           {
-            'title':'体育娱乐'
-          },
-          {
-            'title':'游戏'
-          },
-          {
-            'title':'生活'
+            'title':'游戏',
+            'tip':'play'
           }
         ]
       },
@@ -267,49 +183,57 @@
             'title':'时间：'
           },
           {
-            'title':'全部'
+            'title':'全部',
+            'date':''
           },
           {
-            'title':'2016'
+            'title':'2016',
+            'date':'2016'
           },
           {
-            'title':'2015'
+            'title':'2015',
+            'date':'2015'
           },
           {
-            'title':'2014'
+            'title':'2014',
+            'date':'2014'
           },
           {
-            'title':'2013'
+            'title':'2013',
+            'date':'2013'
           },
           {
-            'title':'2012'
+            'title':'2012',
+            'date':'2012'
           },
           {
-            'title':'2011'
+            'title':'2011',
+            'date':'2011'
           },
           {
-            'title':'00年代'
+            'title':'00年代',
+            'date':'2000'
           },
           {
-            'title':'90年代'
+            'title':'90年代',
+            'date':'1990'
           },
           {
-            'title':'80年代'
+            'title':'80年代',
+            'date':'1980'
           },
           {
-            'title':'70年代'
+            'title':'70年代',
+            'date':'1970'
           },
           {
-            'title':'更早'
+            'title':'更早',
+            'date':'1960'
           }
         ]
       }
     ];
-    artsSortService.getArts = function(){
-      var d = $q.defer();
-      d.resolve({'data':arts});
-      return d.promise;
-    };
+
     artsSortService.getMenu = function(){
       var d = $q.defer();
       d.resolve({'data':menus});

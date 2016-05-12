@@ -11,152 +11,44 @@
   /** @ngInject */
   function TeachSortService($q,$http){
     var teachSortService = [];
-    var teaches = [
-      {
-        image:'/assets/images/tv/01.jpg',
-        message:'aa',
-        id:1
-      },
-      {
-        image:'/assets/images/tv/02.jpg',
-        message:'aa',
-        id:2
-      },
-      {
-        image:'/assets/images/tv/03.jpg',
-        message:'aa',
-        id:3
-      },
-      {
-        image:'/assets/images/tv/04.jpg',
-        message:'aa',
-        id:4
-      },
-      {
-        image:'/assets/images/tv/05.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/tv/06.jpg',
-        message:'aa',
-        id:6
-      },
-      {
-        image:'/assets/images/tv/07.jpg',
-        message:'aa',
-        id:7
-      },
-      {
-        image:'/assets/images/tv/08.jpg',
-        message:'aa',
-        id:8
-      },
-      {
-        image:'/assets/images/tv/09.jpg',
-        message:'aa',
-        id:9
-      },
-      {
-        image:'/assets/images/tv/05.jpg',
-        message:'aa',
-        id:10
-      },
-      {
-        image:'/assets/images/tv/04.jpg',
-        message:'aa',
-        id:11
-      },
-      {
-        image:'/assets/images/tv/03.jpg',
-        message:'aa',
-        id:12
-      },
-      {
-        image:'/assets/images/tv/01.jpg',
-        message:'aa',
-        id:1
-      },
-      {
-        image:'/assets/images/tv/02.jpg',
-        message:'aa',
-        id:2
-      },
-      {
-        image:'/assets/images/tv/03.jpg',
-        message:'aa',
-        id:3
-      },
-      {
-        image:'/assets/images/tv/04.jpg',
-        message:'aa',
-        id:4
-      },
-      {
-        image:'/assets/images/tv/05.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/tv/06.jpg',
-        message:'aa',
-        id:6
-      },
-      {
-        image:'/assets/images/tv/07.jpg',
-        message:'aa',
-        id:7
-      },
-      {
-        image:'/assets/images/tv/08.jpg',
-        message:'aa',
-        id:8
-      },
-      {
-        image:'/assets/images/tv/09.jpg',
-        message:'aa',
-        id:9
-      },
-      {
-        image:'/assets/images/tv/05.jpg',
-        message:'aa',
-        id:10
-      },
-      {
-        image:'/assets/images/tv/04.jpg',
-        message:'aa',
-        id:11
-      },
-      {
-        image:'/assets/images/tv/03.jpg',
-        message:'aa',
-        id:12
-      }
-    ];
+
     var menus = [
       {
         'title':'频道',
-        'datas':[
+        datas:[
           {
-            'title':'频道：'
+            title:'频道：',
+            url:''
           },
           {
-            'title':'电视剧'
+            'title':'电视剧',
+            'url':'nav.tvSort',
+            'type':'tv'
           },
           {
-            'title':'电影'
+            'title':'电影',
+            'url':'nav.movieSort',
+            'type':'movie'
           },
           {
-            'title':'综艺'
+            'title':'综艺',
+            'url':'nav.artsSort',
+            'type':'art'
           },
           {
-            'title':'动漫'
+            'title':'动漫',
+            'url':'nav.animationSort',
+            'type':'animation'
           },
           {
-            'title':'健康'
+            'title':'健康',
+            'url':'nav.fitnessSort',
+            'type':'fitness'
           },
           {
-            'title':'教育'
+            'title':'教育',
+            'url':'nav.teachSort',
+            'type':'teach'
           }
         ]
       },
@@ -167,49 +59,64 @@
             'title':'类型：'
           },
           {
-            'title':'全部'
+            'title':'全部',
+            'tip':''
           },
           {
-            'title':'幼儿'
+            'title':'幼儿',
+            'tip':'child'
           },
           {
-            'title':'小学'
+            'title':'小学',
+            'tip':'primary'
           },
           {
-            'title':'初中'
+            'title':'初中',
+            'tip':'junior'
           },
           {
-            'title':'高中'
+            'title':'高中',
+            'tip':'high'
           },
           {
-            'title':'外语学习'
+            'title':'外语学习',
+            'tip':'foreign'
           },
           {
-            'title':'理工'
+            'title':'理工',
+            'tip':'polytechnic'
           },
           {
-            'title':'历史'
+            'title':'历史',
+            'tip':'history'
           },
           {
-            'title':'心理学'
+            'title':'心理学',
+            'tip':'psychology'
           },
           {
-            'title':'经济'
+            'title':'经济',
+            'tip':'economics'
           },
           {
-            'title':'政治'
+            'title':'政治',
+            'tip':'politics'
           },
           {
-            'title':'管理学'
+            'title':'管理学',
+            'tip':'manager'
           },
           {
-            'title':'计算机'
+            'title':'计算机',
+            'tip':'computer'
           },
           {
-            'title':'法律'
+            'title':'法律',
+            'tip':'law'
           },
           {
-            'title':'家庭教育'
+            'title':'家庭教育',
+            'tip':'home'
           }
         ]
       },
@@ -220,37 +127,41 @@
             'title':'出品：'
           },
           {
-            'title':'TED'
+            'title':'全部',
+            'area':''
           },
           {
-            'title':'泰学传媒'
+            'title':'TED',
+            'area':'TED'
           },
           {
-            'title':'耶鲁大学'
+            'title':'耶鲁大学',
+            'area':'yale'
           },
           {
-            'title':'哈佛大学'
+            'title':'哈佛大学',
+            'area':'harvard'
           },
           {
-            'title':'斯坦福大学'
+            'title':'斯坦福大学',
+            'tip':'stanford'
           },
           {
-            'title':'麻省理工学院'
+            'title':'麻省理工学院',
+            'tip':'massachusetts'
           },
           {
-            'title':'Undacity'
+            'title':'Undacity',
+            'tip':'undacity'
           },
           {
-            'title':'中学网上课堂'
+            'title':'中学网上课堂',
+            'tip':'middle'
           }
         ]
       }
     ];
-    teachSortService.getTeaches = function(){
-      var d = $q.defer();
-      d.resolve({'data':teaches});
-      return d.promise;
-    };
+
     teachSortService.getMenu = function(){
       var d = $q.defer();
       d.resolve({'data':menus});

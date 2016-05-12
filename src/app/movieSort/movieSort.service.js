@@ -11,152 +11,44 @@
   /** @ngInject */
   function MovieSortService($q,$http){
     var movieSortService = [];
-    var movies = [
-      {
-        image:'/assets/images/tv/01.jpg',
-        message:'aa',
-        id:1
-      },
-      {
-        image:'/assets/images/tv/02.jpg',
-        message:'aa',
-        id:2
-      },
-      {
-        image:'/assets/images/tv/03.jpg',
-        message:'aa',
-        id:3
-      },
-      {
-        image:'/assets/images/tv/04.jpg',
-        message:'aa',
-        id:4
-      },
-      {
-        image:'/assets/images/tv/05.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/tv/06.jpg',
-        message:'aa',
-        id:6
-      },
-      {
-        image:'/assets/images/tv/07.jpg',
-        message:'aa',
-        id:7
-      },
-      {
-        image:'/assets/images/tv/08.jpg',
-        message:'aa',
-        id:8
-      },
-      {
-        image:'/assets/images/tv/09.jpg',
-        message:'aa',
-        id:9
-      },
-      {
-        image:'/assets/images/tv/05.jpg',
-        message:'aa',
-        id:10
-      },
-      {
-        image:'/assets/images/tv/04.jpg',
-        message:'aa',
-        id:11
-      },
-      {
-        image:'/assets/images/tv/03.jpg',
-        message:'aa',
-        id:12
-      },
-      {
-        image:'/assets/images/tv/01.jpg',
-        message:'aa',
-        id:1
-      },
-      {
-        image:'/assets/images/tv/02.jpg',
-        message:'aa',
-        id:2
-      },
-      {
-        image:'/assets/images/tv/03.jpg',
-        message:'aa',
-        id:3
-      },
-      {
-        image:'/assets/images/tv/04.jpg',
-        message:'aa',
-        id:4
-      },
-      {
-        image:'/assets/images/tv/05.jpg',
-        message:'aa',
-        id:5
-      },
-      {
-        image:'/assets/images/tv/06.jpg',
-        message:'aa',
-        id:6
-      },
-      {
-        image:'/assets/images/tv/07.jpg',
-        message:'aa',
-        id:7
-      },
-      {
-        image:'/assets/images/tv/08.jpg',
-        message:'aa',
-        id:8
-      },
-      {
-        image:'/assets/images/tv/09.jpg',
-        message:'aa',
-        id:9
-      },
-      {
-        image:'/assets/images/tv/05.jpg',
-        message:'aa',
-        id:10
-      },
-      {
-        image:'/assets/images/tv/04.jpg',
-        message:'aa',
-        id:11
-      },
-      {
-        image:'/assets/images/tv/03.jpg',
-        message:'aa',
-        id:12
-      }
-    ];
+
     var menus = [
       {
         'title':'频道',
-        'datas':[
+        datas:[
           {
-            'title':'频道：'
+            title:'频道：',
+            url:''
           },
           {
-            'title':'电视剧'
+            'title':'电视剧',
+            'url':'nav.tvSort',
+            'type':'tv'
           },
           {
-            'title':'电影'
+            'title':'电影',
+            'url':'nav.movieSort',
+            'type':'movie'
           },
           {
-            'title':'综艺'
+            'title':'综艺',
+            'url':'nav.artsSort',
+            'type':'art'
           },
           {
-            'title':'动漫'
+            'title':'动漫',
+            'url':'nav.animationSort',
+            'type':'animation'
           },
           {
-            'title':'健康'
+            'title':'健康',
+            'url':'nav.fitnessSort',
+            'type':'fitness'
           },
           {
-            'title':'教育'
+            'title':'教育',
+            'url':'nav.teachSort',
+            'type':'teach'
           }
         ]
       },
@@ -167,31 +59,40 @@
             'title':'地区：'
           },
           {
-            'title':'全部'
+            'title':'全部',
+            'area':''
           },
           {
-            'title':'大陆'
+            'title':'大陆',
+            'area':'china'
           },
           {
-            'title':'香港'
+            'title':'香港',
+            'area':'hkong'
           },
           {
-            'title':'韩国'
+            'title':'韩国',
+            'area':'korea'
           },
           {
-            'title':'美国'
+            'title':'美国',
+            'area':'american'
           },
           {
-            'title':'英国'
+            'title':'英国',
+            'area':'english'
           },
           {
-            'title':'台湾'
+            'title':'台湾',
+            'area':'taiwan'
           },
           {
-            'title':'泰国'
+            'title':'泰国',
+            'area':'thailand'
           },
           {
-            'title':'新加坡'
+            'title':'新加坡',
+            'area':'singapore'
           }
         ]
       },
@@ -202,61 +103,80 @@
             'title':'类型：'
           },
           {
-            'title':'全部'
+            'title':'全部',
+            'tip':''
           },
           {
-            'title':'武侠'
+            'title':'武侠',
+            'tip':'art'
           },
           {
-            'title':'警匪'
+            'title':'警匪',
+            'tip':'cop'
           },
           {
-            'title':'犯罪'
+            'title':'犯罪',
+            'tip':'crime'
           },
           {
-            'title':'科幻'
+            'title':'科幻',
+            'tip':'fiction'
           },
           {
-            'title':'战争'
+            'title':'战争',
+            'tip':'war'
           },
           {
-            'title':'恐怖'
+            'title':'恐怖',
+            'tip':'terror'
           },
           {
-            'title':'惊悚'
+            'title':'惊悚',
+            'tip':'thriller'
           },
           {
-            'title':'纪录片'
+            'title':'纪录片',
+            'tip':'documentary'
           },
           {
-            'title':'冒险'
+            'title':'冒险',
+            'tip':'adventure'
           },
           {
-            'title':'悬疑'
+            'title':'悬疑',
+            'tip':'suspense'
           },
           {
-            'title':'历史'
+            'title':'历史',
+            'tip':'history'
           },
           {
-            'title':'动作'
+            'title':'动作',
+            'tip':'action'
           },
           {
-            'title':'动画'
+            'title':'动画',
+            'tip':'animation'
           },
           {
-            'title':'喜剧'
+            'title':'喜剧',
+            'tip':'comedy'
           },
           {
-            'title':'爱情'
+            'title':'爱情',
+            'tip':'love'
           },
           {
-            'title':'剧情'
+            'title':'剧情',
+            'tip':'plot'
           },
           {
-            'title':'西部'
+            'title':'西部',
+            'tip':'west'
           },
           {
-            'title':'传记'
+            'title':'传记',
+            'tip':'biography'
           }
         ]
       },
@@ -267,49 +187,61 @@
             'title':'时间：'
           },
           {
-            'title':'全部'
+            'title':'全部',
+            'date':''
           },
           {
-            'title':'2016'
+            'title':'2016',
+            'date':'2016'
           },
           {
-            'title':'2015'
+            'title':'2015',
+            'date':'2015'
           },
           {
-            'title':'2014'
+            'title':'2014',
+            'date':'2014'
           },
           {
-            'title':'2013'
+            'title':'2013',
+            'date':'2013'
           },
           {
-            'title':'2012'
+            'title':'2012',
+            'date':'2012'
           },
           {
-            'title':'2011'
+            'title':'2011',
+            'date':'2011'
           },
           {
-            'title':'00年代'
+            'title':'00年代',
+            'date':'2000'
           },
           {
-            'title':'90年代'
+            'title':'90年代',
+            'date':'1990'
           },
           {
-            'title':'80年代'
+            'title':'80年代',
+            'date':'1980'
           },
           {
-            'title':'70年代'
+            'title':'70年代',
+            'date':'1970'
           },
           {
-            'title':'更早'
-          },
+            'title':'更早',
+            'date':'1960'
+          }
         ]
       }
     ];
-    movieSortService.getMovies = function(){
+/*    movieSortService.getMovies = function(){
       var d = $q.defer();
       d.resolve({'data':movies});
       return d.promise;
-    };
+    };*/
     movieSortService.getMenu = function(){
       var d = $q.defer();
       d.resolve({'data':menus});

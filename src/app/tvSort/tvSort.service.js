@@ -143,32 +143,32 @@
           },
           {
             'title':'电视剧',
-            'url':'tvSort',
+            'url':'nav.tvSort',
             'type':'tv'
           },
           {
             'title':'电影',
-            'url':'movieSort',
+            'url':'nav.movieSort',
             'type':'movie'
           },
           {
             'title':'综艺',
-            'url':'artSort',
+            'url':'nav.artsSort',
             'type':'art'
           },
           {
             'title':'动漫',
-            'url':'animationSort',
+            'url':'nav.animationSort',
             'type':'animation'
           },
           {
             'title':'健康',
-            'url':'fitnessSort',
+            'url':'nav.fitnessSort',
             'type':'fitness'
           },
           {
             'title':'教育',
-            'url':'teachSort',
+            'url':'nav.teachSort',
             'type':'teach'
           }
         ]

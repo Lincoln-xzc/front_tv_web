@@ -216,6 +216,12 @@
         controller:'EndTeachController',
         controllerAs:'endTeachList'
       })
+      .state('end.user',{
+        url:'user',
+        templateUrl:'app/end/user/user_list.html',
+        controller:'UserController',
+        controllerAs:'user'
+      })
       .state('modal',{
         onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state,$modal){
           $modal.open({

@@ -10,6 +10,7 @@
     var vm = this;
     vm.isCollapsed = false;
 
+
   } //End of MainController
 
 })();

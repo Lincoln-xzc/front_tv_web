@@ -97,7 +97,7 @@
 
     //复制
     vm.copy = function(data){
-      console.log(data);
+
       var modalInstance = $modal.open({
         templateUrl:'copy.html',
         controller:'CopyDataController',
@@ -111,8 +111,8 @@
         }
       });
 
-      modalInstance.result.then(function (selectItem){
-        vm.selected = selectItem;
+      modalInstance.result.then(function (data){
+        vm.data = data;
       },function(){
         $log.info("Modal dismissed at:" + new Date());
       })
@@ -141,9 +141,9 @@
       vm.data ={
         'movieId':vm.movie.id,
         'recommand':vm.movie.recommand,
-        'tip':vm.movie.tip
+        'tip':vm.movie.type
       };
-      console.log(vm.data);
+
       EndTvService.save(vm.data).then(function(result){
         vm.data = result.data;
       },function(err){

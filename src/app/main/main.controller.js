@@ -89,6 +89,7 @@
     vm.getTv = function(type){
       MainService.getTvShow(type).then(function(result){
         vm.tvDatas = result.data.data;
+        console.log(vm.tvDatas);
       },function(err){
         $log.error(err.status + ':' +err.statusText);
       })
